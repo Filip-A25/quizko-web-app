@@ -1,0 +1,68 @@
+@import "./global-styles.scss";
+@import "./styling-vars.scss";
+
+
+/* -------------------------- */
+/* ---------- MAIN ---------- */
+/* -------------------------- */
+
+#page-content {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    margin: 0;
+}
+
+/* -------------------------- */
+/* --------- NAVBAR --------- */
+/* -------------------------- */
+
+#navbar-element {
+    @include flexCentered();
+
+    height: $navbar-height;
+    width: 100vw;
+    background: $main-theme-color;
+
+    .navbar-content-section {
+        @include flexVerticalCentered();
+        
+        justify-content: space-between;
+        height: 100%;
+        width: 80%;
+
+        .logo-section {
+
+            h1 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                font-family: $main-font-style;
+                color: $main-dark-theme-color;
+            }
+        }
+
+        .nav-buttons-section {
+            display: grid;
+            height: 100%;
+            width: 50%;
+            grid-template-columns: repeat(4, auto);
+            gap: 1%;
+            align-items: center;
+    
+            .nav-button {
+                @include standardButton(1.1rem, 65%);
+                @include flexCentered();
+
+                color: $main-dark-theme-color;
+                background: transparent;
+
+                .nav-button-icon {
+                    height: 15px;
+                    width: 15px;
+                }
+            }
+        }
+    }
+}

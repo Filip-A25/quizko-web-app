@@ -1,0 +1,70 @@
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* --------------------------------- */
+/* --------- GLOBAL STYLES --------- */
+/* --------------------------------- */
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* -------------------------- */
+/* ---------- MAIN ---------- */
+/* -------------------------- */
+#page-content {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  margin: 0;
+}
+
+/* -------------------------- */
+/* --------- NAVBAR --------- */
+/* -------------------------- */
+#navbar-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 100vw;
+  background: #E1BF57;
+}
+#navbar-element .navbar-content-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 80%;
+}
+#navbar-element .navbar-content-section .logo-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "Lato";
+  color: #3C3C3C;
+}
+#navbar-element .navbar-content-section .nav-buttons-section {
+  display: grid;
+  height: 100%;
+  width: 50%;
+  grid-template-columns: repeat(4, auto);
+  gap: 1%;
+  align-items: center;
+}
+#navbar-element .navbar-content-section .nav-buttons-section .nav-button {
+  font-family: "Lato";
+  font-size: 1.1rem;
+  border-radius: 3px;
+  border: none;
+  height: 65%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3C3C3C;
+  background: transparent;
+}
+#navbar-element .navbar-content-section .nav-buttons-section .nav-button .nav-button-icon {
+  height: 15px;
+  width: 15px;
+}/*# sourceMappingURL=content-styles.css.map */

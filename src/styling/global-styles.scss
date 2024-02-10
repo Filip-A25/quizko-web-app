@@ -1,0 +1,25 @@
+@import "./styling-vars.scss";
+
+/* --------------------------------- */
+/* --------- GLOBAL STYLES --------- */
+/* --------------------------------- */
+
+@mixin flexCentered() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexVerticalCentered() {
+    display: flex;
+    align-items: center;
+}
+
+@mixin standardButton($fontSize, $height) {
+    font-family: $main-font-style;
+    font-size: $fontSize;
+    border-radius: 3px;
+    border: none;
+    height: $height;
+    cursor: pointer;
+}
