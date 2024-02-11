@@ -13,6 +13,8 @@
 #page-content {
   height: 100vh;
   width: 100vw;
+  background: whitesmoke;
+  position: relative;
 }
 
 body {
@@ -39,24 +41,63 @@ body {
 }
 #navbar-element .navbar-content-section .logo-section h1 {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 900;
   font-family: "Lato";
   color: #3C3C3C;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 #navbar-element .navbar-content-section .nav-buttons-section {
   display: grid;
   height: 100%;
-  width: 50%;
+  width: 40%;
   grid-template-columns: repeat(4, auto);
   gap: 1%;
   align-items: center;
 }
 #navbar-element .navbar-content-section .nav-buttons-section .nav-button {
   font-family: "Lato";
-  font-size: 1.1rem;
-  border-radius: 3px;
+  font-size: 1rem;
+  border-radius: 5px;
   border: none;
   height: 65%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#navbar-element .navbar-content-section .nav-buttons-section .nav-button .nav-button-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 5%;
+}
+#navbar-element .navbar-content-section .nav-buttons-section .nav-button span {
+  font-weight: 700;
+}
+#navbar-element .navbar-content-section .nav-buttons-section .nav-button-inactive {
+  color: #3C3C3C;
+  background: transparent;
+}
+#navbar-element .navbar-content-section .nav-buttons-section .nav-button-active {
+  color: white;
+  background: #3C3C3C;
+}
+#navbar-element .navbar-content-section .nav-buttons-section .nav-button-active .nav-button-icon {
+  filter: invert(1);
+}
+#navbar-element .navbar-content-section .auth-buttons-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 20%;
+}
+#navbar-element .navbar-content-section .auth-buttons-section .auth-button {
+  font-family: "Lato";
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  height: 100%;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -64,7 +105,46 @@ body {
   color: #3C3C3C;
   background: transparent;
 }
-#navbar-element .navbar-content-section .nav-buttons-section .nav-button .nav-button-icon {
-  height: 15px;
-  width: 15px;
+#navbar-element .navbar-content-section .auth-buttons-section .auth-button .nav-button-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 5%;
+}
+#navbar-element .navbar-content-section .auth-buttons-section .auth-button span {
+  font-weight: 700;
+}
+
+/* -------------------------- */
+/* --------- FOOTER --------- */
+/* -------------------------- */
+#footer-element {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 20vh;
+  width: 100vw;
+  background: #3C3C3C;
+  position: absolute;
+  bottom: 0;
+}
+#footer-element .social-media-links-section {
+  width: 7%;
+  display: flex;
+  justify-content: space-around;
+}
+#footer-element .social-media-links-section .sm-link {
+  transition: all 200ms ease-in-out;
+}
+#footer-element .social-media-links-section .sm-link:hover {
+  transform: scale(1.1);
+  transition: all 200ms ease-in-out;
+}
+#footer-element .social-media-links-section .sm-link .sm-link-icon {
+  height: 40px;
+  width: 40px;
+  filter: invert(1);
+}
+#footer-element .copyright-section small {
+  color: white;
+  font-style: "Lato";
 }/*# sourceMappingURL=content-styles.css.map */

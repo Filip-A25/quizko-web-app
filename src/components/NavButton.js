@@ -1,23 +1,34 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import "../styling/content-styles.scss";
 import homeIcon from "../icons/home-icon.png";
 import createIcon from "../icons/create-quiz-icon.png";
 import myQuizzesIcon from "../icons/my-quizzes-icon.png";
 import profileIcon from "../icons/profile-icon.png";
+import logInIcon from "../icons/sign-in-icon.png";
+import registerIcon from "../icons/register-icon.png";
+import { MainContext } from "./MainContent";
 
 function NavButton(props) {
-    const [buttonClass, setButtonClass] = useState("nav-button");
+    const [buttonClass, setButtonClass] = useState("");
     const [iconSrc, setIconSrc] = useState("");
-    const [isActive, setActive] = useState(1);
 
-    useEffect(() => {
-        if (props.index === isActive) setButtonClass("nav-button nav-button-active");
-        else setButtonClass("standard-button nav-button");
-    }, [isActive])
+    const {setActiveIndex} = useContext(MainContext);
 
     const handleActiveChange = () => {
-        setActive(props.index);
+        if (props.isContent) setActiveIndex(props.index);
     }
+
+    // Postavlja klase za buttone na prvom renderu.
+    useEffect(() => {
+        if (props.isContent) setButtonClass("nav-button nav-button-inactive");
+        else setButtonClass("auth-button");
+    }, [])
+
+    // Postavlja active klasu za button koji je kliknut.
+    useEffect(() => {
+        if (props.isActive) setButtonClass("nav-button nav-button-active");
+        if (!props.isActive && props.isContent) setButtonClass("nav-button nav-button-inactive");
+    }, [props.isActive])
 
     useEffect(() => {
         switch(props.index) {
@@ -32,11 +43,17 @@ function NavButton(props) {
                 break;
             case 4:
                 setIconSrc(profileIcon);
+                break;
+            case 5:
+                setIconSrc(logInIcon);
+                break;
+            case 6:
+                setIconSrc(registerIcon);
         }
     }, [])
 
     return (
-        <button className={buttonClass} onClick={() => handleActiveChange}>
+        <button className={buttonClass} onClick={() => handleActiveChange()}>
             <img className="nav-button-icon" src={iconSrc}></img>
             <span className="nav-button-text">{props.title}</span>
         </button>

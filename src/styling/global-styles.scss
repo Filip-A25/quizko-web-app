@@ -15,11 +15,28 @@
     align-items: center;
 }
 
+@mixin flexHorizontalCentered() {
+    display: flex;
+    justify-content: center;
+}
+
 @mixin standardButton($fontSize, $height) {
     font-family: $main-font-style;
     font-size: $fontSize;
-    border-radius: 3px;
+    border-radius: 5px;
     border: none;
     height: $height;
     cursor: pointer;
+}
+
+@mixin buttonIcon() {
+    height: 16px;
+    width: 16px;
+    margin-right: 5%;
+}
+
+@mixin footerIcon() {
+    height: 40px;
+    width: 40px;
+    filter: invert(1);
 }

@@ -9,11 +9,14 @@
 #page-content {
     height: 100vh;
     width: 100vw;
+    background: $background-light-color;
+    position: relative;
 }
 
 body {
     margin: 0;
 }
+
 
 /* -------------------------- */
 /* --------- NAVBAR --------- */
@@ -37,32 +40,113 @@ body {
 
             h1 {
                 font-size: 2.5rem;
-                font-weight: 700;
+                font-weight: 900;
                 font-family: $main-font-style;
                 color: $main-dark-theme-color;
+                user-select: none;
             }
         }
 
         .nav-buttons-section {
             display: grid;
             height: 100%;
-            width: 50%;
+            width: 40%;
             grid-template-columns: repeat(4, auto);
             gap: 1%;
             align-items: center;
     
             .nav-button {
-                @include standardButton(1.1rem, 65%);
+                @include standardButton(1rem, 65%);
+                @include flexCentered();
+
+                .nav-button-icon {
+                    @include buttonIcon();
+                }
+
+                span {
+                    font-weight: 700;
+                }
+            }
+
+            .nav-button-inactive {
+                color: $main-dark-theme-color;
+                background: transparent;
+            }
+
+            .nav-button-active {
+                color: $casual-light-text-color;
+                background: $main-dark-theme-color;
+
+                .nav-button-icon {
+                    filter: invert(1);
+                }
+            }
+        }
+
+        .auth-buttons-section {
+            @include flexVerticalCentered();
+
+            justify-content: space-around;
+            width: 20%;
+
+            .auth-button {
+                @include standardButton(1rem, 100%);
                 @include flexCentered();
 
                 color: $main-dark-theme-color;
                 background: transparent;
 
                 .nav-button-icon {
-                    height: 15px;
-                    width: 15px;
+                    @include buttonIcon();
+                }
+
+                span {
+                    font-weight: 700;
                 }
             }
+        }
+    }
+}
+
+
+/* -------------------------- */
+/* --------- FOOTER --------- */
+/* -------------------------- */
+
+#footer-element {
+    @include flexVerticalCentered();
+
+    flex-direction: column;
+    height: $footer-height;
+    width: 100vw;
+    background: $main-dark-theme-color;
+    position: absolute;
+    bottom: 0;
+
+    .social-media-links-section {
+        width: 7%;
+        display: flex;
+        justify-content: space-around;
+
+        .sm-link {
+            transition: all 200ms ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+                transition: all 200ms ease-in-out;
+            }
+
+            .sm-link-icon {
+                @include footerIcon();
+            }
+        }
+    }
+
+    .copyright-section {
+
+        small {
+            color: $casual-light-text-color;
+            font-style: $main-font-style;
         }
     }
 }
