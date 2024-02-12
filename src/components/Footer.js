@@ -14,6 +14,7 @@ function Footer() {
                         <img src={instagramIcon} className="sm-link-icon"></img>
                     </a>
                 </div>
+                <small>udruga.edit@gmail.com</small>
             </section>
             <section className="copyright-section">
                 <small>© Udruga edIT</small>
@@ -21,7 +22,7 @@ function Footer() {
             <section className="logo-section">
                 <div className="logo-flexbox">
                     <img src={editLogo} className="edit-logo"></img>
-                    <span>Ekonomsko društvo informacijskih tehnologija</span>
+                    <small>Ekonomsko društvo informacijskih tehnologija</small>
                 </div>
             </section>
         </div>

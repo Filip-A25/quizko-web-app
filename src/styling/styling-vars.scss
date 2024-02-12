@@ -10,8 +10,8 @@ $background-light-color: whitesmoke;
 $main-font-style: 'Lato';
 
 $navbar-height: 10vh;
-
 $footer-height: 10vh;
+$main-content-height: calc(100% - ($navbar-height + $footer-height));
 
 $casual-text-color: #3C3C3C;
 $casual-light-text-color: white;
