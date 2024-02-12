@@ -10,6 +10,11 @@
 /* -------------------------- */
 /* ---------- MAIN ---------- */
 /* -------------------------- */
+* {
+  box-sizing: border-box;
+  font-family: "Lato";
+}
+
 #page-content {
   height: 100vh;
   width: 100vw;
@@ -120,31 +125,60 @@ body {
 #footer-element {
   display: flex;
   align-items: center;
-  flex-direction: column;
-  height: 20vh;
+  justify-content: space-between;
+  height: 10vh;
   width: 100vw;
   background: #3C3C3C;
   position: absolute;
   bottom: 0;
+  padding: 0% 3% 0% 3%;
 }
 #footer-element .social-media-links-section {
-  width: 7%;
-  display: flex;
-  justify-content: space-around;
+  width: 30%;
 }
-#footer-element .social-media-links-section .sm-link {
+#footer-element .social-media-links-section .social-media-flexbox {
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
+}
+#footer-element .social-media-links-section .social-media-flexbox .sm-link {
   transition: all 200ms ease-in-out;
 }
-#footer-element .social-media-links-section .sm-link:hover {
+#footer-element .social-media-links-section .social-media-flexbox .sm-link:hover {
   transform: scale(1.1);
   transition: all 200ms ease-in-out;
 }
-#footer-element .social-media-links-section .sm-link .sm-link-icon {
-  height: 40px;
-  width: 40px;
+#footer-element .social-media-links-section .social-media-flexbox .sm-link .sm-link-icon {
+  height: 30px;
+  width: 30px;
   filter: invert(1);
+}
+#footer-element .copyright-section {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #footer-element .copyright-section small {
   color: white;
-  font-style: "Lato";
+  font-size: 1rem;
+}
+#footer-element .logo-section {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+#footer-element .logo-section .logo-flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+}
+#footer-element .logo-section .logo-flexbox .edit-logo {
+  height: 40px;
+  margin-right: 1%;
+}
+#footer-element .logo-section .logo-flexbox span {
+  color: white;
 }/*# sourceMappingURL=content-styles.css.map */
