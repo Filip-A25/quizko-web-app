@@ -1,271 +1,266 @@
 @import "./global-styles.scss";
 @import "./styling-vars.scss";
 
-
 /* -------------------------- */
 /* ---------- MAIN ---------- */
 /* -------------------------- */
 
 * {
-    box-sizing: border-box;
-    font-family: $main-font-style;
+  box-sizing: border-box;
+  font-family: $main-font-style;
 }
 
 #page-content {
-    height: 120vh;
-    width: 100vw;
-    background: $background-light-color;
-    position: relative;
-    z-index: 0;
+  height: 120vh;
+  width: 100vw;
+  background: $background-light-color;
+  position: relative;
+  z-index: 0;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
-
 
 /* -------------------------- */
 /* --------- NAVBAR --------- */
 /* -------------------------- */
 
 #navbar-element {
-    @include flexCentered();
+  @include flexCentered();
 
-    height: $navbar-height;
-    width: 100vw;
-    background: $main-theme-color;
+  height: $navbar-height;
+  width: 100vw;
+  background: $main-theme-color;
 
-    .navbar-content-section {
-        @include flexVerticalCentered();
-        
-        justify-content: space-between;
-        height: 100%;
-        width: 80%;
+  .navbar-content-section {
+    @include flexVerticalCentered();
 
-        .logo-section {
+    justify-content: space-between;
+    height: 100%;
+    width: 80%;
 
-            h1 {
-                font-size: 2.5rem;
-                font-weight: 900;
-                font-family: $main-font-style;
-                color: $main-dark-theme-color;
-                user-select: none;
-            }
-        }
-
-        .nav-buttons-section {
-            display: grid;
-            height: 100%;
-            width: 40%;
-            grid-template-columns: repeat(4, auto);
-            gap: 1%;
-            align-items: center;
-    
-            .nav-button {
-                @include standardButton(1rem, 65%);
-                @include flexCentered();
-
-                .nav-button-icon {
-                    @include buttonIcon();
-                }
-
-                span {
-                    font-weight: 700;
-                }
-            }
-
-            .nav-button-inactive {
-                color: $main-dark-theme-color;
-                background: transparent;
-            }
-
-            .nav-button-active {
-                color: $casual-light-text-color;
-                background: $main-dark-theme-color;
-
-                .nav-button-icon {
-                    filter: invert(1);
-                }
-            }
-        }
-
-        .auth-buttons-section {
-            @include flexVerticalCentered();
-
-            justify-content: space-around;
-            width: 20%;
-
-            .auth-button {
-                @include standardButton(1rem, 100%);
-                @include flexCentered();
-
-                color: $main-dark-theme-color;
-                background: transparent;
-
-                .nav-button-icon {
-                    @include buttonIcon();
-                }
-
-                span {
-                    font-weight: 700;
-                }
-            }
-        }
+    .logo-section {
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        font-family: $main-font-style;
+        color: $main-dark-theme-color;
+        user-select: none;
+      }
     }
-}
 
+    .nav-buttons-section {
+      display: grid;
+      height: 100%;
+      width: 40%;
+      grid-template-columns: repeat(4, auto);
+      gap: 1%;
+      align-items: center;
+
+      .nav-button {
+        @include standardButton(1rem, 65%);
+        @include flexCentered();
+
+        .nav-button-icon {
+          @include buttonIcon();
+        }
+
+        span {
+          font-weight: 700;
+        }
+      }
+
+      .nav-button-inactive {
+        color: $main-dark-theme-color;
+        background: transparent;
+      }
+
+      .nav-button-active {
+        color: $casual-light-text-color;
+        background: $main-dark-theme-color;
+
+        .nav-button-icon {
+          filter: invert(1);
+        }
+      }
+    }
+
+    .auth-buttons-section {
+      @include flexVerticalCentered();
+
+      justify-content: space-around;
+      width: 20%;
+
+      .auth-button {
+        @include standardButton(1rem, 100%);
+        @include flexCentered();
+
+        color: $main-dark-theme-color;
+        background: transparent;
+
+        .nav-button-icon {
+          @include buttonIcon();
+        }
+
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
 
 /* ---------------------------- */
 /* --------- HOMEPAGE --------- */
 /* ---------------------------- */
 
 #homepage-content {
-    height: $main-content-height;
+  height: $main-content-height;
 
-    .hp-homepage-text {
-        @include flexHorizontalCentered();
+  .hp-homepage-text {
+    @include flexHorizontalCentered();
 
-        text-align: center;
-        height: 32%;
-        align-items: flex-end;
+    text-align: center;
+    height: 32%;
+    align-items: flex-end;
 
-        h1 {
-            font-size: 3rem;
-            color: $casual-text-color;
+    h1 {
+      font-size: 3rem;
+      color: $casual-text-color;
 
-            .text-coloring {
-                font-weight: bolder;
-                color: $main-theme-color;
-                font-size: 4rem;
-                text-shadow: 4px 4px 0px $casual-text-color;
-            }
-        }
+      .text-coloring {
+        font-weight: bolder;
+        color: $main-theme-color;
+        font-size: 4rem;
+        text-shadow: 4px 4px 0px $casual-text-color;
+      }
     }
+  }
 
-    .hp-feature-info-section {
+  .hp-feature-info-section {
+    @include flexCentered();
+
+    .fi-element {
+      height: 50vh;
+      width: 18vw;
+      background: rgb(249, 249, 249);
+      margin-left: 3%;
+      border-radius: 12px;
+      position: relative;
+
+      &::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        border-radius: inherit;
+        height: inherit;
+        width: inherit;
+        background: $main-theme-color;
+        top: 6px;
+        left: 6px;
+      }
+
+      section {
+        height: 50%;
+      }
+
+      .fi-icon-section {
         @include flexCentered();
 
-        .fi-element {
-            height: 50vh;
-            width: 18vw;
-            background: rgb(249, 249, 249);
-            margin-left: 3%;
-            border-radius: 12px;
-            position: relative;
-
-            &::after {
-                content: "";
-                z-index: -1;
-                position: absolute;
-                border-radius: inherit;
-                height: inherit;
-                width: inherit;
-                background: $main-theme-color;
-                top: 6px;
-                left: 6px;
-            }
-
-            section {
-                height: 50%;
-            }
-
-            .fi-icon-section {
-                @include flexCentered();
-
-                img {
-                    height: 80px;
-                    width: 80px;
-                }
-            }
-
-            .fi-text-section {
-                padding-left: 20%;
-                padding-right: 20%;
-                text-align: center;
-
-                span {
-                    font-size: 1.3rem;
-                    font-weight: bold;
-                    color: $casual-text-color;
-                }
-            }
+        img {
+          height: 80px;
+          width: 80px;
         }
-    }
-}
+      }
 
+      .fi-text-section {
+        padding-left: 20%;
+        padding-right: 20%;
+        text-align: center;
+
+        span {
+          font-size: 1.3rem;
+          font-weight: bold;
+          color: $casual-text-color;
+        }
+      }
+    }
+  }
+}
 
 /* -------------------------- */
 /* --------- FOOTER --------- */
 /* -------------------------- */
 
 #footer-element {
+  @include flexVerticalCentered();
+
+  justify-content: space-between;
+  height: $footer-height;
+  width: 100vw;
+  background: $main-dark-theme-color;
+  position: absolute;
+  bottom: 0;
+  padding: 0% 3% 0% 3%;
+
+  .social-media-links-section {
+    @include footerSection();
     @include flexVerticalCentered();
 
-    justify-content: space-between;
-    height: $footer-height;
-    width: 100vw;
-    background: $main-dark-theme-color;
-    position: absolute;
-    bottom: 0;
-    padding: 0% 3% 0% 3%;
-
-    .social-media-links-section {
-        @include footerSection();
-        @include flexVerticalCentered();
-
-        small {
-            margin-left: 3%;
-            color: $casual-light-text-color;
-        }
-
-        .social-media-flexbox {
-            display: flex;
-            justify-content: space-between;
-            width: 15%;
-
-            .sm-link {
-                transition: all 200ms ease-in-out;
-    
-                &:hover {
-                    transform: scale(1.1);
-                    transition: all 200ms ease-in-out;
-                }
-    
-                .sm-link-icon {
-                    @include footerIcon();
-                }
-            }
-        }
+    small {
+      margin-left: 3%;
+      color: $casual-light-text-color;
     }
 
-    .copyright-section {
-        @include footerSection();
-        @include flexCentered();
+    .social-media-flexbox {
+      display: flex;
+      justify-content: space-between;
+      width: 15%;
 
-        small {
-            color: $casual-light-text-color;
+      .sm-link {
+        transition: all 200ms ease-in-out;
+
+        &:hover {
+          transform: scale(1.1);
+          transition: all 200ms ease-in-out;
         }
-    }
 
-    .logo-section {
-        @include footerSection();
-        @include flexVerticalCentered();
-
-        justify-content: end;
-
-        .logo-flexbox {
-            @include flexCentered();
-
-            width: 55%;
-
-            .edit-logo {
-                height: 40px;
-                margin-right: 1%;
-            }
-    
-            small {
-                color: $casual-light-text-color;
-            }
+        .sm-link-icon {
+          @include footerIcon();
         }
+      }
     }
+  }
+
+  .copyright-section {
+    @include footerSection();
+    @include flexCentered();
+
+    small {
+      color: $casual-light-text-color;
+    }
+  }
+
+  .logo-section {
+    @include footerSection();
+    @include flexVerticalCentered();
+
+    justify-content: end;
+
+    .logo-flexbox {
+      @include flexCentered();
+
+      width: 55%;
+
+      .edit-logo {
+        height: 40px;
+        margin-right: 1%;
+      }
+
+      small {
+        color: $casual-light-text-color;
+      }
+    }
+  }
 }
