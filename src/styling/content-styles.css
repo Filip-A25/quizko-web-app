@@ -38,7 +38,7 @@ body {
   align-items: center;
   height: 10vh;
   width: 100vw;
-  background: #E1BF57;
+  background: #e1bf57;
 }
 #navbar-element .navbar-content-section {
   display: flex;
@@ -65,7 +65,7 @@ body {
   font-size: 2.5rem;
   font-weight: 900;
   font-family: "Lato";
-  color: #3C3C3C;
+  color: #3c3c3c;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -101,13 +101,13 @@ body {
 }
 #navbar-element .navbar-content-section .nav-buttons-section .navlink-active button {
   color: white;
-  background: #3C3C3C;
+  background: #3c3c3c;
 }
 #navbar-element .navbar-content-section .nav-buttons-section .navlink-active button .nav-button-icon {
   filter: invert(1);
 }
 #navbar-element .navbar-content-section .nav-buttons-section .navlink-inactive button {
-  color: #3C3C3C;
+  color: #3c3c3c;
   background: transparent;
 }
 #navbar-element .navbar-content-section .auth-buttons-section {
@@ -126,7 +126,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #3C3C3C;
+  color: #3c3c3c;
   background: transparent;
   margin-right: 7%;
 }
@@ -154,13 +154,13 @@ body {
 }
 #homepage-content .hp-homepage-text h1 {
   font-size: 3rem;
-  color: #3C3C3C;
+  color: #3c3c3c;
 }
 #homepage-content .hp-homepage-text h1 .text-coloring {
   font-weight: bolder;
-  color: #E1BF57;
+  color: #e1bf57;
   font-size: 4rem;
-  text-shadow: 4px 4px 0px #3C3C3C;
+  text-shadow: 4px 4px 0px #3c3c3c;
 }
 #homepage-content .hp-feature-info-section {
   display: flex;
@@ -174,17 +174,40 @@ body {
   margin-left: 3%;
   border-radius: 12px;
   position: relative;
+  transition: 600ms;
+  box-shadow: 10px 10px 10px #e1bf57;
+  /*
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    border-radius: inherit;
+    height: inherit;
+    width: inherit;
+    background: $main-theme-color;
+    top: 6px;
+    left: 6px;
+    transition: 800ms;
+  }*/
+  /*
+        &:hover::after {
+          content: "";
+          z-index: -1;
+          position: absolute;
+          border-radius: inherit;
+          height: inherit;
+          width: inherit;
+          background: rgb(249, 249, 249);
+          top: 0px;
+          left: 0px;
+        }
+  */
 }
-#homepage-content .hp-feature-info-section .fi-element::after {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  border-radius: inherit;
-  height: inherit;
-  width: inherit;
-  background: #E1BF57;
-  top: 6px;
-  left: 6px;
+#homepage-content .hp-feature-info-section .fi-element:hover {
+  background-color: #e1bf57;
+  cursor: pointer;
+  scale: 1.1;
+  box-shadow: 10px 10px 20px black;
 }
 #homepage-content .hp-feature-info-section .fi-element section {
   height: 50%;
@@ -206,7 +229,7 @@ body {
 #homepage-content .hp-feature-info-section .fi-element .fi-text-section span {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #3C3C3C;
+  color: #3c3c3c;
 }
 
 /* -------------------------- */
@@ -218,7 +241,7 @@ body {
   justify-content: space-between;
   height: 10vh;
   width: 100vw;
-  background: #3C3C3C;
+  background: #3c3c3c;
   position: absolute;
   bottom: 0;
   padding: 0% 3% 0% 3%;

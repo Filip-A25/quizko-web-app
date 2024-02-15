@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import "../styling/content-styles.scss";
 import homeIcon from "../icons/home-icon.png";
 import createIcon from "../icons/create-quiz-icon.png";
@@ -12,10 +12,10 @@ function NavButton(props) {
   const [buttonClass, setButtonClass] = useState("");
   const [iconSrc, setIconSrc] = useState("");
 
-    useEffect(() => {
-        if (props.isContent) setButtonClass("nav-button");
-        else setButtonClass("auth-button");
-    }, [])
+  useEffect(() => {
+    if (props.isContent) setButtonClass("nav-button");
+    else setButtonClass("auth-button");
+  }, []);
 
   useEffect(() => {
     switch (props.index) {
@@ -39,16 +39,21 @@ function NavButton(props) {
     }
   }, []);
 
-    return (
-        <NavLink to={props.path} className={({isActive}) => {
-            return isActive ? "navlink-element navlink-active" : "navlink-element navlink-inactive";
-        }}>
-            <button className={buttonClass}>
-                <img className="nav-button-icon" src={iconSrc}></img>
-                <span className="nav-button-text">{props.title}</span>
-            </button>
-        </NavLink>
-    )
+  return (
+    <NavLink
+      to={props.path}
+      className={({ isActive }) => {
+        return isActive
+          ? "navlink-element navlink-active"
+          : "navlink-element navlink-inactive";
+      }}
+    >
+      <button className={buttonClass}>
+        <img className="nav-button-icon" src={iconSrc}></img>
+        <span className="nav-button-text">{props.title}</span>
+      </button>
+    </NavLink>
+  );
 }
 
 export default NavButton;

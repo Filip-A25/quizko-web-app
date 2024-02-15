@@ -5,42 +5,42 @@
 /* --------------------------------- */
 
 @mixin flexCentered() {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin flexVerticalCentered() {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 @mixin flexHorizontalCentered() {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 @mixin standardButton($fontSize, $height) {
-    font-family: $main-font-style;
-    font-size: $fontSize;
-    border-radius: 5px;
-    border: none;
-    height: $height;
-    cursor: pointer;
+  font-family: $main-font-style;
+  font-size: $fontSize;
+  border-radius: 5px;
+  border: none;
+  height: $height;
+  cursor: pointer;
 }
 
 @mixin buttonIcon() {
-    height: 16px;
-    width: 16px;
-    margin-right: 5%;
+  height: 16px;
+  width: 16px;
+  margin-right: 5%;
 }
 
 @mixin footerSection() {
-    width: 30%;
+  width: 30%;
 }
 
 @mixin footerIcon() {
-    height: 30px;
-    width: 30px;
-    filter: invert(1);
+  height: 30px;
+  width: 30px;
+  filter: invert(1);
 }

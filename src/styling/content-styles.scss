@@ -11,17 +11,17 @@
 }
 
 .page-content {
-    height: 120vh;
-    width: 100%;
-    background: $background-light-color;
-    position: relative;
-    z-index: 0;
+  height: 120vh;
+  width: 100%;
+  background: $background-light-color;
+  position: relative;
+  z-index: 0;
 }
 
 body {
-    margin: 0;
-    width: 100vw;
-    overflow-x: hidden;
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 /* -------------------------- */
@@ -35,52 +35,52 @@ body {
   width: 100vw;
   background: $main-theme-color;
 
-    .navbar-content-section {
-        @include flexVerticalCentered();
+  .navbar-content-section {
+    @include flexVerticalCentered();
 
-        justify-content: space-between;
-        height: 100%;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+
+    .navlink-element {
+      text-decoration: none;
+      height: 100%;
+
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .logo-section,
+    .auth-buttons-section {
+      width: 20%;
+    }
+
+    .logo-section {
+      @include flexHorizontalCentered();
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        font-family: $main-font-style;
+        color: $main-dark-theme-color;
+        user-select: none;
+      }
+    }
+
+    .nav-buttons-section {
+      display: grid;
+      height: 100%;
+      width: 40%;
+      grid-template-columns: repeat(4, 20%);
+      gap: 1%;
+      align-items: center;
+      justify-content: center;
+
+      .nav-button {
+        @include standardButton(1rem, 65%);
+        @include flexCentered();
+
         width: 100%;
-
-        .navlink-element {
-            text-decoration: none;
-            height: 100%;
-
-            display: inline-flex;
-            align-items: center;
-        }
-
-        .logo-section,
-        .auth-buttons-section {
-            width: 20%;
-        }
-
-        .logo-section {
-            @include flexHorizontalCentered();
-
-            h1 {
-                font-size: 2.5rem;
-                font-weight: 900;
-                font-family: $main-font-style;
-                color: $main-dark-theme-color;
-                user-select: none;
-            }
-        }
-
-        .nav-buttons-section {
-            display: grid;
-            height: 100%;
-            width: 40%;
-            grid-template-columns: repeat(4, 20%);
-            gap: 1%;
-            align-items: center;
-            justify-content: center;
-
-            .nav-button {
-                @include standardButton(1rem, 65%);
-                @include flexCentered();
-
-                width: 100%;
 
         .nav-button-icon {
           @include buttonIcon();
@@ -91,38 +91,36 @@ body {
         }
       }
 
-            .navlink-active {
+      .navlink-active {
+        button {
+          color: $casual-light-text-color;
+          background: $main-dark-theme-color;
 
-                button {
-                    color: $casual-light-text-color;
-                    background: $main-dark-theme-color;
-
-                    .nav-button-icon {
-                        filter: invert(1);
-                    }
-                }
-            }
-
-            .navlink-inactive {
-
-                button {
-                    color: $main-dark-theme-color;
-                    background: transparent;
-                }
-            }
+          .nav-button-icon {
+            filter: invert(1);
+          }
         }
+      }
 
-        .auth-buttons-section {
-            @include flexVerticalCentered();
-            @include flexHorizontalCentered();
+      .navlink-inactive {
+        button {
+          color: $main-dark-theme-color;
+          background: transparent;
+        }
+      }
+    }
+
+    .auth-buttons-section {
+      @include flexVerticalCentered();
+      @include flexHorizontalCentered();
 
       .auth-button {
         @include standardButton(1rem, 100%);
         @include flexCentered();
 
-                color: $main-dark-theme-color;
-                background: transparent;
-                margin-right: 7%;
+        color: $main-dark-theme-color;
+        background: transparent;
+        margin-right: 7%;
 
         .nav-button-icon {
           @include buttonIcon();
@@ -173,7 +171,10 @@ body {
       margin-left: 3%;
       border-radius: 12px;
       position: relative;
+      transition: 600ms;
+      box-shadow: 10px 10px 10px $main-theme-color;
 
+      /*
       &::after {
         content: "";
         z-index: -1;
@@ -184,8 +185,29 @@ body {
         background: $main-theme-color;
         top: 6px;
         left: 6px;
+        transition: 800ms;
+      }*/
+
+      &:hover {
+        background-color: $main-theme-color;
+        cursor: pointer;
+        scale: 1.1;
+        box-shadow: 10px 10px 20px black;
       }
 
+      /*
+      &:hover::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        border-radius: inherit;
+        height: inherit;
+        width: inherit;
+        background: rgb(249, 249, 249);
+        top: 0px;
+        left: 0px;
+      }
+*/
       section {
         height: 50%;
       }
@@ -243,20 +265,20 @@ body {
       justify-content: space-between;
       width: 15%;
 
-            .sm-link {
-                transition: all 200ms ease-in-out;
+      .sm-link {
+        transition: all 200ms ease-in-out;
 
-                &:hover {
-                    transform: scale(1.1);
-                    transition: all 200ms ease-in-out;
-                }
-
-                .sm-link-icon {
-                    @include footerIcon();
-                }
-            }
+        &:hover {
+          transform: scale(1.1);
+          transition: all 200ms ease-in-out;
         }
+
+        .sm-link-icon {
+          @include footerIcon();
+        }
+      }
     }
+  }
 
   .copyright-section {
     @include footerSection();
@@ -278,14 +300,14 @@ body {
 
       width: 55%;
 
-            .edit-logo {
-                height: 40px;
-                margin-right: 1%;
-            }
+      .edit-logo {
+        height: 40px;
+        margin-right: 1%;
+      }
 
-            small {
-                color: $casual-light-text-color;
-            }
-        }
+      small {
+        color: $casual-light-text-color;
+      }
     }
+  }
 }
