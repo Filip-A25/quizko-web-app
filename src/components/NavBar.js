@@ -1,11 +1,7 @@
-import { useContext } from 'react';
 import NavButton from "./NavButton";
 import logo from "../logos/quizko-logo.png";
-import { MainContext } from "./MainContent";
 
 function NavBar() {
-    const {activeIndex} = useContext(MainContext);
-
     return (
         <div id="navbar-element">
             <section className="navbar-content-section">
@@ -16,26 +12,26 @@ function NavBar() {
                     <NavButton
                         index={1}
                         title="Početna"
+                        path="/"
                         isContent={true}
-                        isActive={activeIndex == 1 ? true : false}
                     />
                     <NavButton
                         index={2}
                         title="Kreiraj kviz"
+                        path="/kreiraj-kviz"
                         isContent={true}
-                        isActive={activeIndex == 2 ? true : false}
                     />
                     <NavButton
                         index={3}
                         title="Moji kvizovi"
+                        path="/moji-kvizovi"
                         isContent={true}
-                        isActive={activeIndex == 3 ? true : false}
                     />
                     <NavButton
                         index={4}
                         title="Moj profil"
+                        path="/moj-profil"
                         isContent={true}
-                        isActive={activeIndex == 4 ? true : false}
                     />
                 </div>
                 <div className="auth-buttons-section">
@@ -43,13 +39,11 @@ function NavBar() {
                         index={5}
                         title="Prijava"
                         isContent={false}
-                        isActive={false}
                     />
                     <NavButton
                         index={6}
                         title="Registracija"
                         isContent={false}
-                        isActive={false}
                     />
                 </div>
             </section>

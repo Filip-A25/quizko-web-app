@@ -15,9 +15,9 @@
   font-family: "Lato";
 }
 
-#page-content {
+.page-content {
   height: 120vh;
-  width: 100vw;
+  width: 100%;
   background: whitesmoke;
   position: relative;
   z-index: 0;
@@ -25,6 +25,8 @@
 
 body {
   margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 /* -------------------------- */
@@ -43,7 +45,21 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  width: 80%;
+  width: 100%;
+}
+#navbar-element .navbar-content-section .navlink-element {
+  text-decoration: none;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+#navbar-element .navbar-content-section .logo-section,
+#navbar-element .navbar-content-section .auth-buttons-section {
+  width: 20%;
+}
+#navbar-element .navbar-content-section .logo-section {
+  display: flex;
+  justify-content: center;
 }
 #navbar-element .navbar-content-section .logo-section h1 {
   font-size: 2.5rem;
@@ -58,9 +74,10 @@ body {
   display: grid;
   height: 100%;
   width: 40%;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(4, 20%);
   gap: 1%;
   align-items: center;
+  justify-content: center;
 }
 #navbar-element .navbar-content-section .nav-buttons-section .nav-button {
   font-family: "Lato";
@@ -72,6 +89,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 #navbar-element .navbar-content-section .nav-buttons-section .nav-button .nav-button-icon {
   height: 16px;
@@ -81,22 +99,22 @@ body {
 #navbar-element .navbar-content-section .nav-buttons-section .nav-button span {
   font-weight: 700;
 }
-#navbar-element .navbar-content-section .nav-buttons-section .nav-button-inactive {
-  color: #3C3C3C;
-  background: transparent;
-}
-#navbar-element .navbar-content-section .nav-buttons-section .nav-button-active {
+#navbar-element .navbar-content-section .nav-buttons-section .navlink-active button {
   color: white;
   background: #3C3C3C;
 }
-#navbar-element .navbar-content-section .nav-buttons-section .nav-button-active .nav-button-icon {
+#navbar-element .navbar-content-section .nav-buttons-section .navlink-active button .nav-button-icon {
   filter: invert(1);
+}
+#navbar-element .navbar-content-section .nav-buttons-section .navlink-inactive button {
+  color: #3C3C3C;
+  background: transparent;
 }
 #navbar-element .navbar-content-section .auth-buttons-section {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 20%;
+  display: flex;
+  justify-content: center;
 }
 #navbar-element .navbar-content-section .auth-buttons-section .auth-button {
   font-family: "Lato";
@@ -110,6 +128,7 @@ body {
   align-items: center;
   color: #3C3C3C;
   background: transparent;
+  margin-right: 7%;
 }
 #navbar-element .navbar-content-section .auth-buttons-section .auth-button .nav-button-icon {
   height: 16px;

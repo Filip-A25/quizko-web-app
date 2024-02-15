@@ -11,9 +11,9 @@
     font-family: $main-font-style;
 }
 
-#page-content {
+.page-content {
     height: 120vh;
-    width: 100vw;
+    width: 100%;
     background: $background-light-color;
     position: relative;
     z-index: 0;
@@ -21,6 +21,8 @@
 
 body {
     margin: 0;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 
@@ -37,12 +39,26 @@ body {
 
     .navbar-content-section {
         @include flexVerticalCentered();
-        
+
         justify-content: space-between;
         height: 100%;
-        width: 80%;
+        width: 100%;
+
+        .navlink-element {
+            text-decoration: none;
+            height: 100%;
+
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .logo-section,
+        .auth-buttons-section {
+            width: 20%;
+        }
 
         .logo-section {
+            @include flexHorizontalCentered();
 
             h1 {
                 font-size: 2.5rem;
@@ -57,13 +73,16 @@ body {
             display: grid;
             height: 100%;
             width: 40%;
-            grid-template-columns: repeat(4, auto);
+            grid-template-columns: repeat(4, 20%);
             gap: 1%;
             align-items: center;
-    
+            justify-content: center;
+
             .nav-button {
                 @include standardButton(1rem, 65%);
                 @include flexCentered();
+
+                width: 100%;
 
                 .nav-button-icon {
                     @include buttonIcon();
@@ -74,26 +93,30 @@ body {
                 }
             }
 
-            .nav-button-inactive {
-                color: $main-dark-theme-color;
-                background: transparent;
+            .navlink-active {
+
+                button {
+                    color: $casual-light-text-color;
+                    background: $main-dark-theme-color;
+
+                    .nav-button-icon {
+                        filter: invert(1);
+                    }
+                }
             }
 
-            .nav-button-active {
-                color: $casual-light-text-color;
-                background: $main-dark-theme-color;
+            .navlink-inactive {
 
-                .nav-button-icon {
-                    filter: invert(1);
+                button {
+                    color: $main-dark-theme-color;
+                    background: transparent;
                 }
             }
         }
 
         .auth-buttons-section {
             @include flexVerticalCentered();
-
-            justify-content: space-around;
-            width: 20%;
+            @include flexHorizontalCentered();
 
             .auth-button {
                 @include standardButton(1rem, 100%);
@@ -101,6 +124,7 @@ body {
 
                 color: $main-dark-theme-color;
                 background: transparent;
+                margin-right: 7%;
 
                 .nav-button-icon {
                     @include buttonIcon();
@@ -225,12 +249,12 @@ body {
 
             .sm-link {
                 transition: all 200ms ease-in-out;
-    
+
                 &:hover {
                     transform: scale(1.1);
                     transition: all 200ms ease-in-out;
                 }
-    
+
                 .sm-link-icon {
                     @include footerIcon();
                 }
@@ -262,7 +286,7 @@ body {
                 height: 40px;
                 margin-right: 1%;
             }
-    
+
             small {
                 color: $casual-light-text-color;
             }
