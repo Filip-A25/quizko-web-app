@@ -1,14 +1,13 @@
 @import "./global-styles.scss";
 @import "./styling-vars.scss";
 
-
 /* -------------------------- */
 /* ---------- MAIN ---------- */
 /* -------------------------- */
 
 * {
-    box-sizing: border-box;
-    font-family: $main-font-style;
+  box-sizing: border-box;
+  font-family: $main-font-style;
 }
 
 .page-content {
@@ -25,17 +24,16 @@ body {
     overflow-x: hidden;
 }
 
-
 /* -------------------------- */
 /* --------- NAVBAR --------- */
 /* -------------------------- */
 
 #navbar-element {
-    @include flexCentered();
+  @include flexCentered();
 
-    height: $navbar-height;
-    width: 100vw;
-    background: $main-theme-color;
+  height: $navbar-height;
+  width: 100vw;
+  background: $main-theme-color;
 
     .navbar-content-section {
         @include flexVerticalCentered();
@@ -84,14 +82,14 @@ body {
 
                 width: 100%;
 
-                .nav-button-icon {
-                    @include buttonIcon();
-                }
+        .nav-button-icon {
+          @include buttonIcon();
+        }
 
-                span {
-                    font-weight: 700;
-                }
-            }
+        span {
+          font-weight: 700;
+        }
+      }
 
             .navlink-active {
 
@@ -118,134 +116,132 @@ body {
             @include flexVerticalCentered();
             @include flexHorizontalCentered();
 
-            .auth-button {
-                @include standardButton(1rem, 100%);
-                @include flexCentered();
+      .auth-button {
+        @include standardButton(1rem, 100%);
+        @include flexCentered();
 
                 color: $main-dark-theme-color;
                 background: transparent;
                 margin-right: 7%;
 
-                .nav-button-icon {
-                    @include buttonIcon();
-                }
-
-                span {
-                    font-weight: 700;
-                }
-            }
+        .nav-button-icon {
+          @include buttonIcon();
         }
-    }
-}
 
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
 
 /* ---------------------------- */
 /* --------- HOMEPAGE --------- */
 /* ---------------------------- */
 
 #homepage-content {
-    height: $main-content-height;
+  height: $main-content-height;
 
-    .hp-homepage-text {
-        @include flexHorizontalCentered();
+  .hp-homepage-text {
+    @include flexHorizontalCentered();
 
-        text-align: center;
-        height: 32%;
-        align-items: flex-end;
+    text-align: center;
+    height: 32%;
+    align-items: flex-end;
 
-        h1 {
-            font-size: 3rem;
-            color: $casual-text-color;
+    h1 {
+      font-size: 3rem;
+      color: $casual-text-color;
 
-            .text-coloring {
-                font-weight: bolder;
-                color: $main-theme-color;
-                font-size: 4rem;
-                text-shadow: 4px 4px 0px $casual-text-color;
-            }
-        }
+      .text-coloring {
+        font-weight: bolder;
+        color: $main-theme-color;
+        font-size: 4rem;
+        text-shadow: 4px 4px 0px $casual-text-color;
+      }
     }
+  }
 
-    .hp-feature-info-section {
+  .hp-feature-info-section {
+    @include flexCentered();
+
+    .fi-element {
+      height: 50vh;
+      width: 18vw;
+      background: rgb(249, 249, 249);
+      margin-left: 3%;
+      border-radius: 12px;
+      position: relative;
+
+      &::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        border-radius: inherit;
+        height: inherit;
+        width: inherit;
+        background: $main-theme-color;
+        top: 6px;
+        left: 6px;
+      }
+
+      section {
+        height: 50%;
+      }
+
+      .fi-icon-section {
         @include flexCentered();
 
-        .fi-element {
-            height: 50vh;
-            width: 18vw;
-            background: rgb(249, 249, 249);
-            margin-left: 3%;
-            border-radius: 12px;
-            position: relative;
-
-            &::after {
-                content: "";
-                z-index: -1;
-                position: absolute;
-                border-radius: inherit;
-                height: inherit;
-                width: inherit;
-                background: $main-theme-color;
-                top: 6px;
-                left: 6px;
-            }
-
-            section {
-                height: 50%;
-            }
-
-            .fi-icon-section {
-                @include flexCentered();
-
-                img {
-                    height: 80px;
-                    width: 80px;
-                }
-            }
-
-            .fi-text-section {
-                padding-left: 20%;
-                padding-right: 20%;
-                text-align: center;
-
-                span {
-                    font-size: 1.3rem;
-                    font-weight: bold;
-                    color: $casual-text-color;
-                }
-            }
+        img {
+          height: 80px;
+          width: 80px;
         }
-    }
-}
+      }
 
+      .fi-text-section {
+        padding-left: 20%;
+        padding-right: 20%;
+        text-align: center;
+
+        span {
+          font-size: 1.3rem;
+          font-weight: bold;
+          color: $casual-text-color;
+        }
+      }
+    }
+  }
+}
 
 /* -------------------------- */
 /* --------- FOOTER --------- */
 /* -------------------------- */
 
 #footer-element {
+  @include flexVerticalCentered();
+
+  justify-content: space-between;
+  height: $footer-height;
+  width: 100vw;
+  background: $main-dark-theme-color;
+  position: absolute;
+  bottom: 0;
+  padding: 0% 3% 0% 3%;
+
+  .social-media-links-section {
+    @include footerSection();
     @include flexVerticalCentered();
 
-    justify-content: space-between;
-    height: $footer-height;
-    width: 100vw;
-    background: $main-dark-theme-color;
-    position: absolute;
-    bottom: 0;
-    padding: 0% 3% 0% 3%;
+    small {
+      margin-left: 3%;
+      color: $casual-light-text-color;
+    }
 
-    .social-media-links-section {
-        @include footerSection();
-        @include flexVerticalCentered();
-
-        small {
-            margin-left: 3%;
-            color: $casual-light-text-color;
-        }
-
-        .social-media-flexbox {
-            display: flex;
-            justify-content: space-between;
-            width: 15%;
+    .social-media-flexbox {
+      display: flex;
+      justify-content: space-between;
+      width: 15%;
 
             .sm-link {
                 transition: all 200ms ease-in-out;
@@ -262,25 +258,25 @@ body {
         }
     }
 
-    .copyright-section {
-        @include footerSection();
-        @include flexCentered();
+  .copyright-section {
+    @include footerSection();
+    @include flexCentered();
 
-        small {
-            color: $casual-light-text-color;
-        }
+    small {
+      color: $casual-light-text-color;
     }
+  }
 
-    .logo-section {
-        @include footerSection();
-        @include flexVerticalCentered();
+  .logo-section {
+    @include footerSection();
+    @include flexVerticalCentered();
 
-        justify-content: end;
+    justify-content: end;
 
-        .logo-flexbox {
-            @include flexCentered();
+    .logo-flexbox {
+      @include flexCentered();
 
-            width: 55%;
+      width: 55%;
 
             .edit-logo {
                 height: 40px;

@@ -9,35 +9,35 @@ import logInIcon from "../icons/sign-in-icon.png";
 import registerIcon from "../icons/register-icon.png";
 
 function NavButton(props) {
-    const [buttonClass, setButtonClass] = useState("");
-    const [iconSrc, setIconSrc] = useState("");
+  const [buttonClass, setButtonClass] = useState("");
+  const [iconSrc, setIconSrc] = useState("");
 
     useEffect(() => {
         if (props.isContent) setButtonClass("nav-button");
         else setButtonClass("auth-button");
     }, [])
 
-    useEffect(() => {
-        switch(props.index) {
-            case 1:
-                setIconSrc(homeIcon);
-                break;
-            case 2:
-                setIconSrc(createIcon);
-                break;
-            case 3:
-                setIconSrc(myQuizzesIcon);
-                break;
-            case 4:
-                setIconSrc(profileIcon);
-                break;
-            case 5:
-                setIconSrc(logInIcon);
-                break;
-            case 6:
-                setIconSrc(registerIcon);
-        }
-    }, [])
+  useEffect(() => {
+    switch (props.index) {
+      case 1:
+        setIconSrc(homeIcon);
+        break;
+      case 2:
+        setIconSrc(createIcon);
+        break;
+      case 3:
+        setIconSrc(myQuizzesIcon);
+        break;
+      case 4:
+        setIconSrc(profileIcon);
+        break;
+      case 5:
+        setIconSrc(logInIcon);
+        break;
+      case 6:
+        setIconSrc(registerIcon);
+    }
+  }, []);
 
     return (
         <NavLink to={props.path} className={({isActive}) => {

@@ -8,10 +8,10 @@ function Footer() {
             <section className="social-media-links-section">
                 <div className="social-media-flexbox">
                     <a href="https://www.facebook.com/edit.udruga/" className="sm-link">
-                        <img src={facebookIcon} alt="Facebook Logo" className="sm-link-icon"></img>
+                        <img src={facebookIcon} className="sm-link-icon"></img>
                     </a>
                     <a href="https://www.instagram.com/udruga_edit/" className="sm-link">
-                        <img src={instagramIcon} alt="Instagram Logo" className="sm-link-icon"></img>
+                        <img src={instagramIcon} className="sm-link-icon"></img>
                     </a>
                 </div>
                 <small>udruga.edit@gmail.com</small>
@@ -21,7 +21,7 @@ function Footer() {
             </section>
             <section className="logo-section">
                 <div className="logo-flexbox">
-                    <img src={editLogo} alt="edIT Logo" className="edit-logo"></img>
+                    <img src={editLogo} className="edit-logo"></img>
                     <small>Ekonomsko društvo informacijskih tehnologija</small>
                 </div>
             </section>
