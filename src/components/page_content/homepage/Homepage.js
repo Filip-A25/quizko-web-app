@@ -1,7 +1,7 @@
 import { useEffect, useContext, useRef } from "react";
 import feature1Icon from "../../../icons/feature1-icon.png";
 import feature2Icon from "../../../icons/feature2-icon.png";
-import feature3Icon from "../../../icons/feature1-icon.png";
+import feature3Icon from "../../../icons/feature3-icon.png";
 import FeatureInfo from "./FeatureInfo";
 import {MainContext} from "../../../MainContent";
 

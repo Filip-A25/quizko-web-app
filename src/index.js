@@ -9,6 +9,8 @@ import CreateQuiz from "./components/page_content/create_quiz/CreateQuiz";
 import MyQuizzes from "./components/page_content/my_quizzes/MyQuizzes";
 import MyProfile from "./components/page_content/my_profile/MyProfile";
 import ErrorPage from "./components/ErrorPage";
+import AuthLogin from "./components/page_content/auth_login/AuthLogin";
+import AuthRegister from "./components/page_content/auth_register/AuthRegister";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
     {
       path: "/moj-profil",
       element: <MyProfile />
+    },
+    {
+      path: "/prijava",
+      element: <AuthLogin />
+    },
+    {
+      path: "/registracija",
+      element: <AuthRegister />
     }
   ]
   }

@@ -30,8 +30,18 @@ function NavBar() {
           />
         </div>
         <div className="auth-buttons-section">
-          <NavButton index={5} title="Prijava" isContent={false} />
-          <NavButton index={6} title="Registracija" isContent={false} />
+          <NavButton
+            index={5}
+            title="Prijava"
+            path="/prijava"
+            isContent={false}
+          />
+          <NavButton
+            index={6}
+            title="Registracija"
+            path="/registracija"
+            isContent={false}
+          />
         </div>
       </section>
     </div>

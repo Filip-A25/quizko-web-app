@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { useRef, createContext } from "react";
+import { createContext } from "react";
 import "./styling/content-styles.css";
 import "./styling/global-styles.css";
 import "./styling/styling-vars.css";

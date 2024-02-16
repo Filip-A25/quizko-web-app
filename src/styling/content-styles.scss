@@ -252,6 +252,33 @@ body {
   }
 }
 
+
+/* -------------------------- */
+/* ---------- AUTH ---------- */
+/* -------------------------- */
+
+#authlogin-content {
+  @include flexCentered();
+  
+  height: $main-content-height;
+
+  .al-form-section {
+    @include flexVerticalCentered();
+    
+    flex-direction: column;
+    height: 85vh;
+    width: 40vw;
+
+    .al-form {
+      @include authForm();
+    
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+
 /* -------------------------- */
 /* --------- FOOTER --------- */
 /* -------------------------- */
