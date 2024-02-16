@@ -24,6 +24,17 @@ body {
   overflow-x: hidden;
 }
 
+.reveal {
+  transform: translateY(75px);
+  opacity: 0;
+  transition: transform 300ms ease-in-out;
+}
+
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
 /* -------------------------- */
 /* --------- NAVBAR --------- */
 /* -------------------------- */
@@ -56,7 +67,7 @@ body {
     }
 
     .logo-section {
-      @include flexHorizontalCentered();
+      @include flexCentered();
 
       h1 {
         font-size: 2.5rem;
@@ -111,8 +122,11 @@ body {
     }
 
     .auth-buttons-section {
-      @include flexVerticalCentered();
-      @include flexHorizontalCentered();
+      @include flexCentered();
+
+      .navlink-element {
+        margin-right: 9%;
+      }
 
       .auth-button {
         @include standardButton(1rem, 100%);
@@ -120,7 +134,6 @@ body {
 
         color: $main-dark-theme-color;
         background: transparent;
-        margin-right: 7%;
 
         .nav-button-icon {
           @include buttonIcon();
@@ -171,43 +184,46 @@ body {
       margin-left: 3%;
       border-radius: 12px;
       position: relative;
-      transition: 600ms;
-      box-shadow: 10px 10px 10px $main-theme-color;
+      cursor: pointer;
+      //transition: 600ms;
+      //box-shadow: 10px 10px 10px $main-theme-color;
+      transition: all 150ms ease-in-out;
 
-      /*
-      &::after {
+      &::before, &::after {
         content: "";
         z-index: -1;
         position: absolute;
         border-radius: inherit;
         height: inherit;
         width: inherit;
-        background: $main-theme-color;
         top: 6px;
         left: 6px;
-        transition: 800ms;
-      }*/
+      }
 
+      &::before {
+        background: $main-dark-theme-color;
+        transition: all 150ms ease-in-out;
+      }
+
+      &:hover::before {
+        top: 12px;
+        left: 12px;
+        transition: all 150ms ease-in-out;
+      }
+
+      &::after {
+        background: $main-theme-color;
+      }
+
+/*
       &:hover {
         background-color: $main-theme-color;
         cursor: pointer;
         scale: 1.1;
         box-shadow: 10px 10px 20px black;
       }
-
-      /*
-      &:hover::after {
-        content: "";
-        z-index: -1;
-        position: absolute;
-        border-radius: inherit;
-        height: inherit;
-        width: inherit;
-        background: rgb(249, 249, 249);
-        top: 0px;
-        left: 0px;
-      }
 */
+
       section {
         height: 50%;
       }

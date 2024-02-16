@@ -29,6 +29,17 @@ body {
   overflow-x: hidden;
 }
 
+.reveal {
+  transform: translateY(75px);
+  opacity: 0;
+  transition: transform 300ms ease-in-out;
+}
+
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
 /* -------------------------- */
 /* --------- NAVBAR --------- */
 /* -------------------------- */
@@ -60,15 +71,14 @@ body {
 #navbar-element .navbar-content-section .logo-section {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 #navbar-element .navbar-content-section .logo-section h1 {
   font-size: 2.5rem;
   font-weight: 900;
   font-family: "Lato";
   color: #3c3c3c;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 #navbar-element .navbar-content-section .nav-buttons-section {
   display: grid;
@@ -112,9 +122,11 @@ body {
 }
 #navbar-element .navbar-content-section .auth-buttons-section {
   display: flex;
-  align-items: center;
-  display: flex;
   justify-content: center;
+  align-items: center;
+}
+#navbar-element .navbar-content-section .auth-buttons-section .navlink-element {
+  margin-right: 9%;
 }
 #navbar-element .navbar-content-section .auth-buttons-section .auth-button {
   font-family: "Lato";
@@ -128,7 +140,6 @@ body {
   align-items: center;
   color: #3c3c3c;
   background: transparent;
-  margin-right: 7%;
 }
 #navbar-element .navbar-content-section .auth-buttons-section .auth-button .nav-button-icon {
   height: 16px;
@@ -174,40 +185,38 @@ body {
   margin-left: 3%;
   border-radius: 12px;
   position: relative;
-  transition: 600ms;
-  box-shadow: 10px 10px 10px #e1bf57;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
   /*
-  &::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    border-radius: inherit;
-    height: inherit;
-    width: inherit;
-    background: $main-theme-color;
-    top: 6px;
-    left: 6px;
-    transition: 800ms;
-  }*/
-  /*
-        &:hover::after {
-          content: "";
-          z-index: -1;
-          position: absolute;
-          border-radius: inherit;
-          height: inherit;
-          width: inherit;
-          background: rgb(249, 249, 249);
-          top: 0px;
-          left: 0px;
+        &:hover {
+          background-color: $main-theme-color;
+          cursor: pointer;
+          scale: 1.1;
+          box-shadow: 10px 10px 20px black;
         }
   */
 }
-#homepage-content .hp-feature-info-section .fi-element:hover {
-  background-color: #e1bf57;
-  cursor: pointer;
-  scale: 1.1;
-  box-shadow: 10px 10px 20px black;
+#homepage-content .hp-feature-info-section .fi-element::before, #homepage-content .hp-feature-info-section .fi-element::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  border-radius: inherit;
+  height: inherit;
+  width: inherit;
+  top: 6px;
+  left: 6px;
+}
+#homepage-content .hp-feature-info-section .fi-element::before {
+  background: #3c3c3c;
+  transition: all 150ms ease-in-out;
+}
+#homepage-content .hp-feature-info-section .fi-element:hover::before {
+  top: 12px;
+  left: 12px;
+  transition: all 150ms ease-in-out;
+}
+#homepage-content .hp-feature-info-section .fi-element::after {
+  background: #e1bf57;
 }
 #homepage-content .hp-feature-info-section .fi-element section {
   height: 50%;
