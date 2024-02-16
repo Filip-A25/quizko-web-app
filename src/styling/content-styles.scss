@@ -189,7 +189,8 @@ body {
       //box-shadow: 10px 10px 10px $main-theme-color;
       transition: all 150ms ease-in-out;
 
-      &::before, &::after {
+      &::before,
+      &::after {
         content: "";
         z-index: -1;
         position: absolute;
@@ -215,7 +216,7 @@ body {
         background: $main-theme-color;
       }
 
-/*
+      /*
       &:hover {
         background-color: $main-theme-color;
         cursor: pointer;
@@ -252,32 +253,51 @@ body {
   }
 }
 
-
 /* -------------------------- */
 /* ---------- AUTH ---------- */
 /* -------------------------- */
 
 #authlogin-content {
   @include flexCentered();
-  
+
   height: $main-content-height;
 
   .al-form-section {
     @include flexVerticalCentered();
-    
+
     flex-direction: column;
     height: 85vh;
     width: 40vw;
 
     .al-form {
       @include authForm();
-    
+
       display: flex;
       justify-content: space-between;
     }
   }
 }
 
+#authregister-content {
+  @include flexCentered();
+
+  height: $main-content-height;
+
+  .al-form-section {
+    @include flexVerticalCentered();
+
+    flex-direction: column;
+    height: 85vh;
+    width: 40vw;
+
+    .al-form {
+      @include authForm();
+
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
 
 /* -------------------------- */
 /* --------- FOOTER --------- */
