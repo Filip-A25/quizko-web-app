@@ -269,11 +269,77 @@ body {
     height: 85vh;
     width: 40vw;
 
+    h1 {
+      width: $auth-form-width;
+      font-size: 2rem;
+      color: $casual-text-color;
+    }
+
     .al-form {
       @include authForm();
 
       display: flex;
       justify-content: space-between;
+
+      label {
+        color: $casual-text-color;
+      }
+
+      .auth-form-input {
+        @include authFormInput();
+
+        border: 1px solid #3c3c3c40;
+        background: transparent;
+        padding: 0 2% 0 2%;
+        font-size: 1rem;
+        transition: all 50ms ease-in-out;
+
+        &:focus {
+          border: 3px solid $main-theme-color;
+          transition: all 50ms ease-in-out;
+        }
+      }
+
+      .auth-input-err-empty {
+        position: relative;
+
+        &::after {
+          @include errorAfterClass("* Polje mora biti ispunjeno.");
+        }
+      }
+
+      .auth-input-err-min {
+        position: relative;
+
+        &::after {
+          @include errorAfterClass("* Nadimak ne može biti kraći od 3 znaka.");
+        }
+      }
+
+      .auth-input-err-max {
+        position: relative;
+
+        &::after {
+          @include errorAfterClass("* Nadimak ne može biti duži od 16 znakova.");
+        }
+      }
+
+      .auth-input-err-spc {
+        position: relative;
+
+        &::after {
+          @include errorAfterClass("* Nadimak ne može sadržavati posebne znakove.");
+        }
+      }
+
+      #al-submit-input {
+        @include authFormSubmit();
+      }
+
+      .forget-password-label {
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
     }
   }
 }

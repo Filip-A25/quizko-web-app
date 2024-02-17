@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ------------------------- */
 /* ------- VARIABLES ------- */
 /* ------------------------- */
@@ -18,7 +19,7 @@
 .page-content {
   height: 120vh;
   width: 100%;
-  background: whitesmoke;
+  background: rgb(240, 240, 240);
   position: relative;
   z-index: 0;
 }
@@ -257,12 +258,89 @@ body {
   height: 85vh;
   width: 40vw;
 }
+#authlogin-content .al-form-section h1 {
+  width: 60%;
+  font-size: 2rem;
+  color: #3c3c3c;
+}
 #authlogin-content .al-form-section .al-form {
   flex-direction: column;
-  height: 40%;
-  width: 70%;
+  height: 50%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
+}
+#authlogin-content .al-form-section .al-form label {
+  color: #3c3c3c;
+}
+#authlogin-content .al-form-section .al-form .auth-form-input {
+  height: 6vh;
+  width: 100%;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(60, 60, 60, 0.2509803922);
+  background: transparent;
+  padding: 0 2% 0 2%;
+  font-size: 1rem;
+  transition: all 50ms ease-in-out;
+}
+#authlogin-content .al-form-section .al-form .auth-form-input:focus {
+  border: 3px solid #e1bf57;
+  transition: all 50ms ease-in-out;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-empty {
+  position: relative;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-empty::after {
+  content: "* Polje mora biti ispunjeno.";
+  position: absolute;
+  top: 110%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-min {
+  position: relative;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-min::after {
+  content: "* Nadimak ne može biti kraći od 3 znaka.";
+  position: absolute;
+  top: 110%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-max {
+  position: relative;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-max::after {
+  content: "* Nadimak ne može biti duži od 16 znakova.";
+  position: absolute;
+  top: 110%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-spc {
+  position: relative;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-spc::after {
+  content: "* Nadimak ne može sadržavati posebne znakove.";
+  position: absolute;
+  top: 110%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+}
+#authlogin-content .al-form-section .al-form #al-submit-input {
+  background: #3c3c3c;
+  color: white;
+  cursor: pointer;
+}
+#authlogin-content .al-form-section .al-form .forget-password-label {
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
 /* -------------------------- */

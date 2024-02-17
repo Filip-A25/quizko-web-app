@@ -47,6 +47,29 @@
 
 @mixin authForm() {
   flex-direction: column;
-  height: 40%;
-  width: 70%;
+  height: 50%;
+  width: $auth-form-width;
+}
+
+@mixin authFormInput() {
+  height: $auth-input-height;
+  width: 100%;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+}
+
+@mixin authFormSubmit() {
+  background: $main-dark-theme-color;
+  color: $casual-light-text-color;
+  cursor: pointer;
+}
+
+@mixin errorAfterClass($error-message) {
+  content: $error-message;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
 }
