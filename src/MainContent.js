@@ -18,7 +18,8 @@ function MainContent() {
       2. dodati mu ref={el => revealingElements.current[<broj elementa po redu (samo reveal elementi)>] = el} u html tag
   */
   const handleElementReveal = (elements) => {
-    elements.current.forEach(element => {
+    if (elements.current) {
+      elements.current.forEach(element => {
         if (element) {
             const windowHeight = window.innerHeight;
             const elementRevealPoint = 50;
@@ -26,7 +27,8 @@ function MainContent() {
 
             if (elementTop < windowHeight - elementRevealPoint) element.classList.add("active");
         }
-    })
+      })
+    }
 }
 
   return (

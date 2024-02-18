@@ -88,7 +88,7 @@ body {
       justify-content: center;
 
       .nav-button {
-        @include standardButton(1rem, 65%);
+        @include standardButton(0.9rem, 65%);
         @include flexCentered();
 
         width: 100%;
@@ -129,7 +129,7 @@ body {
       }
 
       .auth-button {
-        @include standardButton(1rem, 100%);
+        @include standardButton(0.9rem, 100%);
         @include flexCentered();
 
         color: $main-dark-theme-color;

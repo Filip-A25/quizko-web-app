@@ -15,7 +15,7 @@ function AuthRegister() {
   //handle reveal animation
   useEffect(() => {
     handleElementReveal(revealingElements);
-    window.addEventListener("scroll", handleElementReveal(revealingElements));
+    window.addEventListener("scroll", handleElementReveal);
 
     return () => {
       window.removeEventListener(
