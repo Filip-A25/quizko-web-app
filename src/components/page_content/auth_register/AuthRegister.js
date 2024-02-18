@@ -1,5 +1,6 @@
 import { useRef, useContext, useEffect, useState } from "react";
 import { MainContext } from "../../../MainContent";
+import { Link } from 'react-router-dom';
 
 function AuthRegister() {
   const { handleElementReveal } = useContext(MainContext);
@@ -24,8 +25,9 @@ function AuthRegister() {
     };
   }, []);
 
-  const handleRegistration = (firstname, lastname, email, password) => {
+  const handleRegistration = (e, firstname, lastname, email, password) => {
     //replace with post req logic
+    e.preventDefault();
     if (
       firstname !== "" &&
       lastname !== "" &&
@@ -46,79 +48,70 @@ function AuthRegister() {
         className="al-form-section reveal"
         ref={(el) => (revealingElements.current[0] = el)}
       >
-        <h2>Registrirajte se</h2>
+        <h1>Registrirajte se</h1>
         <form
           className="al-form"
-          onSubmit={handleRegistration(firstname, lastname, email, password)}
+          onSubmit={(e) => handleRegistration(e, firstname, lastname, email, password)}
         >
-          <label>
-            Ime:
-            <br />
-            <input
-              type="text"
-              className="auth-form-input"
-              id="ar-firstname-input"
-              onChange={(e) => {
-                setFirstName(e.target.value);
-              }}
-            />
-          </label>
-          <label>
-            Prezime:
-            <br />
-            <input
-              type="text"
-              className="auth-form-input"
-              id="ar-lastname-input"
-              onChange={(e) => {
-                setLastName(e.target.value);
-              }}
-            />
-          </label>
-          <label>
-            E-mail adresa:
-            <br />
-            <input
-              type="email"
-              className="auth-form-input"
-              id="ar-email-nick-input"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
-          </label>
-          <label>
-            Lozinka:
-            <br />
-            <input
-              type="password"
-              className="auth-form-input"
-              id="ar-password-input"
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-            />
-          </label>
-          <label>
-            Potvrdi lozinku:
-            <br />
-            <input
-              type="password"
-              className="auth-form-input"
-              id="ar-password-input"
-              onChange={(e) => {
-                if (e.target.value != password) {
-                  console.log("Passwords don't match");
-                }
-              }}
-            />
-          </label>
+          <label>Ime</label>
+          <input
+            type="text"
+            className="auth-form-input"
+            id="ar-firstname-input"
+            onChange={(e) => {
+              setFirstName(e.target.value);
+            }}
+            placeholder="Unesite svoje ime"
+          />
+          <label>Prezime</label>
+          <input
+            type="text"
+            className="auth-form-input"
+            id="ar-lastname-input"
+            onChange={(e) => {
+              setLastName(e.target.value);
+            }}
+            placeholder="Unesite svoje prezime"
+          />
+          <label>E-mail</label>
+          <input
+            type="email"
+            className="auth-form-input"
+            id="ar-email-nick-input"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            placeholder="Unesite svoj e-mail"
+          />
+          <label>Lozinka</label>
+          <input
+            type="password"
+            className="auth-form-input"
+            id="ar-password-input"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            placeholder="Unesite svoju lozinku"
+          />
+          <label>Potvrdi lozinku</label>
+          <input
+            type="password"
+            className="auth-form-input"
+            id="ar-confirm-password-input"
+            onChange={(e) => {
+              if (e.target.value != password) {
+                console.log("Passwords don't match");
+              }
+            }}
+            placeholder="Potvrdite svoju lozinku"
+          />
           <input
             type="submit"
             className="auth-form-input"
             id="ar-submit-input"
             value="Prijavi se"
           />
+          <label className="already-registered-label">Već imate korisnički račun? <Link to="/prijava">Prijavite se.</Link></label>
         </form>
       </section>
     </div>

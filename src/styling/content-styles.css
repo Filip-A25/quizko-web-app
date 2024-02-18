@@ -115,7 +115,7 @@ body {
   background: #3c3c3c;
 }
 #navbar-element .navbar-content-section .nav-buttons-section .navlink-active button .nav-button-icon {
-  filter: invert(1);
+  filter: invert(1) brightness(100);
 }
 #navbar-element .navbar-content-section .nav-buttons-section .navlink-inactive button {
   color: #3c3c3c;
@@ -343,6 +343,60 @@ body {
   font-weight: bold;
 }
 
+#authregister-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 20vh);
+}
+#authregister-content .al-form-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 85vh;
+  width: 40vw;
+}
+#authregister-content .al-form-section h1 {
+  width: 60%;
+  font-size: 2rem;
+  color: #3c3c3c;
+}
+#authregister-content .al-form-section .al-form {
+  flex-direction: column;
+  height: 90%;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+#authregister-content .al-form-section .al-form label {
+  color: #3c3c3c;
+}
+#authregister-content .al-form-section .al-form .auth-form-input {
+  height: 6vh;
+  width: 100%;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(60, 60, 60, 0.2509803922);
+  background: transparent;
+  padding: 0 2% 0 2%;
+  font-size: 1rem;
+  transition: all 50ms ease-in-out;
+}
+#authregister-content .al-form-section .al-form .auth-form-input:focus {
+  border: 3px solid #e1bf57;
+  transition: all 50ms ease-in-out;
+}
+#authregister-content .al-form-section .al-form #ar-submit-input {
+  background: #3c3c3c;
+  color: white;
+  cursor: pointer;
+}
+#authregister-content .al-form-section .al-form .already-registered-label {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
 /* -------------------------- */
 /* --------- FOOTER --------- */
 /* -------------------------- */
@@ -381,7 +435,7 @@ body {
 #footer-element .social-media-links-section .social-media-flexbox .sm-link .sm-link-icon {
   height: 30px;
   width: 30px;
-  filter: invert(1);
+  filter: invert(1) brightness(100);
 }
 #footer-element .copyright-section {
   width: 30%;

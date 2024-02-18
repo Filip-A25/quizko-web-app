@@ -57,14 +57,14 @@ function AuthLogin() {
                 <form className="al-form" onSubmit={(e) => handleLoginSubmit(e)}>
                     <label>E-mail ili nadimak</label>
                     <div className={nickWrapClass}>
-                        <input type="text" className="auth-form-input" id="al-email-nick-input" placeholder="Upišite svoj e-mail ili nadimak" onChange={(e) => setNickname(e.target.value)} />
+                        <input type="text" className="auth-form-input" id="al-email-nick-input" placeholder="Unesite svoj e-mail ili nadimak" onChange={(e) => setNickname(e.target.value)} />
                     </div>
                     <label>Lozinka</label>
                     <div className="al-password-inputwrap">
-                        <input type="text" className="auth-form-input" id="al-password-input" placeholder="Upišite svoju lozinku" />
+                        <input type="text" className="auth-form-input" id="al-password-input" placeholder="Unesite svoju lozinku" />
                     </div>
                     <input type="submit" className="auth-form-input" id="al-submit-input" value="Prijavi se" />
-                    <label className="forget-password-label">Zaboravili ste nadimak ili lozinku? <Link to="/" className="forget-password-link">Kliknite ovdje.</Link></label>
+                    <label className="forget-password-label">Zaboravili ste nadimak ili lozinku? <Link to="/">Kliknite ovdje.</Link></label>
                 </form>
             </section>
         </div>

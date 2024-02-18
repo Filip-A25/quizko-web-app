@@ -42,12 +42,12 @@
 @mixin footerIcon() {
   height: 30px;
   width: 30px;
-  filter: invert(1);
+  filter: invert(1) brightness(100);
 }
 
-@mixin authForm() {
+@mixin authForm($form-height) {
   flex-direction: column;
-  height: 50%;
+  height: $form-height;
   width: $auth-form-width;
 }
 
@@ -63,6 +63,12 @@
   background: $main-dark-theme-color;
   color: $casual-light-text-color;
   cursor: pointer;
+}
+
+@mixin authFormHeader() {
+  width: $auth-form-width;
+  font-size: 2rem;
+  color: $casual-text-color;
 }
 
 @mixin errorAfterClass($error-message) {

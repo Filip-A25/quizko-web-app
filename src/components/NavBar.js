@@ -1,12 +1,15 @@
 import NavButton from "./NavButton";
 import logo from "../logos/quizko-logo.png";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <div id="navbar-element">
       <section className="navbar-content-section">
         <div className="logo-section">
-          <img src={logo} height="45px" alt="quizko app logo"></img>
+          <Link to="/">
+            <img src={logo} height="45px" alt="quizko app logo"></img>
+          </Link>
         </div>
         <div className="nav-buttons-section">
           <NavButton index={1} title="Početna" path="/" isContent={true} />

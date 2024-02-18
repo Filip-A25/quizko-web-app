@@ -108,7 +108,7 @@ body {
           background: $main-dark-theme-color;
 
           .nav-button-icon {
-            filter: invert(1);
+            filter: invert(1) brightness(100);
           }
         }
       }
@@ -270,13 +270,11 @@ body {
     width: 40vw;
 
     h1 {
-      width: $auth-form-width;
-      font-size: 2rem;
-      color: $casual-text-color;
+      @include authFormHeader();
     }
 
     .al-form {
-      @include authForm();
+      @include authForm(50%);
 
       display: flex;
       justify-content: space-between;
@@ -356,11 +354,43 @@ body {
     height: 85vh;
     width: 40vw;
 
+    h1 {
+      @include authFormHeader();
+    }
+
     .al-form {
-      @include authForm();
+      @include authForm(90%);
 
       display: flex;
       justify-content: space-between;
+
+      label {
+        color: $casual-text-color;
+      }
+
+      .auth-form-input {
+        @include authFormInput();
+
+        border: 1px solid #3c3c3c40;
+        background: transparent;
+        padding: 0 2% 0 2%;
+        font-size: 1rem;
+        transition: all 50ms ease-in-out;
+
+        &:focus {
+          border: 3px solid $main-theme-color;
+          transition: all 50ms ease-in-out;
+        }
+      }
+
+      #ar-submit-input {
+        @include authFormSubmit();
+      }
+
+      .already-registered-label {
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
     }
   }
 }
