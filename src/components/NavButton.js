@@ -36,6 +36,9 @@ function NavButton(props) {
         break;
       case 6:
         setIconSrc(registerIcon);
+        break;
+      default:
+        console.log(`Icon for an element with index ${props.index} doesn't exist.`);
     }
   }, []);
 
@@ -49,7 +52,7 @@ function NavButton(props) {
       }}
     >
       <button className={buttonClass}>
-        <img className="nav-button-icon" src={iconSrc}></img>
+        <img className="nav-button-icon" alt="" src={iconSrc}></img>
         <span className="nav-button-text">{props.title}</span>
       </button>
     </NavLink>

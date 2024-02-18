@@ -99,7 +99,7 @@ function AuthRegister() {
             className="auth-form-input"
             id="ar-confirm-password-input"
             onChange={(e) => {
-              if (e.target.value != password) {
+              if (e.target.value !== password) {
                 console.log("Passwords don't match");
               }
             }}

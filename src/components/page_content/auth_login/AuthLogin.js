@@ -19,8 +19,7 @@ function AuthLogin() {
     }, [])
 
     // Hendlaj u backendu.
-    const handleNicknameCheck = (el) => {
-        const inputEl = Array.from(el.children).find(child => child.className === nickWrapClass);
+    const handleNicknameCheck = () => {
         const specialCharsFormat = /[ `!#$%^&*()_+\-=\[\]{};':"\\|,<>\/?~]/;
 
         const trimmedValue = nickname.replace(/\s/g, ""); 
@@ -47,7 +46,7 @@ function AuthLogin() {
     const handleLoginSubmit = (e) => {
         e.preventDefault();
         setNickWrapClass("al-email-nick-input-wrap");
-        handleNicknameCheck(e.target);
+        handleNicknameCheck();
     }
 
     return (
