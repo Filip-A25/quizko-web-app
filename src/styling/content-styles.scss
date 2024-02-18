@@ -452,7 +452,7 @@ body {
     @include footerSection();
     @include flexVerticalCentered();
 
-    justify-content: end;
+    justify-content: flex-end;
 
     .logo-flexbox {
       @include flexCentered();
