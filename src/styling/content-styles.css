@@ -13,11 +13,11 @@
 /* -------------------------- */
 * {
   box-sizing: border-box;
-  font-family: "Lato";
+  font-family: "Lato", sans-serif;
 }
 
 .page-content {
-  height: 120vh;
+  min-height: 100vh;
   width: 100%;
   background: rgb(240, 240, 240);
   position: relative;
@@ -76,8 +76,8 @@ body {
 }
 #navbar-element .navbar-content-section .logo-section h1 {
   font-size: 2.5rem;
-  font-weight: 900;
-  font-family: "Lato";
+  font-weight: 500;
+  font-family: "Lato", sans-serif;
   color: #3c3c3c;
   user-select: none;
 }
@@ -91,7 +91,7 @@ body {
   justify-content: center;
 }
 #navbar-element .navbar-content-section .nav-buttons-section .nav-button {
-  font-family: "Lato";
+  font-family: "Lato", sans-serif;
   font-size: 0.9rem;
   border-radius: 5px;
   border: none;
@@ -130,7 +130,7 @@ body {
   margin-right: 9%;
 }
 #navbar-element .navbar-content-section .auth-buttons-section .auth-button {
-  font-family: "Lato";
+  font-family: "Lato", sans-serif;
   font-size: 0.9rem;
   border-radius: 5px;
   border: none;
@@ -155,7 +155,7 @@ body {
 /* --------- HOMEPAGE --------- */
 /* ---------------------------- */
 #homepage-content {
-  height: calc(100% - 20vh);
+  height: 110vh;
 }
 #homepage-content .hp-homepage-text {
   display: flex;
@@ -255,8 +255,9 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 85vh;
+  height: 80vh;
   width: 40vw;
+  padding-top: 2%;
 }
 #authlogin-content .al-form-section h1 {
   width: 60%;
@@ -346,8 +347,7 @@ body {
 #authregister-content {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: calc(100% - 20vh);
+  height: 120vh;
 }
 #authregister-content .al-form-section {
   display: flex;
@@ -355,6 +355,7 @@ body {
   flex-direction: column;
   height: 85vh;
   width: 40vw;
+  padding-top: 2%;
 }
 #authregister-content .al-form-section h1 {
   width: 60%;
@@ -456,7 +457,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 55%;
+  width: 60%;
 }
 #footer-element .logo-section .logo-flexbox .edit-logo {
   height: 40px;

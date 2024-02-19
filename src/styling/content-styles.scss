@@ -11,7 +11,7 @@
 }
 
 .page-content {
-  height: 120vh;
+  min-height: 100vh;
   width: 100%;
   background: $background-light-color;
   position: relative;
@@ -71,7 +71,7 @@ body {
 
       h1 {
         font-size: 2.5rem;
-        font-weight: 900;
+        font-weight: 500;
         font-family: $main-font-style;
         color: $main-dark-theme-color;
         user-select: none;
@@ -152,7 +152,7 @@ body {
 /* ---------------------------- */
 
 #homepage-content {
-  height: $main-content-height;
+  height: 110vh;
 
   .hp-homepage-text {
     @include flexHorizontalCentered();
@@ -253,6 +253,7 @@ body {
   }
 }
 
+
 /* -------------------------- */
 /* ---------- AUTH ---------- */
 /* -------------------------- */
@@ -266,8 +267,10 @@ body {
     @include flexVerticalCentered();
 
     flex-direction: column;
-    height: 85vh;
+    //height: 85vh;
+    height: calc(100vh - ($navbar-height + $footer-height));
     width: 40vw;
+    padding-top: 2%;
 
     h1 {
       @include authFormHeader();
@@ -343,9 +346,9 @@ body {
 }
 
 #authregister-content {
-  @include flexCentered();
+  @include flexHorizontalCentered();
 
-  height: $main-content-height;
+  height: 120vh;
 
   .al-form-section {
     @include flexVerticalCentered();
@@ -353,6 +356,7 @@ body {
     flex-direction: column;
     height: 85vh;
     width: 40vw;
+    padding-top: 2%;
 
     h1 {
       @include authFormHeader();
@@ -457,7 +461,7 @@ body {
     .logo-flexbox {
       @include flexCentered();
 
-      width: 55%;
+      width: 60%;
 
       .edit-logo {
         height: 40px;
