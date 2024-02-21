@@ -17,8 +17,8 @@ function CreateQuiz() {
     return (
         <div id="create-quiz-content">
             <div className="component-content">
-
-            </div>
+                
+            </div> 
         </div>
     )
 }

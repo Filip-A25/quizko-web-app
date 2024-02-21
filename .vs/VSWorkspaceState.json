@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\page_content",
+    "\\src\\components\\page_content\\auth_register",
+    "\\src\\components\\page_content\\homepage"
+  ],
+  "SelectedNode": "\\src\\components\\page_content\\auth_register\\AuthRegister.js",
+  "PreviewInSolutionExplorer": false
+}

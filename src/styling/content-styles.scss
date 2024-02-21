@@ -273,7 +273,7 @@ body {
     padding-top: 2%;
 
     h1 {
-      @include authFormHeader();
+      @include formHeader();
     }
 
     .al-form {
@@ -334,7 +334,7 @@ body {
       }
 
       #al-submit-input {
-        @include authFormSubmit();
+        @include formSubmit();
       }
 
       .forget-password-label {
@@ -359,7 +359,7 @@ body {
     padding-top: 2%;
 
     h1 {
-      @include authFormHeader();
+      @include formHeader();
     }
 
     .al-form {
@@ -388,12 +388,44 @@ body {
       }
 
       #ar-submit-input {
-        @include authFormSubmit();
+        @include formSubmit();
       }
 
       .already-registered-label {
         font-size: 0.9rem;
         font-weight: bold;
+      }
+    }
+  }
+}
+
+#action-success-message-content {
+  @include flexHorizontalCentered();
+
+  height: calc(100vh - ($footer-height + $navbar-height));
+
+  .asm-section {
+    padding-top: 6%;
+    flex-direction: column;
+
+    h1 {
+      margin-bottom: 15%;
+    }
+
+    h4 {
+      margin-top: 2%;
+      margin-bottom: 4%;
+    }
+
+    .asm-button {
+      @include formSubmit();
+      @include standardButton(1rem, 9%);
+
+      width: 70%;
+
+      .asm-link {
+        text-decoration: none;
+        color: $casual-light-text-color;
       }
     }
   }

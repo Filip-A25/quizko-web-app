@@ -59,13 +59,13 @@
   border: none;
 }
 
-@mixin authFormSubmit() {
+@mixin formSubmit() {
   background: $main-dark-theme-color;
   color: $casual-light-text-color;
   cursor: pointer;
 }
 
-@mixin authFormHeader() {
+@mixin formHeader() {
   width: $auth-form-width;
   font-size: 2rem;
   color: $casual-text-color;

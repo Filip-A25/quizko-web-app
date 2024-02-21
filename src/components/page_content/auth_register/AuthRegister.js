@@ -1,13 +1,15 @@
-import { useRef, useContext, useEffect, useState } from "react";
+import { useRef, useContext, useEffect, useState, Fragment } from "react";
 import { MainContext } from "../../../MainContent";
 import { Link } from 'react-router-dom';
+import ActionSuccessMessage from "../../ActionSuccessMessage";
 
 function AuthRegister() {
   const { handleElementReveal } = useContext(MainContext);
   const revealingElements = useRef([]);
+  const [registerSuccess, setRegisterSuccess] = useState(false);
 
   //state elements
-  const [firstname, setFirstName] = useState("");
+  const [firstname, setFirstName] = useState("Legenda");
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -43,7 +45,8 @@ function AuthRegister() {
   };
 
   return (
-    <div id="authregister-content">
+    <Fragment>
+    {!registerSuccess && (<div id="authregister-content">
       <section
         className="al-form-section reveal"
         ref={(el) => (revealingElements.current[0] = el)}
@@ -114,7 +117,20 @@ function AuthRegister() {
           <label className="already-registered-label">Već imate korisnički račun? <Link to="/prijava">Prijavite se.</Link></label>
         </form>
       </section>
-    </div>
+    </div>)}
+
+    {registerSuccess && (
+      <ActionSuccessMessage
+        mainMessage={`Hvala Vam na registraciji, ${firstname}!`}
+        secondaryMessages={[
+          "Zavirite u svoj e-mail sandučić.",
+          "Poslali smo vam mail u kojem morate potvrditi registraciju."
+        ]}
+        path="/prijava"
+        linkText="Prijava"
+      />
+    )}
+    </Fragment>
   );
 }
 
