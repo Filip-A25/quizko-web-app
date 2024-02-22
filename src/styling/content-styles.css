@@ -145,7 +145,7 @@ body {
 #navbar-element .navbar-content-section .auth-buttons-section .auth-button .nav-button-icon {
   height: 16px;
   width: 16px;
-  margin-right: 5%;
+  margin-right: 8%;
 }
 #navbar-element .navbar-content-section .auth-buttons-section .auth-button span {
   font-weight: 700;
@@ -396,6 +396,39 @@ body {
 #authregister-content .al-form-section .al-form .already-registered-label {
   font-size: 0.9rem;
   font-weight: bold;
+}
+
+#action-success-message-content {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+}
+#action-success-message-content .asm-section {
+  padding-top: 6%;
+  flex-direction: column;
+}
+#action-success-message-content .asm-section h1 {
+  margin-bottom: 15%;
+}
+#action-success-message-content .asm-section h4 {
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+#action-success-message-content .asm-section .asm-button {
+  background: #3c3c3c;
+  color: white;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  height: 9%;
+  cursor: pointer;
+  width: 70%;
+}
+#action-success-message-content .asm-section .asm-button .asm-link {
+  text-decoration: none;
+  color: white;
 }
 
 /* -------------------------- */

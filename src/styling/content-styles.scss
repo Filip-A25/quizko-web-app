@@ -94,7 +94,7 @@ body {
         width: 100%;
 
         .nav-button-icon {
-          @include buttonIcon();
+          @include buttonIcon(5%);
         }
 
         span {
@@ -136,7 +136,7 @@ body {
         background: transparent;
 
         .nav-button-icon {
-          @include buttonIcon();
+          @include buttonIcon(8%);
         }
 
         span {

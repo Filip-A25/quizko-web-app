@@ -7,6 +7,7 @@ import myQuizzesIcon from "../icons/my-quizzes-icon.png";
 import profileIcon from "../icons/profile-icon.png";
 import logInIcon from "../icons/sign-in-icon.png";
 import registerIcon from "../icons/register-icon.png";
+import logOutIcon from "../icons/sign-out-icon.png";
 
 function NavButton(props) {
   const [buttonClass, setButtonClass] = useState("");
@@ -36,6 +37,9 @@ function NavButton(props) {
         break;
       case 6:
         setIconSrc(registerIcon);
+        break;
+      case 7:
+        setIconSrc(logOutIcon);
         break;
       default:
         console.log(`Icon for an element with index ${props.index} doesn't exist.`);
