@@ -9,7 +9,6 @@ function NavBar() {
     Za isprobavanje prikaza stranice prijavljenom korisniku i neprijavljenom korisniku.
     unregistered_user - neregistrirani korisnik
     registered user - registrirani korisnik
-    admin_user - admin
   */
 
   return (
