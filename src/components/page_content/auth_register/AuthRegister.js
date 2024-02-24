@@ -9,8 +9,7 @@ function AuthRegister() {
   const [registerSuccess, setRegisterSuccess] = useState(false);
 
   //state elements
-  const [firstname, setFirstName] = useState("Legenda");
-  const [lastname, setLastName] = useState("");
+  const [nickname, setNickname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -27,22 +26,27 @@ function AuthRegister() {
     };
   }, []);
 
-  const handleRegistration = (e, firstname, lastname, email, password) => {
+  const handleRegistration = (e, nickname, email, password) => {
     //replace with post req logic
     e.preventDefault();
-    if (
-      firstname !== "" &&
-      lastname !== "" &&
-      email !== "" &&
-      password !== ""
-    ) {
-      console.log(
-        `User with first name: ${firstname}, last name: ${lastname}, email: ${email} and password ${password} created`
-      );
-    } else {
-      console.log("Something went wrong, please try registrating again");
-    }
-  };
+    const specialCharsNameFormat = /[ `!#@$%^&*()_+\-=\[\]{};':"\\|,<>\/?~]/;
+    const specialCharsEmailFormat = /[ `!#$%^&*()_+\-=\[\]{};':"\\|,<>\/?~]/;
+
+    const trimmedNickname = nickname.replace(/\s/g, "");
+    const trimmedEmail = email.replace(/\s/g, "");
+
+    if (!specialCharsNameFormat.test(trimmedNickname)) {
+      if (trimmedNickname === "") console.log("Error: Polje nadimak mora biti ispunjeno.");
+      else if (trimmedNickname !== "" && trimmedNickname.length < 3) console.log("Error: Nadimak ne smije biti kraći od 3 znaka.");
+      else if (trimmedNickname !== "" && trimmedNickname.length > 16) console.log("Error: Nadimak ne smije biti duži od 16 znakova.");
+      else console.log(`Uneseni nadimak ${nickname} odgovara kriterijima.`);
+    } else console.log("Nadimak ne smije sadržavati posebne znakove.");
+
+    if (!specialCharsEmailFormat.test(trimmedEmail)) {
+      if (trimmedEmail === "") console.log("Error: Polje e-mail mora biti ispunjeno.");
+      else console.log(`Uneseni e-mail ${email} odgovara kriterijima.`);
+    } else console.log("E-mail ne smije sadržavati posebne znakove.");
+  }
 
   return (
     <Fragment>
@@ -54,27 +58,17 @@ function AuthRegister() {
         <h1>Registrirajte se</h1>
         <form
           className="al-form"
-          onSubmit={(e) => handleRegistration(e, firstname, lastname, email, password)}
+          onSubmit={(e) => handleRegistration(e, nickname, email, password)}
         >
-          <label>Ime</label>
+          <label>Nadimak</label>
           <input
             type="text"
             className="auth-form-input"
             id="ar-firstname-input"
             onChange={(e) => {
-              setFirstName(e.target.value);
+              setNickname(e.target.value);
             }}
             placeholder="Unesite svoje ime"
-          />
-          <label>Prezime</label>
-          <input
-            type="text"
-            className="auth-form-input"
-            id="ar-lastname-input"
-            onChange={(e) => {
-              setLastName(e.target.value);
-            }}
-            placeholder="Unesite svoje prezime"
           />
           <label>E-mail</label>
           <input
@@ -121,7 +115,7 @@ function AuthRegister() {
 
     {registerSuccess && (
       <ActionSuccessMessage
-        mainMessage={`Hvala Vam na registraciji, ${firstname}!`}
+        mainMessage={`Hvala Vam na registraciji, ${nickname}!`}
         secondaryMessages={[
           "Zavirite u svoj e-mail sandučić.",
           "Poslali smo vam mail u kojem morate potvrditi registraciju."
