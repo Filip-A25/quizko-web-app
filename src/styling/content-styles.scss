@@ -253,7 +253,6 @@ body {
   }
 }
 
-
 /* -------------------------- */
 /* ---------- AUTH ---------- */
 /* -------------------------- */
@@ -321,7 +320,9 @@ body {
         position: relative;
 
         &::after {
-          @include errorAfterClass("* Nadimak ne može biti duži od 16 znakova.");
+          @include errorAfterClass(
+            "* Nadimak ne može biti duži od 16 znakova."
+          );
         }
       }
 
@@ -329,7 +330,9 @@ body {
         position: relative;
 
         &::after {
-          @include errorAfterClass("* Nadimak ne može sadržavati posebne znakove.");
+          @include errorAfterClass(
+            "* Nadimak ne može sadržavati posebne znakove."
+          );
         }
       }
 
@@ -428,6 +431,47 @@ body {
         color: $casual-light-text-color;
       }
     }
+  }
+}
+
+/* -------------------------- */
+/* --------- MY PROFILE --------- */
+/* -------------------------- */
+
+#my-profile-content {
+  @include flexCentered();
+
+  height: $main-content-height;
+
+  .mp-fields {
+    .mp-fields-field {
+      width: 30vw;
+      @include flexVerticalCentered();
+      justify-content: space-between;
+      gap: 5vw;
+      .mp-field-data {
+        width: 30%;
+      }
+      .mp-field-button {
+        @include flexVerticalCentered();
+        background: none;
+        border: none;
+        text-decoration: underline;
+        color: #5774ad;
+        img {
+          filter: invert(42%) sepia(97%) saturate(261%) hue-rotate(181deg)
+            brightness(87%) contrast(89%);
+        }
+      }
+    }
+  }
+  .mp-delete-button {
+    margin-top: 3vh;
+    background-color: #a10000;
+    padding: 1rem 5rem;
+    color: white;
+    border-radius: 0.8rem;
+    border: none;
   }
 }
 

@@ -79,7 +79,9 @@ body {
   font-weight: 500;
   font-family: "Lato", sans-serif;
   color: #3c3c3c;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 #navbar-element .navbar-content-section .nav-buttons-section {
   display: grid;
@@ -396,6 +398,78 @@ body {
 #authregister-content .al-form-section .al-form .already-registered-label {
   font-size: 0.9rem;
   font-weight: bold;
+}
+
+#action-success-message-content {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+}
+#action-success-message-content .asm-section {
+  padding-top: 6%;
+  flex-direction: column;
+}
+#action-success-message-content .asm-section h1 {
+  margin-bottom: 15%;
+}
+#action-success-message-content .asm-section h4 {
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+#action-success-message-content .asm-section .asm-button {
+  background: #3c3c3c;
+  color: white;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  height: 9%;
+  cursor: pointer;
+  width: 70%;
+}
+#action-success-message-content .asm-section .asm-button .asm-link {
+  text-decoration: none;
+  color: white;
+}
+
+/* -------------------------- */
+/* --------- MY PROFILE --------- */
+/* -------------------------- */
+#my-profile-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 20vh);
+}
+#my-profile-content .mp-fields .mp-fields-field {
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5vw;
+}
+#my-profile-content .mp-fields .mp-fields-field .mp-field-data {
+  width: 30%;
+}
+#my-profile-content .mp-fields .mp-fields-field .mp-field-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: #5774ad;
+}
+#my-profile-content .mp-fields .mp-fields-field .mp-field-button img {
+  filter: invert(42%) sepia(97%) saturate(261%) hue-rotate(181deg) brightness(87%) contrast(89%);
+}
+#my-profile-content .mp-delete-button {
+  margin-top: 3vh;
+  background-color: #a10000;
+  padding: 1rem 5rem;
+  color: white;
+  border-radius: 0.8rem;
+  border: none;
 }
 
 /* -------------------------- */
