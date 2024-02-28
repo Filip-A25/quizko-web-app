@@ -45,10 +45,10 @@
   filter: invert(1) brightness(100);
 }
 
-@mixin authForm($form-height) {
+@mixin authForm($form-height, $form-width) {
   flex-direction: column;
   height: $form-height;
-  width: $auth-form-width;
+  width: $form-width;
 }
 
 @mixin authFormInput() {
