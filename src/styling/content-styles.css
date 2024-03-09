@@ -79,7 +79,9 @@ body {
   font-weight: 500;
   font-family: "Lato", sans-serif;
   color: #3c3c3c;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 #navbar-element .navbar-content-section .nav-buttons-section {
   display: grid;

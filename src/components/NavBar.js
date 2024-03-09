@@ -3,7 +3,7 @@ import logo from "../logos/quizko-logo.png";
 import { Link } from "react-router-dom";
 import { useState, Fragment } from "react";
 
-function NavBar() {
+function NavBar({ position }) {
   const [userStatus, setUserStatus] = useState("registered_user");
   /*
     Za isprobavanje prikaza stranice prijavljenom korisniku i neprijavljenom korisniku.
@@ -12,7 +12,7 @@ function NavBar() {
   */
 
   return (
-    <div id="navbar-element">
+    <div id="navbar-element" className={`navbar-${position}`}>
       <section className="navbar-content-section">
         <div className="logo-section">
           <Link to="/">
@@ -62,12 +62,7 @@ function NavBar() {
             </Fragment>
           )}
           {userStatus === "registered_user" || userStatus === "admin_user" ? (
-            <NavButton
-              index={7}
-              title="Odjava"
-              path="/"
-              isContent={false}
-            />
+            <NavButton index={7} title="Odjava" path="/" isContent={false} />
           ) : null}
         </div>
       </section>

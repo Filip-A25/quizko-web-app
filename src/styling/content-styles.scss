@@ -449,7 +449,6 @@ body {
     height: 20vh;
 
     .mp-fields-field {
-
       .mp-field-data {
         width: 30%;
       }
@@ -502,7 +501,7 @@ body {
       top: 4px;
       left: 4px;
       transition: all 150ms ease-in-out;
-    } 
+    }
   }
 }
 
@@ -525,17 +524,17 @@ body {
     .mp-edit-label {
       color: black;
     }
-  
+
     .mp-edit-input {
       input {
         @include authFormInput();
-  
+
         border: 1px solid #3c3c3c40;
         background: transparent;
         padding: 0 2% 0 2%;
         font-size: 1rem;
         transition: all 50ms ease-in-out;
-  
+
         &:focus {
           border: 3px solid $main-theme-color;
           transition: all 50ms ease-in-out;
@@ -553,7 +552,7 @@ body {
         margin-top: 3vh;
         width: 12vw;
         position: relative;
-    
+
         input {
           background: transparent;
           outline: none;
@@ -574,19 +573,19 @@ body {
           top: 0px;
           left: 0px;
         }
-    
+
         &::after {
           background: $main-dark-theme-color;
           transition: all 150ms ease-in-out;
         }
-    
+
         &:hover::after {
           top: 4px;
           left: 4px;
           transition: all 150ms ease-in-out;
         }
       }
-    
+
       .mp-edit-back {
         @include standardButton(1rem, 6vh);
         background: rgb(191, 16, 16);
@@ -594,7 +593,7 @@ body {
         width: 12vw;
         position: relative;
         color: $casual-light-text-color;
-    
+
         &::after {
           content: "";
           z-index: -1;
@@ -605,12 +604,12 @@ body {
           top: 0px;
           left: 0px;
         }
-    
+
         &::after {
           background: $main-dark-theme-color;
           transition: all 150ms ease-in-out;
         }
-    
+
         &:hover::after {
           top: 4px;
           left: 4px;
@@ -618,7 +617,7 @@ body {
         }
       }
     }
-  
+
     .mp-edit-forget {
       @include flexVerticalCentered();
       gap: 0.3rem;
@@ -637,7 +636,6 @@ body {
     }
   }
 }
-
 
 /* -------------------------- */
 /* --------- FOOTER --------- */
