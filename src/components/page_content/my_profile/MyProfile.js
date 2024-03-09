@@ -154,4 +154,4 @@ function MyProfile() {
 }
 
 export default MyProfile;
-export {ProfileContext};
+export { ProfileContext };

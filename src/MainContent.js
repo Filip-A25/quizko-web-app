@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from "react-router-dom";
 import { createContext } from "react";
 import "./styling/page_component-styles/auth.css";
 import "./styling/page_component-styles/footer.css";
@@ -23,28 +23,41 @@ function MainContent() {
   */
   const handleElementReveal = (elements) => {
     if (elements.current) {
-      elements.current.forEach(element => {
+      elements.current.forEach((element) => {
         if (element) {
-            const windowHeight = window.innerHeight;
-            const elementRevealPoint = 50;
-            const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          const elementRevealPoint = 50;
+          const elementTop = element.getBoundingClientRect().top;
 
-            if (elementTop < windowHeight - elementRevealPoint) element.classList.add("active");
+          if (elementTop < windowHeight - elementRevealPoint)
+            element.classList.add("active");
         }
-      })
+      });
     }
-}
+  };
+
+  const location = useLocation();
+
+  const isSidebarPage = [
+    "/moji-kvizovi",
+    "/moj-profil",
+    "/kreiraj-kviz",
+  ].includes(location.pathname);
 
   return (
-    <div className="page-content"> 
-      <NavBar />
-        <MainContext.Provider value={{handleElementReveal}}> 
-          <Outlet />
-        </MainContext.Provider>
+    <div className={`page-content ${isSidebarPage ? "sidebar" : ""}`}>
+      {isSidebarPage ? (
+        <NavBar position="sidebar" />
+      ) : (
+        <NavBar position="top" />
+      )}
+      <MainContext.Provider value={{ handleElementReveal }}>
+        <Outlet />
+      </MainContext.Provider>
       <Footer />
     </div>
   );
 }
 
 export default MainContent;
-export {MainContext};
+export { MainContext };
