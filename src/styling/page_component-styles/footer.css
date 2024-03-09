@@ -1,0 +1,59 @@
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* --------------------------------- */
+/* --------- GLOBAL STYLES --------- */
+/* --------------------------------- */
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* -------------------------- */
+/* --------- FOOTER --------- */
+/* -------------------------- */
+#footer-element {
+  width: 100vw;
+  background: #3c3c3c;
+  position: absolute;
+  bottom: 0;
+  padding: 0% 3% 0% 3%;
+}
+#footer-element .social-media-links-section small {
+  margin-left: 3%;
+  color: white;
+}
+#footer-element .social-media-links-section .social-media-flexbox {
+  display: flex;
+}
+#footer-element .social-media-links-section .social-media-flexbox .sm-link {
+  transition: all 200ms ease-in-out;
+}
+#footer-element .social-media-links-section .social-media-flexbox .sm-link:hover {
+  transform: scale(1.1);
+  transition: all 200ms ease-in-out;
+}
+#footer-element .social-media-links-section .social-media-flexbox .sm-link .sm-link-icon {
+  height: 25px;
+  width: 25px;
+  filter: invert(1) brightness(100);
+}
+#footer-element .copyright-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#footer-element .copyright-section small {
+  color: white;
+  text-align: center;
+}
+#footer-element .logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#footer-element .logo-section .logo-flexbox .edit-logo {
+  height: 40px;
+  margin-right: 1%;
+}
+#footer-element .logo-section .logo-flexbox small {
+  color: white;
+}/*# sourceMappingURL=footer.css.map */

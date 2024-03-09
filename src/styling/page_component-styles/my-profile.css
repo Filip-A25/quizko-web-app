@@ -1,0 +1,201 @@
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* --------------------------------- */
+/* --------- GLOBAL STYLES --------- */
+/* --------------------------------- */
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* ---------------------------- */
+/* -------- MY PROFILE -------- */
+/* ---------------------------- */
+#my-profile-content .mp-fields {
+  width: 30vw;
+  height: 20vh;
+}
+#my-profile-content .mp-fields .mp-fields-field .mp-field-data {
+  width: 30%;
+}
+#my-profile-content .mp-fields .mp-fields-field .mp-field-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  color: #5774ad;
+  cursor: pointer;
+}
+#my-profile-content .mp-fields .mp-fields-field .mp-field-button img {
+  height: 3vh;
+  filter: invert(42%) sepia(97%) saturate(261%) hue-rotate(181deg) brightness(87%) contrast(89%);
+  transition: all 200ms ease-in-out;
+}
+#my-profile-content .mp-fields .mp-fields-field .mp-field-button:hover img {
+  transform: rotate(-45deg);
+}
+#my-profile-content .mp-delete-button {
+  font-family: "Lato", sans-serif;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: rgb(191, 16, 16);
+  margin-top: 3vh;
+  position: relative;
+  color: white;
+}
+#my-profile-content .mp-delete-button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+#my-profile-content .mp-delete-button::after {
+  background: #3c3c3c;
+  transition: all 150ms ease-in-out;
+}
+#my-profile-content .mp-delete-button:hover::after {
+  top: 4px;
+  left: 4px;
+  transition: all 150ms ease-in-out;
+}
+
+/* ----------------------------- */
+/* ------ MY PROFILE-FORM ------ */
+/* ----------------------------- */
+.component-content {
+  height: 60vh;
+}
+.component-content section {
+  height: 100%;
+}
+.component-content h1 {
+  color: #3c3c3c;
+  font-weight: bold;
+}
+.component-content .mp-edit-form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4%;
+}
+.component-content .mp-edit-form .mp-edit-label {
+  color: black;
+}
+.component-content .mp-edit-form .mp-edit-input .new-password-input-wrap {
+  width: inherit;
+  height: inherit;
+}
+.component-content .mp-edit-form .mp-edit-input .new-password-input-wrap .error-password-match {
+  position: relative;
+  border: 5px solid black;
+}
+.component-content .mp-edit-form .mp-edit-input .new-password-input-wrap .error-password-match::after {
+  content: "* Lozinke moraju biti iste.";
+  position: absolute;
+  top: 110%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+}
+.component-content .mp-edit-form .mp-edit-input input {
+  height: 6vh;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(60, 60, 60, 0.2509803922);
+  background: transparent;
+  padding: 0 2% 0 2%;
+  transition: all 50ms ease-in-out;
+}
+.component-content .mp-edit-form .mp-edit-input input:focus {
+  border: 3px solid #e1bf57;
+  transition: all 50ms ease-in-out;
+}
+.component-content .mp-edit-form .mp-edit-buttons .mp-edit-submit {
+  font-family: "Lato", sans-serif;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #e1bf57;
+  position: relative;
+}
+.component-content .mp-edit-form .mp-edit-buttons .mp-edit-submit input {
+  background: transparent;
+  outline: none;
+  border: none;
+  color: #3c3c3c;
+  font-weight: bold;
+  cursor: pointer;
+}
+.component-content .mp-edit-form .mp-edit-buttons .mp-edit-submit::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+.component-content .mp-edit-form .mp-edit-buttons .mp-edit-submit::after {
+  background: #3c3c3c;
+  transition: all 150ms ease-in-out;
+}
+.component-content .mp-edit-form .mp-edit-buttons .mp-edit-submit:hover::after {
+  top: 4px;
+  left: 4px;
+  transition: all 150ms ease-in-out;
+}
+.component-content .mp-edit-form .mp-edit-buttons .mp-edit-back {
+  font-family: "Lato", sans-serif;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: rgb(191, 16, 16);
+  position: relative;
+  color: white;
+}
+.component-content .mp-edit-form .mp-edit-buttons .mp-edit-back::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+.component-content .mp-edit-form .mp-edit-buttons .mp-edit-back::after {
+  background: #3c3c3c;
+  transition: all 150ms ease-in-out;
+}
+.component-content .mp-edit-form .mp-edit-buttons .mp-edit-back:hover::after {
+  top: 4px;
+  left: 4px;
+  transition: all 150ms ease-in-out;
+}
+.component-content .mp-edit-form .mp-edit-forget {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: black;
+}
+.component-content .mp-edit-form .mp-edit-forget .mp-edit-forget-text {
+  height: 2vh;
+  font-size: 0.8rem;
+}
+.component-content .mp-edit-form .mp-edit-forget .mp-edit-forget-link {
+  font-weight: bolder;
+  align-self: center;
+  height: 2vh;
+  font-size: 0.8rem;
+  color: black;
+}/*# sourceMappingURL=my-profile.css.map */

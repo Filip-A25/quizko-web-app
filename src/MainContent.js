@@ -1,6 +1,10 @@
 import { Outlet } from 'react-router-dom';
 import { createContext } from "react";
-import "./styling/content-styles.css";
+import "./styling/page_component-styles/auth.css";
+import "./styling/page_component-styles/footer.css";
+import "./styling/page_component-styles/homepage.css";
+import "./styling/page_component-styles/main-navbar.css";
+import "./styling/page_component-styles/my-profile.css";
 import "./styling/global-styles.css";
 import "./styling/styling-vars.css";
 import NavBar from "./components/NavBar";

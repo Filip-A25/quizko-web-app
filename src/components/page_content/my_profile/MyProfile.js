@@ -1,6 +1,7 @@
 import { useRef, useContext, useEffect, useState, createContext } from "react";
 import { MainContext } from "../../../MainContent";
 import EditData from "./EditData";
+import "../../../styles.css";
 
 //import icon
 import icon from "../../../icons/editIcon.svg";
@@ -41,19 +42,19 @@ function MyProfile() {
   }, [handleElementReveal, editOn]);
 
   return (
-    <ProfileContext.Provider value={{setEditOn, editOn, setEmail, setNickname, setPassword}}>
-    <div id="my-profile-content">
-      <div className="component-content">
-      {editOn == 0 ? (
+    <ProfileContext.Provider value={{setEditOn, editOn, setEmail, setNickname, setPassword, password}}>
+    <div id="my-profile-content" className="flex justify-center h-[110vh] md:h-[70vh] pt-[10%] sm:pt-[6%] md:pt-[3%]">
+      <div className="component-content md:w-[35vw] lg:w-[30vw] xl:w-[25vw]">
+      {editOn === 0 ? (
           <>
           <section className="reveal" ref={el => revealingElements.current[0] = el}>
-            <h2 className="mp-heading">Moj profil</h2>
+            <h1 className="mp-heading text-xl md:text-2xl lg:text-3xl mb-3">Moj profil</h1>
 
             <table className="mp-fields">
-              <tbody>
+              <tbody className="text-sm md:text-base">
                 <tr className="mp-fields-field">
                   <td>E-mail</td>
-                  <td>{email}</td>
+                  <td className="font-bold">{email}</td>
                   <td>
                     <button className="mp-field-button" onClick={() => setEditOn(1)}>
                       <img src={icon} alt="uredi"></img>
@@ -63,7 +64,7 @@ function MyProfile() {
                 </tr>
                 <tr className="mp-fields-field">
                   <td>Nadimak</td>
-                  <td>{nickname}</td>
+                  <td className="font-bold">{nickname}</td>
                   <td>
                     <button className="mp-field-button" onClick={() => setEditOn(2)}>
                       <img src={icon} alt="uredi"></img>
@@ -73,7 +74,7 @@ function MyProfile() {
                 </tr>
                 <tr className="mp-fields-field">
                   <td>Lozinka</td>
-                  <td>{password}</td>
+                  <td className="font-bold">{password}</td>
                   <td>
                     <button className="mp-field-button" onClick={(e) => {
                       e.preventDefault();
@@ -87,10 +88,10 @@ function MyProfile() {
               </tbody>
             </table>
 
-            <button className="mp-delete-button">Izbriši profil</button>
+            <button className="mp-delete-button text-base h-[6vh] w-[100%] md:w-[50%]">Izbriši profil</button>
           </section>
         </>
-        ) : editOn == 1 ? (
+        ) : editOn === 1 ? (
           <EditData
             index={1}
             headers={
@@ -108,7 +109,7 @@ function MyProfile() {
               new: "newEmail"
             }}
           />
-        ) : editOn == 2 ? (
+        ) : editOn === 2 ? (
           <EditData
             index={2}
             headers={

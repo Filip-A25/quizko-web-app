@@ -2,6 +2,7 @@ import NavButton from "./NavButton";
 import logo from "../logos/quizko-logo.png";
 import { Link } from "react-router-dom";
 import { useState, Fragment } from "react";
+import "../styles.css";
 
 function NavBar() {
   const [userStatus, setUserStatus] = useState("registered_user");
@@ -16,10 +17,10 @@ function NavBar() {
       <section className="navbar-content-section">
         <div className="logo-section">
           <Link to="/">
-            <img src={logo} height="45px" alt="quizko app logo"></img>
+            <img src={logo} alt="quizko app logo" className="h-9 sm:h-10 lg:h-11"></img>
           </Link>
         </div>
-        <div className="nav-buttons-section">
+        <div className="nav-buttons-section w-[30%] md:w-[72%] lg:w-[50%] xl:w-[40%]">
           {userStatus === "registered_user" || userStatus === "admin_user" ? (
             <Fragment>
               <NavButton index={1} title="Početna" path="/" isContent={true} />

@@ -1,0 +1,143 @@
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* --------------------------------- */
+/* --------- GLOBAL STYLES --------- */
+/* --------------------------------- */
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* -------------------------- */
+/* ---------- MAIN ---------- */
+/* -------------------------- */
+* {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+.page-content {
+  min-height: 100vh;
+  width: 100%;
+  background: rgb(240, 240, 240);
+  position: relative;
+  z-index: 0;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.reveal {
+  transform: translateY(75px);
+  opacity: 0;
+  transition: transform 300ms ease-in-out;
+}
+
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/* -------------------------- */
+/* --------- NAVBAR --------- */
+/* -------------------------- */
+#navbar-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 100vw;
+  background: #e1bf57;
+}
+#navbar-element .navbar-content-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+#navbar-element .navbar-content-section .navlink-element {
+  text-decoration: none;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+#navbar-element .navbar-content-section .logo-section,
+#navbar-element .navbar-content-section .auth-buttons-section {
+  width: 20%;
+}
+#navbar-element .navbar-content-section .logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#navbar-element .navbar-content-section .nav-buttons-section {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(4, 20%);
+  gap: 1%;
+  align-items: center;
+  justify-content: center;
+}
+#navbar-element .navbar-content-section .nav-buttons-section .nav-button {
+  font-family: "Lato", sans-serif;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: none;
+  height: 65%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#navbar-element .navbar-content-section .nav-buttons-section .nav-button .nav-button-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 5%;
+}
+#navbar-element .navbar-content-section .nav-buttons-section .nav-button span {
+  font-weight: 700;
+}
+#navbar-element .navbar-content-section .nav-buttons-section .navlink-active button {
+  color: white;
+  background: #3c3c3c;
+}
+#navbar-element .navbar-content-section .nav-buttons-section .navlink-active button .nav-button-icon {
+  filter: invert(1) brightness(100);
+}
+#navbar-element .navbar-content-section .nav-buttons-section .navlink-inactive button {
+  color: #3c3c3c;
+  background: transparent;
+}
+#navbar-element .navbar-content-section .auth-buttons-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#navbar-element .navbar-content-section .auth-buttons-section .navlink-element {
+  margin-right: 9%;
+}
+#navbar-element .navbar-content-section .auth-buttons-section .auth-button {
+  font-family: "Lato", sans-serif;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: none;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3c3c3c;
+  background: transparent;
+}
+#navbar-element .navbar-content-section .auth-buttons-section .auth-button .nav-button-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 8%;
+}
+#navbar-element .navbar-content-section .auth-buttons-section .auth-button span {
+  font-weight: 700;
+}/*# sourceMappingURL=main-navbar.css.map */

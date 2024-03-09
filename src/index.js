@@ -10,6 +10,7 @@ import MyProfile from "./components/page_content/my_profile/MyProfile";
 import ErrorPage from "./components/ErrorPage";
 import AuthLogin from "./components/page_content/auth_login/AuthLogin";
 import AuthRegister from "./components/page_content/auth_register/AuthRegister";
+import "./styles.css";
 
 const router = createBrowserRouter([
   {

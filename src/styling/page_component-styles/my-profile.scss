@@ -1,0 +1,212 @@
+@import "../global-styles.scss";
+@import "../styling-vars.scss";
+
+/* ---------------------------- */
+/* -------- MY PROFILE -------- */
+/* ---------------------------- */
+
+#my-profile-content {
+  
+    .mp-fields {
+      width: 30vw;
+      height: 20vh;
+  
+      .mp-fields-field {
+  
+        .mp-field-data {
+          width: 30%;
+        }
+        .mp-field-button {
+          @include flexVerticalCentered();
+          background: none;
+          border: none;
+          text-decoration: underline;
+          color: #5774ad;
+          cursor: pointer;
+          img {
+            height: 3vh;
+            filter: invert(42%) sepia(97%) saturate(261%) hue-rotate(181deg)
+              brightness(87%) contrast(89%);
+            transition: all 200ms ease-in-out;
+          }
+          &:hover {
+            img {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+    .mp-delete-button {
+      @include standardButton();
+      background: rgb(191, 16, 16);
+      margin-top: 3vh;
+      position: relative;
+      color: $casual-light-text-color;
+  
+      &::after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        border-radius: inherit;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+      }
+  
+      &::after {
+        background: $main-dark-theme-color;
+        transition: all 150ms ease-in-out;
+      }
+  
+      &:hover::after {
+        top: 4px;
+        left: 4px;
+        transition: all 150ms ease-in-out;
+      } 
+    }
+  }
+  
+  /* ----------------------------- */
+  /* ------ MY PROFILE-FORM ------ */
+  /* ----------------------------- */
+  
+  .component-content {
+    height: 60vh;
+  
+    section {
+      height: 100%;
+    }
+  
+    h1 {
+      @include formHeader();
+    }
+  
+    .mp-edit-form {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 4%;
+  
+      .mp-edit-label {
+        color: black;
+      }
+    
+      .mp-edit-input {
+  
+        .new-password-input-wrap {
+          width: inherit;
+          height: inherit;
+  
+          .error-password-match {
+            position: relative;
+            border: 5px solid black;
+  
+            &::after {
+              @include errorAfterClass("* Lozinke moraju biti iste.");
+            }
+          }
+        }
+  
+        input {
+          @include authFormInput();
+    
+          border: 1px solid #3c3c3c40;
+          background: transparent;
+          padding: 0 2% 0 2%;
+          transition: all 50ms ease-in-out;
+    
+          &:focus {
+            border: 3px solid $main-theme-color;
+            transition: all 50ms ease-in-out;
+          }
+        }
+      }
+  
+      .mp-edit-buttons {
+  
+        .mp-edit-submit {
+          @include standardButton();
+          background: $main-theme-color;
+          position: relative;
+      
+          input {
+            background: transparent;
+            outline: none;
+            border: none;
+            color: $casual-text-color;
+            font-weight: bold;
+            cursor: pointer;
+          }
+  
+          &::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            border-radius: inherit;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+          }
+      
+          &::after {
+            background: $main-dark-theme-color;
+            transition: all 150ms ease-in-out;
+          }
+      
+          &:hover::after {
+            top: 4px;
+            left: 4px;
+            transition: all 150ms ease-in-out;
+          }
+        }
+      
+        .mp-edit-back {
+          @include standardButton();
+          background: rgb(191, 16, 16);
+          position: relative;
+          color: $casual-light-text-color;
+      
+          &::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            border-radius: inherit;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+          }
+      
+          &::after {
+            background: $main-dark-theme-color;
+            transition: all 150ms ease-in-out;
+          }
+      
+          &:hover::after {
+            top: 4px;
+            left: 4px;
+            transition: all 150ms ease-in-out;
+          }
+        }
+      }
+    
+      .mp-edit-forget {
+        @include flexVerticalCentered();
+        gap: 0.3rem;
+        color: black;
+        .mp-edit-forget-text {
+          height: 2vh;
+          font-size: 0.8rem;
+        }
+        .mp-edit-forget-link {
+          font-weight: bolder;
+          align-self: center;
+          height: 2vh;
+          font-size: 0.8rem;
+          color: black;
+        }
+      }
+    }
+  }

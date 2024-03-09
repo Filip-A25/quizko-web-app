@@ -1,0 +1,236 @@
+@charset "UTF-8";
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* --------------------------------- */
+/* --------- GLOBAL STYLES --------- */
+/* --------------------------------- */
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* -------------------------- */
+/* ---------- AUTH ---------- */
+/* -------------------------- */
+#authlogin-content {
+  display: flex;
+  justify-content: center;
+}
+#authlogin-content .al-form-section {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+#authlogin-content .al-form-section h1 {
+  color: #3c3c3c;
+  font-weight: bold;
+}
+#authlogin-content .al-form-section .al-form {
+  display: flex;
+  justify-content: space-between;
+}
+#authlogin-content .al-form-section .al-form label {
+  color: #3c3c3c;
+}
+#authlogin-content .al-form-section .al-form .auth-form-input {
+  height: 6vh;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(60, 60, 60, 0.2509803922);
+  background: transparent;
+  padding: 0 2% 0 2%;
+  transition: all 50ms ease-in-out;
+}
+#authlogin-content .al-form-section .al-form .auth-form-input:focus {
+  border: 3px solid #e1bf57;
+  transition: all 50ms ease-in-out;
+}
+#authlogin-content .al-form-section .al-form .auth-form-submit {
+  font-family: "Lato", sans-serif;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #3c3c3c;
+  position: relative;
+  color: whitesmoke;
+}
+#authlogin-content .al-form-section .al-form .auth-form-submit input {
+  cursor: pointer;
+}
+#authlogin-content .al-form-section .al-form .auth-form-submit::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+#authlogin-content .al-form-section .al-form .auth-form-submit::after {
+  background: #e1bf57;
+  transition: all 150ms ease-in-out;
+}
+#authlogin-content .al-form-section .al-form .auth-form-submit:hover::after {
+  top: 4px;
+  left: 4px;
+  transition: all 150ms ease-in-out;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-empty {
+  position: relative;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-empty::after {
+  content: "* Polje mora biti ispunjeno.";
+  position: absolute;
+  top: 110%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-min {
+  position: relative;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-min::after {
+  content: "* Nadimak ne može biti kraći od 3 znaka.";
+  position: absolute;
+  top: 110%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-max {
+  position: relative;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-max::after {
+  content: "* Nadimak ne može biti duži od 16 znakova.";
+  position: absolute;
+  top: 110%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-spc {
+  position: relative;
+}
+#authlogin-content .al-form-section .al-form .auth-input-err-spc::after {
+  content: "* Nadimak ne može sadržavati posebne znakove.";
+  position: absolute;
+  top: 110%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+}
+#authlogin-content .al-form-section .al-form .forget-password-label {
+  font-size: 0.8rem;
+}
+#authlogin-content .al-form-section .al-form .forget-password-label a {
+  font-weight: bold;
+}
+
+#authregister-content {
+  display: flex;
+  justify-content: center;
+}
+#authregister-content .al-form-section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+#authregister-content .al-form-section h1 {
+  color: #3c3c3c;
+  font-weight: bold;
+}
+#authregister-content .al-form-section .al-form {
+  display: flex;
+  justify-content: space-between;
+}
+#authregister-content .al-form-section .al-form label {
+  color: #3c3c3c;
+}
+#authregister-content .al-form-section .al-form .auth-form-input {
+  height: 6vh;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  border: 1px solid rgba(60, 60, 60, 0.2509803922);
+  background: transparent;
+  padding: 0 2% 0 2%;
+  transition: all 50ms ease-in-out;
+}
+#authregister-content .al-form-section .al-form .auth-form-input:focus {
+  border: 3px solid #e1bf57;
+  transition: all 50ms ease-in-out;
+}
+#authregister-content .al-form-section .al-form .auth-form-submit {
+  font-family: "Lato", sans-serif;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #3c3c3c;
+  position: relative;
+  color: whitesmoke;
+}
+#authregister-content .al-form-section .al-form .auth-form-submit input {
+  cursor: pointer;
+}
+#authregister-content .al-form-section .al-form .auth-form-submit::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+#authregister-content .al-form-section .al-form .auth-form-submit::after {
+  background: #e1bf57;
+  transition: all 150ms ease-in-out;
+}
+#authregister-content .al-form-section .al-form .auth-form-submit:hover::after {
+  top: 4px;
+  left: 4px;
+  transition: all 150ms ease-in-out;
+}
+#authregister-content .al-form-section .al-form .forget-password-label {
+  font-size: 0.8rem;
+}
+#authregister-content .al-form-section .al-form .forget-password-label a {
+  font-weight: bold;
+}
+
+#action-success-message-content {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+}
+#action-success-message-content .asm-section {
+  padding-top: 6%;
+  flex-direction: column;
+}
+#action-success-message-content .asm-section h1 {
+  margin-bottom: 15%;
+}
+#action-success-message-content .asm-section h4 {
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+#action-success-message-content .asm-section .asm-button {
+  background: #3c3c3c;
+  color: white;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  width: 70%;
+}
+#action-success-message-content .asm-section .asm-button .asm-link {
+  text-decoration: none;
+  color: white;
+}/*# sourceMappingURL=auth.css.map */

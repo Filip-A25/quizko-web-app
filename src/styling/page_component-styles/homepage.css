@@ -1,0 +1,75 @@
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* --------------------------------- */
+/* --------- GLOBAL STYLES --------- */
+/* --------------------------------- */
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* ---------------------------- */
+/* --------- HOMEPAGE --------- */
+/* ---------------------------- */
+#homepage-content .hp-homepage-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#homepage-content .hp-homepage-text h1 {
+  color: #3c3c3c;
+}
+#homepage-content .hp-homepage-text h1 .text-coloring {
+  font-weight: bolder;
+  color: #e1bf57;
+  text-shadow: 4px 4px 0px #3c3c3c;
+}
+#homepage-content .hp-feature-info-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#homepage-content .hp-feature-info-section .fi-element {
+  background: rgb(249, 249, 249);
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+#homepage-content .hp-feature-info-section .fi-element::before, #homepage-content .hp-feature-info-section .fi-element::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  top: 6px;
+  left: 6px;
+}
+#homepage-content .hp-feature-info-section .fi-element::before {
+  background: #3c3c3c;
+  transition: all 150ms ease-in-out;
+}
+#homepage-content .hp-feature-info-section .fi-element:hover::before {
+  top: 12px;
+  left: 12px;
+  transition: all 150ms ease-in-out;
+}
+#homepage-content .hp-feature-info-section .fi-element::after {
+  background: #e1bf57;
+}
+#homepage-content .hp-feature-info-section .fi-element section {
+  height: 50%;
+}
+#homepage-content .hp-feature-info-section .fi-element .fi-text-section {
+  padding-left: 20%;
+  padding-right: 20%;
+  text-align: center;
+}
+#homepage-content .hp-feature-info-section .fi-element .fi-text-section span {
+  font-weight: bold;
+  color: #3c3c3c;
+}/*# sourceMappingURL=homepage.css.map */

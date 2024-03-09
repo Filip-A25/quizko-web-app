@@ -1,0 +1,139 @@
+@import "../global-styles.scss";
+@import "../styling-vars.scss";
+
+/* -------------------------- */
+/* ---------- MAIN ---------- */
+/* -------------------------- */
+
+* {
+    box-sizing: border-box;
+    font-family: $main-font-style;
+  }
+  
+  .page-content {
+    min-height: 100vh;
+    width: 100%;
+    background: $background-light-color;
+    position: relative;
+    z-index: 0;
+  }
+  
+  body {
+    margin: 0;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  .reveal {
+    transform: translateY(75px);
+    opacity: 0;
+    transition: transform 300ms ease-in-out;
+  }
+  
+  .reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  
+  /* -------------------------- */
+  /* --------- NAVBAR --------- */
+  /* -------------------------- */
+  
+  #navbar-element {
+    @include flexCentered();
+  
+    height: $navbar-height;
+    width: 100vw;
+    background: $main-theme-color;
+  
+    .navbar-content-section {
+      @include flexVerticalCentered();
+  
+      justify-content: space-between;
+      height: 100%;
+      width: 100%;
+  
+      .navlink-element {
+        text-decoration: none;
+        height: 100%;
+  
+        display: inline-flex;
+        align-items: center;
+      }
+  
+      .logo-section,
+      .auth-buttons-section {
+        width: 20%;
+      }
+  
+      .logo-section {
+        @include flexCentered();
+      }
+  
+      .nav-buttons-section {
+        display: grid;
+        height: 100%;
+        grid-template-columns: repeat(4, 20%);
+        gap: 1%;
+        align-items: center;
+        justify-content: center;
+  
+        .nav-button {
+          @include standardButton(0.9rem, 65%);
+          @include flexCentered();
+  
+          width: 100%;
+  
+          .nav-button-icon {
+            @include buttonIcon(5%);
+          }
+  
+          span {
+            font-weight: 700;
+          }
+        }
+  
+        .navlink-active {
+          button {
+            color: $casual-light-text-color;
+            background: $main-dark-theme-color;
+  
+            .nav-button-icon {
+              filter: invert(1) brightness(100);
+            }
+          }
+        }
+  
+        .navlink-inactive {
+          button {
+            color: $main-dark-theme-color;
+            background: transparent;
+          }
+        }
+      }
+  
+      .auth-buttons-section {
+        @include flexCentered();
+  
+        .navlink-element {
+          margin-right: 9%;
+        }
+  
+        .auth-button {
+          @include standardButton(0.9rem, 100%);
+          @include flexCentered();
+  
+          color: $main-dark-theme-color;
+          background: transparent;
+  
+          .nav-button-icon {
+            @include buttonIcon(8%);
+          }
+  
+          span {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }

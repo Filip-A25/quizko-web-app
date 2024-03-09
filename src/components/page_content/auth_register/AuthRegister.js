@@ -2,6 +2,7 @@ import { useRef, useContext, useEffect, useState, Fragment } from "react";
 import { MainContext } from "../../../MainContent";
 import { Link } from 'react-router-dom';
 import ActionSuccessMessage from "../../ActionSuccessMessage";
+import "../../../styles.css";
 
 function AuthRegister() {
   const { handleElementReveal } = useContext(MainContext);
@@ -50,14 +51,14 @@ function AuthRegister() {
 
   return (
     <Fragment>
-    {!registerSuccess && (<div id="authregister-content">
+    {!registerSuccess && (<div id="authregister-content" className="h-[110vh] md:h-[70vh] pt-[10%] sm:pt-[6%] md:pt-[3%]">
       <section
-        className="al-form-section reveal"
+        className="al-form-section reveal text-left w-[52.5vw] h-[55%] md:h-[95%] sm:w-[45vw] md:w-[35vw] lg:w-[30vw] xl:w-[25vw]"
         ref={(el) => (revealingElements.current[0] = el)}
       >
-        <h1>Registrirajte se</h1>
+        <h1 className="text-xl md:text-2xl lg:text-3xl">Registrirajte se</h1>
         <form
-          className="al-form"
+          className="al-form flex-col text-sm md:text-base h-[87.5%] sm:h-[87.5%] md:h-[85%] lg:w-[90%]"
           onSubmit={(e) => handleRegistration(e, nickname, email, password)}
         >
           <label>Nadimak</label>
@@ -102,13 +103,13 @@ function AuthRegister() {
             }}
             placeholder="Potvrdite svoju lozinku"
           />
-          <input
-            type="submit"
-            className="auth-form-input"
-            id="ar-submit-input"
-            value="Prijavi se"
-          />
-          <label className="already-registered-label">Već imate korisnički račun? <Link to="/prijava">Prijavite se.</Link></label>
+          <button className="auth-form-submit mt-[1.5vh] w-[100%] h-[6vh] md:mt-[1vh] md:h-[6vh]" id="ar-submit-input">
+            <input
+              type="submit"
+              value="Prijavi se"
+            />
+          </button>
+          <label className="forget-password-label">Već imate korisnički račun? <Link to="/prijava">Prijavite se.</Link></label>
         </form>
       </section>
     </div>)}
