@@ -15,12 +15,12 @@ function NavBar({ position }) {
   return (
     <div id="navbar-element" className={`navbar-${position}`}>
       <section className="navbar-content-section">
-        <div className="logo-section">
+        <div className="logo-section pl-2 w-[30%] md:pl-0 md:w-[20%]">
           <Link to="/">
             <img src={logo} alt="quizko app logo" className="h-9 sm:h-10 lg:h-11"></img>
           </Link>
         </div>
-        <div className="nav-buttons-section w-[30%] md:w-[72%] lg:w-[50%] xl:w-[40%]">
+        <div className="nav-buttons-section grid w-[30%] md:w-[72%] lg:w-[50%] xl:w-[40%]">
           {userStatus === "registered_user" || userStatus === "admin_user" ? (
             <Fragment>
               <NavButton index={1} title="Početna" path="/" isContent={true} />

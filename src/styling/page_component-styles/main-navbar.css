@@ -64,17 +64,12 @@ body {
   display: inline-flex;
   align-items: center;
 }
-#navbar-element .navbar-content-section .logo-section,
-#navbar-element .navbar-content-section .auth-buttons-section {
-  width: 20%;
-}
 #navbar-element .navbar-content-section .logo-section {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #navbar-element .navbar-content-section .nav-buttons-section {
-  display: grid;
   height: 100%;
   grid-template-columns: repeat(4, 20%);
   gap: 1%;
@@ -83,15 +78,15 @@ body {
 }
 #navbar-element .navbar-content-section .nav-buttons-section .nav-button {
   font-family: "Lato", sans-serif;
-  font-size: 0.9rem;
   border-radius: 5px;
   border: none;
-  height: 65%;
   cursor: pointer;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 65%;
 }
 #navbar-element .navbar-content-section .nav-buttons-section .nav-button .nav-button-icon {
   height: 16px;
@@ -116,17 +111,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 20%;
 }
 #navbar-element .navbar-content-section .auth-buttons-section .navlink-element {
   margin-right: 9%;
 }
 #navbar-element .navbar-content-section .auth-buttons-section .auth-button {
   font-family: "Lato", sans-serif;
-  font-size: 0.9rem;
   border-radius: 5px;
   border: none;
-  height: 100%;
   cursor: pointer;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;

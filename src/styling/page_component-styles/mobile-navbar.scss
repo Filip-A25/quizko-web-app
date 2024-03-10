@@ -1,0 +1,24 @@
+@import "../global-styles.scss";
+@import "../styling-vars.scss";
+
+/* ----------------------------- */
+/* ------- MOBILE NAVBAR ------- */
+/* ----------------------------- */
+
+#mobile-navbar-element {
+    height: $navbar-height;
+    width: 100vw;
+    background: $main-theme-color;
+
+    .mobile-menu-line {
+        background: $main-dark-theme-color;
+    }
+
+    .mml-top {
+        transform: rotate(45deg) translateY(1.4vh);
+    }
+
+    .mml-bottom {
+        transform: rotate(-45deg) translateY(-1.4vh);
+    }
+}

@@ -1,0 +1,26 @@
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* --------------------------------- */
+/* --------- GLOBAL STYLES --------- */
+/* --------------------------------- */
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* ----------------------------- */
+/* ------- MOBILE NAVBAR ------- */
+/* ----------------------------- */
+#mobile-navbar-element {
+  height: 10vh;
+  width: 100vw;
+  background: #e1bf57;
+}
+#mobile-navbar-element .mobile-menu-line {
+  background: #3c3c3c;
+}
+#mobile-navbar-element .mml-top {
+  transform: rotate(45deg) translateY(1.4vh);
+}
+#mobile-navbar-element .mml-bottom {
+  transform: rotate(-45deg) translateY(-1.4vh);
+}/*# sourceMappingURL=mobile-navbar.css.map */

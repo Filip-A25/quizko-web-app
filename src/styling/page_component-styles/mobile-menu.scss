@@ -1,0 +1,19 @@
+@import "../global-styles.scss";
+@import "../styling-vars.scss";
+
+/* --------------------------- */
+/* ------- MOBILE MENU ------- */
+/* --------------------------- */
+
+#mobile-menu-element {
+    height: calc(100vh - $navbar-height);
+    background: $main-theme-color;
+
+    ul {
+        color: $main-dark-theme-color;
+
+        li {
+            border-bottom: 1px solid #3c3c3c78; 
+        }
+    }
+} 

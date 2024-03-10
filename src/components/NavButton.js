@@ -57,7 +57,7 @@ function NavButton(props) {
     >
       <button className={buttonClass}>
         <img className="nav-button-icon" alt="" src={iconSrc}></img>
-        <span className="nav-button-text">{props.title}</span>
+        <span className="nav-button-text text-sm">{props.title}</span>
       </button>
     </NavLink>
   );

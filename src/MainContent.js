@@ -1,14 +1,18 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { createContext } from "react";
+import { createContext, useState, Fragment, useLayoutEffect } from "react";
 import "./styling/page_component-styles/auth.css";
 import "./styling/page_component-styles/footer.css";
 import "./styling/page_component-styles/homepage.css";
 import "./styling/page_component-styles/main-navbar.css";
 import "./styling/page_component-styles/my-profile.css";
+import "./styling/page_component-styles/mobile-navbar.css";
+import "./styling/page_component-styles/mobile-menu.css";
 import "./styling/global-styles.css";
 import "./styling/styling-vars.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import MobileNavBar from "./components/MobileNavBar";
+import MobileMenu from "./components/MobileMenu";
 
 const MainContext = createContext();
 
@@ -36,6 +40,40 @@ function MainContent() {
     }
   };
 
+  const [opened, openMenu] = useState(false);
+  const [mobileSize, setMobileSize] = useState(false);
+
+  const [topAnimatedClass, setTopAnimatedClass] = useState("mobile-menu-line w-[100%] h-[6%] rounded-[5px] transition-transform");
+  const [bottomAnimatedClass, setBottomAnimatedClass] = useState("mobile-menu-line w-[100%] h-[6%] rounded-[5px] transition-transform");
+  const [midAnimatedClass, setMidAnimatedClass] = useState("mobile-menu-line w-[100%] h-[6%] rounded-[5px]");
+
+  const handleMenuDisplay = () => {
+    const display = opened ? false : true;
+    openMenu(display);
+  }
+
+  const handleAnimateButton = () => {
+    console.log(opened);
+    if (!opened) {
+      setTopAnimatedClass(topAnimatedClass + " mml-top");
+      setBottomAnimatedClass(bottomAnimatedClass + " mml-bottom");
+      setMidAnimatedClass("hidden");
+    } else {
+      setTopAnimatedClass("mobile-menu-line w-[100%] h-[6%] rounded-[5px] transition-transform");
+      setBottomAnimatedClass("mobile-menu-line w-[100%] h-[6%] rounded-[5px] transition-transform");
+      setMidAnimatedClass("mobile-menu-line w-[100%] h-[6%] rounded-[5px]");
+    }
+  }
+
+  useLayoutEffect(() => {
+    if (window.innerWidth < 768) setMobileSize(true);
+  })
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth < 768 && !mobileSize) setMobileSize(true);
+    if (window.innerWidth >= 768 && mobileSize) setMobileSize(false);
+  });
+
   const location = useLocation();
 
   const isSidebarPage = [
@@ -46,15 +84,23 @@ function MainContent() {
 
   return (
     <div className={`page-content ${isSidebarPage ? "sidebar" : ""}`}>
-      {isSidebarPage ? (
+      <MainContext.Provider value={{ handleElementReveal, handleMenuDisplay, handleAnimateButton, topAnimatedClass, bottomAnimatedClass, midAnimatedClass, setTopAnimatedClass, setBottomAnimatedClass }}>
+      {isSidebarPage && !mobileSize ? (
         <NavBar position="sidebar" />
-      ) : (
+      ) : !isSidebarPage && !mobileSize ? (
         <NavBar position="top" />
+      ) : (
+        <MobileNavBar />
       )}
-      <MainContext.Provider value={{ handleElementReveal }}>
-        <Outlet />
+        {opened ? (
+          <MobileMenu />
+        ) : (
+          <Fragment>
+            <Outlet />
+            <Footer />
+          </Fragment>
+        )}
       </MainContext.Provider>
-      <Footer />
     </div>
   );
 }
