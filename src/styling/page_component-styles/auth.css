@@ -78,50 +78,6 @@
   left: 4px;
   transition: all 150ms ease-in-out;
 }
-#authlogin-content .al-form-section .al-form .auth-input-err-empty {
-  position: relative;
-}
-#authlogin-content .al-form-section .al-form .auth-input-err-empty::after {
-  content: "* Polje mora biti ispunjeno.";
-  position: absolute;
-  top: 110%;
-  left: 0;
-  color: red;
-  font-size: 0.8rem;
-}
-#authlogin-content .al-form-section .al-form .auth-input-err-min {
-  position: relative;
-}
-#authlogin-content .al-form-section .al-form .auth-input-err-min::after {
-  content: "* Nadimak ne može biti kraći od 3 znaka.";
-  position: absolute;
-  top: 110%;
-  left: 0;
-  color: red;
-  font-size: 0.8rem;
-}
-#authlogin-content .al-form-section .al-form .auth-input-err-max {
-  position: relative;
-}
-#authlogin-content .al-form-section .al-form .auth-input-err-max::after {
-  content: "* Nadimak ne može biti duži od 16 znakova.";
-  position: absolute;
-  top: 110%;
-  left: 0;
-  color: red;
-  font-size: 0.8rem;
-}
-#authlogin-content .al-form-section .al-form .auth-input-err-spc {
-  position: relative;
-}
-#authlogin-content .al-form-section .al-form .auth-input-err-spc::after {
-  content: "* Nadimak ne može sadržavati posebne znakove.";
-  position: absolute;
-  top: 110%;
-  left: 0;
-  color: red;
-  font-size: 0.8rem;
-}
 #authlogin-content .al-form-section .al-form .forget-password-label {
   font-size: 0.8rem;
 }
@@ -233,4 +189,121 @@
 #action-success-message-content .asm-section .asm-button .asm-link {
   text-decoration: none;
   color: white;
+}
+
+.auth-input-err-empty {
+  position: relative;
+}
+.auth-input-err-empty::after {
+  content: "* Polje mora biti ispunjeno.";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.auth-input-err-min {
+  position: relative;
+}
+.auth-input-err-min::after {
+  content: "* Unesite ispravnu e-mail adresu.";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.auth-input-err-spc {
+  position: relative;
+}
+.auth-input-err-spc::after {
+  content: "* Nesipravna e-mail adresa.";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.password-auth-input-err-spc {
+  position: relative;
+}
+.password-auth-input-err-spc::after {
+  content: "* Lozinka mora sadržavati barem jedno veliko slovo i jedan znak ili broj.";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.password-auth-input-err-min {
+  position: relative;
+}
+.password-auth-input-err-min::after {
+  content: "* Lozinka mora sadržavati minimalno 6 znakova.";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.password-auth-input-err-max {
+  position: relative;
+}
+.password-auth-input-err-max::after {
+  content: "* Lozinka ne smije sadržavati više od 24 znaka.";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.nick-auth-input-err-min {
+  position: relative;
+}
+.nick-auth-input-err-min::after {
+  content: "* Nadimak mora sadržavati minimalno 3 znaka.";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.nick-auth-input-err-max {
+  position: relative;
+}
+.nick-auth-input-err-max::after {
+  content: "* Nadimak ne smije sadržavati više od 16 znakova.";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.nick-auth-input-err-spc {
+  position: relative;
+}
+.nick-auth-input-err-spc::after {
+  content: "* Nadimak ne smije sadržavati posebne znakove.";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+  line-height: 1;
 }/*# sourceMappingURL=auth.css.map */

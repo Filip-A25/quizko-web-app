@@ -73,42 +73,6 @@
           }
         }
   
-        .auth-input-err-empty {
-          position: relative;
-  
-          &::after {
-            @include errorAfterClass("* Polje mora biti ispunjeno.");
-          }
-        }
-  
-        .auth-input-err-min {
-          position: relative;
-  
-          &::after {
-            @include errorAfterClass("* Nadimak ne može biti kraći od 3 znaka.");
-          }
-        }
-  
-        .auth-input-err-max {
-          position: relative;
-  
-          &::after {
-            @include errorAfterClass(
-              "* Nadimak ne može biti duži od 16 znakova."
-            );
-          }
-        }
-  
-        .auth-input-err-spc {
-          position: relative;
-  
-          &::after {
-            @include errorAfterClass(
-              "* Nadimak ne može sadržavati posebne znakove."
-            );
-          }
-        }
-  
         .forget-password-label {
           font-size: 0.8rem;
 
@@ -228,5 +192,94 @@
           color: $casual-light-text-color;
         }
       }
+    }
+  }
+
+
+
+
+  .auth-input-err-empty {
+    position: relative;
+
+    &::after {
+      @include errorAfterClass("* Polje mora biti ispunjeno.");
+    }
+  }
+
+  .auth-input-err-min {
+    position: relative;
+
+    &::after {
+      @include errorAfterClass("* Unesite ispravnu e-mail adresu.");
+    }
+  }
+
+  .auth-input-err-spc {
+    position: relative;
+
+    &::after {
+      @include errorAfterClass(
+        "* Nesipravna e-mail adresa."
+      );
+    }
+  }
+
+  .password-auth-input-err-spc {
+    position: relative;
+
+    &::after {
+      @include errorAfterClass(
+        "* Lozinka mora sadržavati barem jedno veliko slovo i jedan znak ili broj."
+      );
+    }
+  }
+
+  .password-auth-input-err-min {
+    position: relative;
+
+    &::after {
+      @include errorAfterClass(
+        "* Lozinka mora sadržavati minimalno 6 znakova."
+      );
+    }
+  }
+
+  .password-auth-input-err-max {
+    position: relative;
+
+    &::after {
+      @include errorAfterClass(
+        "* Lozinka ne smije sadržavati više od 24 znaka."
+      );
+    }
+  }
+
+  .nick-auth-input-err-min {
+    position: relative;
+
+    &::after {
+      @include errorAfterClass(
+        "* Nadimak mora sadržavati minimalno 3 znaka."
+      );
+    }
+  }
+
+  .nick-auth-input-err-max {
+    position: relative;
+
+    &::after {
+      @include errorAfterClass(
+        "* Nadimak ne smije sadržavati više od 16 znakova."
+      );
+    }
+  }
+
+  .nick-auth-input-err-spc {
+    position: relative;
+
+    &::after {
+      @include errorAfterClass(
+        "* Nadimak ne smije sadržavati posebne znakove."
+      );
     }
   }

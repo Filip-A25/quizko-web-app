@@ -5,14 +5,10 @@ import ActionSuccessMessage from "../../ActionSuccessMessage";
 import "../../../styles.css";
 
 function AuthRegister() {
-  const { handleElementReveal } = useContext(MainContext);
+  const {handleElementReveal, nickWrapClass, emailWrapClass, passwordWrapClass, handleNicknameCheck, handleEmailCheck, handlePasswordCheck} = useContext(MainContext);
   const revealingElements = useRef([]);
   const [registerSuccess, setRegisterSuccess] = useState(false);
-
-  //state elements
   const [nickname, setNickname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   //handle reveal animation
   useEffect(() => {
@@ -27,86 +23,69 @@ function AuthRegister() {
     };
   }, []);
 
-  const handleRegistration = (e, nickname, email, password) => {
-    //replace with post req logic
+  const handleRegisterSubmit = (e) => {
     e.preventDefault();
-    const specialCharsNameFormat = /[ `!#@$%^&*()_+\-=\[\]{};':"\\|,<>\/?~]/;
-    const specialCharsEmailFormat = /[ `!#$%^&*()_+\-=\[\]{};':"\\|,<>\/?~]/;
+    setNickname(e.target[0].value);
 
-    const trimmedNickname = nickname.replace(/\s/g, "");
-    const trimmedEmail = email.replace(/\s/g, "");
+    const nickCheck = handleNicknameCheck(e.target[0].value);
+    const emailCheck = handleEmailCheck(e.target[1].value);
+    const passwordCheck = handlePasswordCheck(e.target[2].value);
+    if (!nickCheck || !emailCheck || !passwordCheck) return; 
 
-    if (!specialCharsNameFormat.test(trimmedNickname)) {
-      if (trimmedNickname === "") console.log("Error: Polje nadimak mora biti ispunjeno.");
-      else if (trimmedNickname !== "" && trimmedNickname.length < 3) console.log("Error: Nadimak ne smije biti kraći od 3 znaka.");
-      else if (trimmedNickname !== "" && trimmedNickname.length > 16) console.log("Error: Nadimak ne smije biti duži od 16 znakova.");
-      else console.log(`Uneseni nadimak ${nickname} odgovara kriterijima.`);
-    } else console.log("Nadimak ne smije sadržavati posebne znakove.");
-
-    if (!specialCharsEmailFormat.test(trimmedEmail)) {
-      if (trimmedEmail === "") console.log("Error: Polje e-mail mora biti ispunjeno.");
-      else console.log(`Uneseni e-mail ${email} odgovara kriterijima.`);
-    } else console.log("E-mail ne smije sadržavati posebne znakove.");
+    if (e.target[2].value !== e.target[3].value) console.log("Error: Lozinke moraju biti iste.");
+    setRegisterSuccess(true);
   }
 
   return (
     <Fragment>
-    {!registerSuccess && (<div id="authregister-content" className="h-[110vh] md:h-[70vh] pt-[10%] sm:pt-[6%] md:pt-[3%]">
+    {!registerSuccess && (<div id="authregister-content" className="h-[110vh] md:h-[75vh] pt-[10%] sm:pt-[6%] md:pt-[3%]">
       <section
-        className="al-form-section reveal text-left w-[52.5vw] h-[55%] md:h-[95%] sm:w-[45vw] md:w-[35vw] lg:w-[30vw] xl:w-[25vw]"
+        className="al-form-section reveal text-left w-[52.5vw] h-[55%] md:h-[100%] sm:w-[45vw] md:w-[35vw] lg:w-[30vw] xl:w-[25vw]"
         ref={(el) => (revealingElements.current[0] = el)}
       >
         <h1 className="text-xl md:text-2xl lg:text-3xl">Registrirajte se</h1>
         <form
-          className="al-form flex-col text-sm md:text-base h-[87.5%] sm:h-[87.5%] md:h-[85%] lg:w-[90%]"
-          onSubmit={(e) => handleRegistration(e, nickname, email, password)}
+          className="al-form flex-col text-sm md:text-base h-[87.5%] sm:h-[87.5%] md:h-[90%] lg:w-[90%]"
+          onSubmit={(e) => handleRegisterSubmit(e)}
         >
           <label>Nadimak</label>
-          <input
-            type="text"
-            className="auth-form-input"
-            id="ar-firstname-input"
-            onChange={(e) => {
-              setNickname(e.target.value);
-            }}
-            placeholder="Unesite svoje ime"
-          />
+          <div className={nickWrapClass}>
+            <input
+              type="text"
+              className="auth-form-input"
+              id="ar-firstname-input"
+              placeholder="Unesite svoje ime"
+            />
+          </div>
           <label>E-mail</label>
-          <input
-            type="email"
-            className="auth-form-input"
-            id="ar-email-nick-input"
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            placeholder="Unesite svoj e-mail"
-          />
+          <div className={emailWrapClass}>
+            <input
+              type="email"
+              className="auth-form-input"
+              id="ar-email-nick-input"
+              placeholder="Unesite svoj e-mail"
+            />
+          </div>
           <label>Lozinka</label>
-          <input
-            type="password"
-            className="auth-form-input"
-            id="ar-password-input"
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            placeholder="Unesite svoju lozinku"
-          />
+          <div className={passwordWrapClass}>
+            <input
+              type="password"
+              className="auth-form-input"
+              id="ar-password-input"
+              placeholder="Unesite svoju lozinku"
+            />
+          </div>
           <label>Potvrdi lozinku</label>
           <input
             type="password"
             className="auth-form-input"
             id="ar-confirm-password-input"
-            onChange={(e) => {
-              if (e.target.value !== password) {
-                console.log("Passwords don't match");
-              }
-            }}
             placeholder="Potvrdite svoju lozinku"
           />
           <button className="auth-form-submit mt-[1.5vh] w-[100%] h-[6vh] md:mt-[1vh] md:h-[6vh]" id="ar-submit-input">
             <input
               type="submit"
-              value="Prijavi se"
+              value="Registriraj se"
             />
           </button>
           <label className="forget-password-label">Već imate korisnički račun? <Link to="/prijava">Prijavite se.</Link></label>

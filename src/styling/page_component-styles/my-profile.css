@@ -97,7 +97,7 @@
 .component-content .mp-edit-form .mp-edit-input .new-password-input-wrap .error-password-match::after {
   content: "* Lozinke moraju biti iste.";
   position: absolute;
-  top: 110%;
+  top: 100%;
   left: 0;
   color: red;
   font-size: 0.8rem;

@@ -72,8 +72,9 @@
 @mixin errorAfterClass($error-message) {
   content: $error-message;
   position: absolute;
-  top: 110%;
+  top: 100%;
   left: 0;
   color: red;
   font-size: 0.8rem;
+  line-height: 1;
 }

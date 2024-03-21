@@ -19,7 +19,11 @@ function CreateQuiz() {
 
   return (
     <div id="create-quiz-content">
-      <div className="component-content"></div>
+      <div className="component-content">
+        <section className="">
+          
+        </section>
+      </div>
     </div>
   );
 }
