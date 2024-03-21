@@ -4,37 +4,37 @@ import SideButton from "./SideButton";
 
 function Sidebar() {
     return (
-        <div id="sidebar-element" className="group absolute left-0 h-screen w-[5vw] hover:w-[15vw] bg-[#E1BF57] transition-all">
-            <header className="flex justify-center items-center h-12">
+        <div id="sidebar-element" className="group absolute left-0 h-screen w-[5vw] hover:w-[18vw] bg-[#E1BF57] transition-all duration-250 ease-in-out">
+            <header className="flex justify-center items-center group-hover:items-end h-12 group-hover:h-20">
                 <NavLink to="/">
-                    <img src={logo} alt="Quizko App Logo" className="h-5"></img>
+                    <img src={logo} alt="Quizko App Logo" className="h-5 group-hover:h-14 transition-[height] duration-250 ease-in-out"></img>
                 </NavLink>
             </header>
-            <nav className="flex flex-col mt-32">
+            <nav className="flex flex-col mt-32 group-hover:mt-24">
                 <SideButton
                     index={1}
                     title="Početna"
-                    path="/"
+                    path="/naslovnica"
                 />
                 <SideButton
                     index={2}
-                    title="Početna"
-                    path="/"
+                    title="Kreiraj kviz"
+                    path="/kreiraj-kviz"
                 />
                 <SideButton
                     index={3}
-                    title="Početna"
-                    path="/"
+                    title="Moji kvizovi"
+                    path="/moji-kvizovi"
                 />
                 <SideButton
                     index={4}
-                    title="Početna"
-                    path="/"
+                    title="Moj profil"
+                    path="/moj-profil"
                 />
                 <SideButton
                     index={5}
-                    title="Početna"
-                    path="/"
+                    title="Odjava"
+                    path="/naslovnica"
                 />
             </nav>
         </div>

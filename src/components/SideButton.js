@@ -33,8 +33,8 @@ function SideButton(props) {
 
     return (
         <NavLink to={props.path}>
-            <button className="h-14 w-full flex justify-center items-center transition-all">
-                <img src={iconSrc} alt={props.title} className="h-6 group-hover:mr-3"></img>
+            <button className="h-14 w-full flex justify-center group-hover:justify-start items-center transition-all  group-hover:px-7">
+                <img src={iconSrc} alt={props.title} className="h-6 group-hover:mr-5"></img>
                 <span className="hidden group-hover:inline-block transition-all">{props.title}</span>
             </button>
         </NavLink>
