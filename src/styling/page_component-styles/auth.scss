@@ -254,6 +254,16 @@
     }
   }
 
+  .password-auth-input-err-dif {
+    position: relative;
+
+    &::after {
+      @include errorAfterClass(
+        "* Lozinke se moraju biti iste."
+      );
+    }
+  }
+
   .nick-auth-input-err-min {
     position: relative;
 

@@ -269,6 +269,19 @@
   line-height: 1;
 }
 
+.password-auth-input-err-dif {
+  position: relative;
+}
+.password-auth-input-err-dif::after {
+  content: "* Lozinke se moraju biti iste.";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: red;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
 .nick-auth-input-err-min {
   position: relative;
 }

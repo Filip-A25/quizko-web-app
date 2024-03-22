@@ -30,7 +30,7 @@ function Footer() {
       <section className="logo-section order-1 md:order-3 md:w-[40%] lg:w-[35%] xl:w-[30%] 2xl:w-[30%]">
         <div className="logo-flexbox items-center flex flex-col md:flex-row md:justify-center md:items-center md:w-[80%] lg:w-[75%] xl:w-[70%] 2xl:w-[60%]">
           <img src={editLogo} className="edit-logo w-fit" alt="edit logo"></img>
-          <small>Ekonomsko društvo informacijskih tehnologija</small>
+          <small className="hidden md:inline">Ekonomsko društvo informacijskih tehnologija</small>
         </div>
       </section>
     </div>

@@ -132,10 +132,6 @@ function MainContent() {
         setPasswordWrapClass("auth-input-err-empty");
         console.log("Error: Polje mora biti ispunjeno.");
         return false;
-    } else if (format.test(password) && password.length >= 6 && password.length <= 24) {
-        setPasswordWrapClass("password-auth-input-err-spc");
-        console.log("Error: Lozinka mora sadržavati barem jedno veliko slovo i jedan znak ili broj.");
-        return false;
     } else if (password.length <= 6) {
         setPasswordWrapClass("password-auth-input-err-min");
         console.log("Error: Lozinka mora sadržavati minimalno 6 znakova.");
@@ -144,9 +140,13 @@ function MainContent() {
         setPasswordWrapClass("password-auth-input-err-max");
         console.log("Error: Lozinka mora sadržavati maksimalno 24 znaka.");
         return false;
+    } else if (!format.test(password)) {
+      setPasswordWrapClass("password-auth-input-err-spc");
+      console.log("Error: Lozinka mora sadržavati barem jedno veliko slovo i jedan znak ili broj.");
+      return false;
     } else {
-        console.log("Success: Uspješno unesena lozinka.");
-        return true;
+      console.log("Success: Uspješno unesena lozinka.");
+      return true;
     }
   }
 

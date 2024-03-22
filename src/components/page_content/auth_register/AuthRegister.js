@@ -6,6 +6,7 @@ import "../../../styles.css";
 
 function AuthRegister() {
   const {handleElementReveal, nickWrapClass, emailWrapClass, passwordWrapClass, handleNicknameCheck, handleEmailCheck, handlePasswordCheck} = useContext(MainContext);
+  const [confirmWrapClass, setConfirmWrapClass] = useState("");
   const revealingElements = useRef([]);
   const [registerSuccess, setRegisterSuccess] = useState(false);
   const [nickname, setNickname] = useState("");
@@ -32,7 +33,11 @@ function AuthRegister() {
     const passwordCheck = handlePasswordCheck(e.target[2].value);
     if (!nickCheck || !emailCheck || !passwordCheck) return; 
 
-    if (e.target[2].value !== e.target[3].value) console.log("Error: Lozinke moraju biti iste.");
+    if (e.target[2].value !== e.target[3].value) {
+      setConfirmWrapClass("password-auth-input-err-dif");
+      console.log("Error: Lozinke moraju biti iste.");
+      return;
+    }
     setRegisterSuccess(true);
   }
 
@@ -76,12 +81,14 @@ function AuthRegister() {
             />
           </div>
           <label>Potvrdi lozinku</label>
-          <input
-            type="password"
-            className="auth-form-input"
-            id="ar-confirm-password-input"
-            placeholder="Potvrdite svoju lozinku"
-          />
+          <div className={confirmWrapClass}>
+            <input
+              type="password"
+              className="auth-form-input"
+              id="ar-confirm-password-input"
+              placeholder="Potvrdite svoju lozinku"
+            />
+          </div>
           <button className="auth-form-submit mt-[1.5vh] w-[100%] h-[6vh] md:mt-[1vh] md:h-[6vh]" id="ar-submit-input">
             <input
               type="submit"

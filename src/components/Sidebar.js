@@ -14,7 +14,7 @@ function Sidebar() {
                 <SideButton
                     index={1}
                     title="Početna"
-                    path="/naslovnica"
+                    path="/"
                 />
                 <SideButton
                     index={2}

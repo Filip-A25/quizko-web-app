@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     element: <MainContent />,
     errorElement: <ErrorPage />,
     children: [{
-      path: "/naslovnica",
+      path: "/",
       element: <Homepage />
     },
     {
