@@ -17,7 +17,11 @@ function NavBar({ position }) {
       <section className="navbar-content-section">
         <div className="logo-section pl-2 w-[30%] md:pl-0 md:w-[20%]">
           <Link to="/">
-            <img src={logo} alt="quizko app logo" className="h-9 sm:h-10 lg:h-11"></img>
+            <img
+              src={logo}
+              alt="quizko app logo"
+              className="h-9 sm:h-10 lg:h-11"
+            ></img>
           </Link>
         </div>
         <div className="nav-buttons-section grid w-[30%] md:w-[72%] lg:w-[50%] xl:w-[40%]">
@@ -63,7 +67,12 @@ function NavBar({ position }) {
             </Fragment>
           )}
           {userStatus === "registered_user" || userStatus === "admin_user" ? (
-            <NavButton index={7} title="Odjava" path="/naslovnica" isContent={false} />
+            <NavButton
+              index={7}
+              title="Odjava"
+              path="/prijava"
+              isContent={false}
+            />
           ) : null}
         </div>
       </section>

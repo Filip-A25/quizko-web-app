@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainContent from "./MainContent";
 import Homepage from "./components/page_content/homepage/Homepage";
 import CreateQuiz from "./components/page_content/create_quiz/CreateQuiz";
@@ -17,40 +17,40 @@ const router = createBrowserRouter([
     path: "/",
     element: <MainContent />,
     errorElement: <ErrorPage />,
-    children: [{
-      path: "/",
-      element: <Homepage />
-    },
-    {
-      path: "/kreiraj-kviz",
-      element: <CreateQuiz />
-    },
-    {
-      path: "/moji-kvizovi",
-      element: <MyQuizzes />
-    },
-    {
-      path: "/moj-profil",
-      element: <MyProfile />
-    },
-    {
-      path: "/prijava",
-      element: <AuthLogin />
-    },
-    {
-      path: "/registracija",
-      element: <AuthRegister />
-    }
-  ]
-  }
+    children: [
+      {
+        path: "/",
+        element: <Homepage />,
+      },
+      {
+        path: "/kreiraj-kviz",
+        element: <CreateQuiz />,
+      },
+      {
+        path: "/moji-kvizovi",
+        element: <MyQuizzes />,
+      },
+      {
+        path: "/moj-profil",
+        element: <MyProfile />,
+      },
+      {
+        path: "/prijava",
+        element: <AuthLogin />,
+      },
+      {
+        path: "/registracija",
+        element: <AuthRegister />,
+      },
+    ],
+  },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
-
 
 reportWebVitals();
