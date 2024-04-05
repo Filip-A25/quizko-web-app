@@ -104,11 +104,9 @@
   line-height: 1;
 }
 .component-content .mp-edit-form .mp-edit-input input {
-  height: 6vh;
-  width: 100%;
   border-radius: 5px;
   outline: none;
-  border: none;
+  width: 100%;
   border: 1px solid rgba(60, 60, 60, 0.2509803922);
   background: transparent;
   padding: 0 2% 0 2%;

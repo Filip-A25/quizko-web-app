@@ -32,11 +32,7 @@
   color: #3c3c3c;
 }
 #authlogin-content .al-form-section .al-form .auth-form-input {
-  height: 6vh;
   width: 100%;
-  border-radius: 5px;
-  outline: none;
-  border: none;
   border: 1px solid rgba(60, 60, 60, 0.2509803922);
   background: transparent;
   padding: 0 2% 0 2%;
@@ -106,11 +102,7 @@
   color: #3c3c3c;
 }
 #authregister-content .al-form-section .al-form .auth-form-input {
-  height: 6vh;
   width: 100%;
-  border-radius: 5px;
-  outline: none;
-  border: none;
   border: 1px solid rgba(60, 60, 60, 0.2509803922);
   background: transparent;
   padding: 0 2% 0 2%;

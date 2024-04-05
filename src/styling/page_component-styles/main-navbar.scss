@@ -35,6 +35,10 @@ body {
   opacity: 1;
 }
 
+.component-content {
+  background: $background-light-color;
+}
+
 /* -------------------------- */
 /* --------- NAVBAR --------- */
 /* -------------------------- */
@@ -131,6 +135,24 @@ body {
           font-weight: 700;
         }
       }
+    }
+  }
+}
+
+
+
+/* ----------------------------- */
+/* ---------- SIDEBAR ---------- */
+/* ----------------------------- */
+
+
+.navlink-active {
+  button {
+    color: $casual-light-text-color;
+    background: $main-dark-theme-color;
+
+    .sbar-button-icon {
+      filter: invert(1) brightness(100);
     }
   }
 }

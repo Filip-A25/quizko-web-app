@@ -5,3 +5,62 @@
 /* ------- CREATE QUIZ ------- */
 /* --------------------------- */
 
+#create-quiz-content {
+
+    form {
+        textarea, input {
+            border: 1px solid #3c3c3c40;
+            background: transparent;
+            padding: 0 2% 0 2%;
+            transition: all 50ms ease-in-out;
+    
+            &:focus {
+              border: 3px solid $main-theme-color;
+              transition: all 50ms ease-in-out;
+            }
+        }
+
+        input {
+            @include authFormInput();
+        }
+
+        textarea {
+            @include authFormInput();
+        }
+    }
+
+    button {
+        @include standardButton();
+        position: relative;
+
+        &::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            border-radius: inherit;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+            transition: all 150ms ease-in-out;
+        }
+      
+        &:hover::after {
+        top: 4px;
+        left: 4px;
+        transition: all 150ms ease-in-out;
+        }
+    }
+
+    #img-load-button {
+        &::after {
+            background: $main-dark-theme-color;
+        }
+    }
+
+    #next-button {
+        &::after {
+            background: $main-theme-color;
+        }
+    }
+}

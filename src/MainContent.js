@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { createContext, useState, Fragment, useLayoutEffect } from "react";
 import "./styling/page_component-styles/auth.css";
+import "./styling/page_component-styles/create-quiz.css";
 import "./styling/page_component-styles/footer.css";
 import "./styling/page_component-styles/homepage.css";
 import "./styling/page_component-styles/main-navbar.css";
@@ -159,14 +160,14 @@ function MainContent() {
   ].includes(location.pathname);
 
   return (
-    <div className={`page-content ${isSidebarPage ? "sidebar" : ""}`}>
+    <div className="page-content">
       <MainContext.Provider value={{ handleElementReveal, handleMenuDisplay, handleAnimateButton, topAnimatedClass, bottomAnimatedClass,
       midAnimatedClass, setTopAnimatedClass, setBottomAnimatedClass, handleNicknameCheck, handleEmailCheck, handlePasswordCheck,
       nickWrapClass, emailWrapClass, passwordWrapClass }}>
       {isSidebarPage && !mobileSize ? (
-        <NavBar position="sidebar" />
+        <Sidebar />
       ) : !isSidebarPage && !mobileSize ? (
-        <NavBar position="top" />
+        <NavBar />
       ) : (
         <MobileNavBar />
       )}
@@ -175,10 +176,11 @@ function MainContent() {
         ) : (
           <Fragment>
             <Outlet />
-            <Footer />
+            {!isSidebarPage && (
+              <Footer />
+            )}
           </Fragment>
         )}
-        {/*<Sidebar />*/}
       </MainContext.Provider>
     </div>
   );

@@ -40,6 +40,10 @@ body {
   opacity: 1;
 }
 
+.component-content {
+  background: rgb(240, 240, 240);
+}
+
 /* -------------------------- */
 /* --------- NAVBAR --------- */
 /* -------------------------- */
@@ -135,4 +139,15 @@ body {
 }
 #navbar-element .navbar-content-section .auth-buttons-section .auth-button span {
   font-weight: 700;
+}
+
+/* ----------------------------- */
+/* ---------- SIDEBAR ---------- */
+/* ----------------------------- */
+.navlink-active button {
+  color: white;
+  background: #3c3c3c;
+}
+.navlink-active button .sbar-button-icon {
+  filter: invert(1) brightness(100);
 }/*# sourceMappingURL=main-navbar.css.map */

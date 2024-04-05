@@ -71,13 +71,13 @@ function MyProfile() {
     >
       <div
         id="my-profile-content"
-        className="flex justify-center h-[110vh] md:h-[70vh] pt-[10%] sm:pt-[6%] md:pt-[3%]"
+        className="flex h-screen w-screen md:w-[88vw] lg:w-[84vw] absolute right-0"
       >
-        <div className="component-content md:w-[35vw] lg:w-[30vw] xl:w-[25vw]">
+        <div className="component-content flex justify-center md:block h-full w-full md:ml-72 md:w-[35vw] lg:w-[30vw] xl:w-[25vw]">
           {editOn === 0 ? (
             <>
               <section
-                className="reveal"
+                className="reveal flex flex-col pt-24 md:pt-[25%] w-3/4 sm:w-2/5 md:w-full"
                 ref={(el) => (revealingElements.current[0] = el)}
               >
                 <h1 className="mp-heading text-xl md:text-2xl lg:text-3xl mb-3">
@@ -131,8 +131,8 @@ function MyProfile() {
                   </tbody>
                 </table>
 
-                <button className="mp-delete-button text-base h-[6vh] w-[100%] md:w-[50%]">
-                  Izbriši profil
+                <button className="mp-delete-button text-base h-[6vh] w-[60%] md:w-[50%]">
+                  Deaktiviraj profil
                 </button>
               </section>
             </>

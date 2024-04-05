@@ -26,8 +26,7 @@
         }
   
         .auth-form-input {
-          @include authFormInput();
-
+          width: 100%;
           border: 1px solid #3c3c3c40;
           background: transparent;
           padding: 0 2% 0 2%;
@@ -105,8 +104,7 @@
         }
   
         .auth-form-input {
-          @include authFormInput();
-  
+          width: 100%;
           border: 1px solid #3c3c3c40;
           background: transparent;
           padding: 0 2% 0 2%;

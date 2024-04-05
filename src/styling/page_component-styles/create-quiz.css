@@ -9,4 +9,52 @@
 /* ------------------------- */
 /* --------------------------- */
 /* ------- CREATE QUIZ ------- */
-/* --------------------------- *//*# sourceMappingURL=create-quiz.css.map */
+/* --------------------------- */
+#create-quiz-content form textarea, #create-quiz-content form input {
+  border: 1px solid rgba(60, 60, 60, 0.2509803922);
+  background: transparent;
+  padding: 0 2% 0 2%;
+  transition: all 50ms ease-in-out;
+}
+#create-quiz-content form textarea:focus, #create-quiz-content form input:focus {
+  border: 3px solid #e1bf57;
+  transition: all 50ms ease-in-out;
+}
+#create-quiz-content form input {
+  border-radius: 5px;
+  outline: none;
+}
+#create-quiz-content form textarea {
+  border-radius: 5px;
+  outline: none;
+}
+#create-quiz-content button {
+  font-family: "Lato", sans-serif;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+}
+#create-quiz-content button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  transition: all 150ms ease-in-out;
+}
+#create-quiz-content button:hover::after {
+  top: 4px;
+  left: 4px;
+  transition: all 150ms ease-in-out;
+}
+#create-quiz-content #img-load-button::after {
+  background: #3c3c3c;
+}
+#create-quiz-content #next-button::after {
+  background: #e1bf57;
+}/*# sourceMappingURL=create-quiz.css.map */

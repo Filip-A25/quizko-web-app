@@ -51,11 +51,8 @@
 }
 
 @mixin authFormInput() {
-  height: $auth-input-height;
-  width: 100%;
   border-radius: 5px;
   outline: none;
-  border: none;
 }
 
 @mixin formSubmit() {
