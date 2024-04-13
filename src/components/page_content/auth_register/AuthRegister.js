@@ -50,14 +50,14 @@ function AuthRegister() {
       >
         <h1 className="text-xl md:text-2xl lg:text-3xl">Registrirajte se</h1>
         <form
-          className="al-form flex-col text-sm md:text-base h-[87.5%] sm:h-[87.5%] md:h-[90%] lg:w-[90%]"
+          className="al-form flex-col text-sm md:text-base h-[87.5%] sm:h-[87.5%] md:h-[80%] lg:w-[90%] pt-4"
           onSubmit={(e) => handleRegisterSubmit(e)}
         >
           <label>Nadimak</label>
           <div className={nickWrapClass}>
             <input
               type="text"
-              className="auth-form-input"
+              className="auth-form-input h-10"
               id="ar-firstname-input"
               placeholder="Unesite svoje ime"
             />
@@ -66,7 +66,7 @@ function AuthRegister() {
           <div className={emailWrapClass}>
             <input
               type="email"
-              className="auth-form-input"
+              className="auth-form-input h-10"
               id="ar-email-nick-input"
               placeholder="Unesite svoj e-mail"
             />
@@ -75,7 +75,7 @@ function AuthRegister() {
           <div className={passwordWrapClass}>
             <input
               type="password"
-              className="auth-form-input"
+              className="auth-form-input h-10"
               id="ar-password-input"
               placeholder="Unesite svoju lozinku"
             />
@@ -84,7 +84,7 @@ function AuthRegister() {
           <div className={confirmWrapClass}>
             <input
               type="password"
-              className="auth-form-input"
+              className="auth-form-input h-10"
               id="ar-confirm-password-input"
               placeholder="Potvrdite svoju lozinku"
             />

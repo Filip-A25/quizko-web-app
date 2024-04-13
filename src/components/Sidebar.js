@@ -34,7 +34,7 @@ function Sidebar() {
                 <SideButton
                     index={5}
                     title="Odjava"
-                    path="/naslovnica"
+                    path="/"
                 />
             </nav>
         </div>

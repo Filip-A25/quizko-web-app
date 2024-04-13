@@ -14,8 +14,8 @@ function MyProfile() {
   const revealingElements = useRef([]);
 
   //profile fields
-  const [email, setEmail] = useState("");
-  const [nickname, setNickname] = useState("");
+  const [email, setEmail] = useState("dummy@dummy.com");
+  const [nickname, setNickname] = useState("hat");
   const [password, setPassword] = useState("");
 
   //modal state

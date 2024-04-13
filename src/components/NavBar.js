@@ -70,7 +70,7 @@ function NavBar({ position }) {
             <NavButton
               index={7}
               title="Odjava"
-              path="/prijava"
+              path="/"
               isContent={false}
             />
           ) : null}
