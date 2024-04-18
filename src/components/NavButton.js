@@ -42,7 +42,9 @@ function NavButton(props) {
         setIconSrc(logOutIcon);
         break;
       default:
-        console.log(`Icon for an element with index ${props.index} doesn't exist.`);
+        console.log(
+          `Icon for an element with index ${props.index} doesn't exist.`
+        );
     }
   }, []);
 
@@ -55,7 +57,7 @@ function NavButton(props) {
           : "navlink-element navlink-inactive";
       }}
     >
-      <button className={buttonClass}>
+      <button className={buttonClass} onClick={props.onClick}>
         <img className="nav-button-icon" alt="" src={iconSrc}></img>
         <span className="nav-button-text text-sm">{props.title}</span>
       </button>

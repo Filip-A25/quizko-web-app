@@ -1,4 +1,4 @@
-import { get, post, put, remove } from "./api_base";
+import { get, post, put, remove, patch } from "./api_base";
 
 const getMyProfile = async () => {
   try {

@@ -1,7 +1,7 @@
 import NavButton from "./NavButton";
 import logo from "../logos/quizko-logo.png";
 import { Link } from "react-router-dom";
-import { useState, Fragment } from "react";
+import { useState, Fragment, useEffect } from "react";
 import "../styles.css";
 
 function NavBar({ position }) {
@@ -11,6 +11,23 @@ function NavBar({ position }) {
     unregistered_user - neregistrirani korisnik
     registered user - registrirani korisnik
   */
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const checkLoggedInStatus = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  };
+
+  useEffect(() => {
+    checkLoggedInStatus();
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+  };
 
   return (
     <div id="navbar-element" className={`navbar-${position}`}>
@@ -66,12 +83,13 @@ function NavBar({ position }) {
               />
             </Fragment>
           )}
-          {userStatus === "registered_user" || userStatus === "admin_user" ? (
+          {isLoggedIn === true ? (
             <NavButton
               index={7}
               title="Odjava"
-              path="/prijava"
               isContent={false}
+              onClick={handleLogout}
+              path="/prijava"
             />
           ) : null}
         </div>

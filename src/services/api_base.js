@@ -36,9 +36,18 @@ const remove = async (url) => {
   return await axios.delete(`${BASE_URL}${url}`, { headers: headers });
 };
 
+const patch = async (url, data) => {
+  const headers = {
+    Accept: "application/json",
+    "Content-type": "application/json",
+    Authorization: getToken(),
+  };
+  return await axios.patch(`${BASE_URL}${url}`, data, { headers: headers });
+};
+
 const getToken = () => {
   const token = localStorage.getItem("token");
   return token ? `Bearer ${token}` : "";
 };
 
-export { get, post, put, remove, getToken };
+export { get, post, put, remove, getToken, patch };

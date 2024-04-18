@@ -1,6 +1,6 @@
 import { useRef, useContext, useEffect, useState } from "react";
 import { MainContext } from "../../../MainContent";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../../styles.css";
 import { handleLogin } from "../../../services/api_user";
 
@@ -18,6 +18,8 @@ function AuthLogin() {
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     handleElementReveal(revealingElements);
@@ -39,6 +41,7 @@ function AuthLogin() {
       const resp = await handleLogin(loginData);
       const data = resp.data;
       localStorage.setItem("token", JSON.stringify(data.token));
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -91,7 +94,7 @@ function AuthLogin() {
             className="auth-form-submit mt-[1.5vh] w-[100%] h-[6vh] md:mt-[2vh] md:h-[6vh]"
             id="al-submit-input"
           >
-            <input type="submit" value="Prijavi se" />
+            <input type="submit" value="Prijavi se" onClick={handleLogin} />
           </button>
           <label className="forget-password-label">
             Zaboravili ste nadimak ili lozinku?{" "}
