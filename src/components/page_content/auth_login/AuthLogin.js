@@ -73,7 +73,7 @@ function AuthLogin() {
             <input
               name="email"
               type="email"
-              className="auth-form-input"
+              className="auth-form-input h-10"
               id="al-email-nick-input"
               placeholder="Unesite svoju e-mail adresu"
               onChange={handleChange}
@@ -84,7 +84,7 @@ function AuthLogin() {
             <input
               name="password"
               type="password"
-              className="auth-form-input"
+              className="auth-form-input h-10"
               id="al-password-input"
               placeholder="Unesite svoju lozinku"
               onChange={handleChange}

@@ -87,9 +87,9 @@ function NavBar({ position }) {
             <NavButton
               index={7}
               title="Odjava"
+              path="/"
               isContent={false}
               onClick={handleLogout}
-              path="/prijava"
             />
           ) : null}
         </div>

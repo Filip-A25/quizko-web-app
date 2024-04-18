@@ -87,7 +87,6 @@
 }
 #authregister-content .al-form-section {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
 }
 #authregister-content .al-form-section h1 {

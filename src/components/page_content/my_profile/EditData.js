@@ -33,9 +33,9 @@ function EditData(props) {
     }
     
     return (
-        <section ref={el => revealingElements.current[0] = el}>
+        <section ref={el => revealingElements.current[0] = el} className="pt-20 md:pt-32">
             <h1 className="text-xl md:text-2xl lg:text-3xl">{props.headers.h1}</h1>
-            <form className="mp-edit-form flex-col text-sm md:text-base h-[75%] md:h-[78%] lg:h-[75%] lg:w-[100%]">
+            <form className="mp-edit-form flex-col text-sm md:text-base h-[60%] md:h-[55%] lg:h-[50%] lg:w-[100%]">
                 <label className="mp-edit-label" htmlFor={props.ids.old}>
                     {props.headers.old}
                 </label>
@@ -46,6 +46,7 @@ function EditData(props) {
                         placeholder={props.placeholders.old}
                         id={props.ids.old}
                         name={props.ids.old}
+                        className="h-10"
                     />
                 ) : (
                     <input
@@ -56,6 +57,7 @@ function EditData(props) {
                         onChange={(e) => {
                             setPassword(e.target.value);
                         }}
+                        className="h-10"
                     />
                 )}
                 </div>
@@ -69,6 +71,7 @@ function EditData(props) {
                         placeholder={props.placeholders.new}
                         id={props.ids.new}
                         name={props.ids.new}
+                        className="h-10"
                     />
                 ) : (
                     <input
@@ -79,6 +82,7 @@ function EditData(props) {
                         onChange={(e) => {
                             setNewPassword(e.target.value);
                         }}
+                        className="h-10"
                     />
                 )}
                 {editOn === 3 && (
@@ -91,6 +95,7 @@ function EditData(props) {
                             onChange={(e) => {
                                 checkPasswordMatch(e);
                             }}
+                            className="h-10"
                         />
                     </div>
                 )}
