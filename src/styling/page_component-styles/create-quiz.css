@@ -52,6 +52,30 @@
   left: 4px;
   transition: all 150ms ease-in-out;
 }
+#create-quiz-content .submit-btn {
+  font-family: "Lato", sans-serif;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+}
+#create-quiz-content .submit-btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  transition: all 150ms ease-in-out;
+}
+#create-quiz-content .submit-btn:hover::after {
+  top: 4px;
+  left: 4px;
+  transition: all 150ms ease-in-out;
+}
 #create-quiz-content #img-load-button::after {
   background: #3c3c3c;
 }

@@ -157,6 +157,8 @@ function MainContent() {
     "/moji-kvizovi",
     "/moj-profil",
     "/kreiraj-kviz",
+    "/kreiraj-kviz/nova-runda",
+    "/kreiraj-kviz/novo-pitanje"
   ].includes(location.pathname);
 
   return (
