@@ -34,11 +34,11 @@ const CreateQuiz_Rounds = () => {
       </div>
       <form className="flex flex-col w-1/4">
         <label>Kategorija runde (opcionalno)</label>
-        <input type="text" />
+        <input type="text" placeholder="Upišite naziv" />
         <label>Timer za pitanja u sekundama</label>
-        <input type="number" />
+        <input type="number" placeholder="Upišite vrijeme" />
         <label>Broj pitanja</label>
-        <input type="number" />
+        <input type="number" placeholder="Unesite broj" />
         <label>Vrsta odgovora</label>
         <input type="radio" />
         <label>2 ponuđena odgovora</label>

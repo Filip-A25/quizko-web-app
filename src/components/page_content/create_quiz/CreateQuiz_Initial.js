@@ -62,6 +62,7 @@ const CreateQuiz_Initial = () => {
           >
             Učitaj sliku
           </button>
+          {/*need to change this button to <input type="file"/> and update styling as well as text value for it */}
         </section>
       </section>
     </>

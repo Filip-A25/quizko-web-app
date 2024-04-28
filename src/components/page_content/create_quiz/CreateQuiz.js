@@ -28,21 +28,39 @@ function CreateQuiz() {
         {page === 2 && <CreateQuiz_Rounds />}
         {page === 3 && <CreateQuiz_Questions />}
       </div>
-      <div className="buttons">
+      <div className="buttons flex self-end pr-40 pb-20 gap-3">
         {page === 2 || page === 3 ? (
-          <button onClick={handleBack}>Nazad</button>
+          <button
+            onClick={handleBack}
+            className="bg-[#4D4D4D] w-36 h-10 p-2 rounded-md mt-6 text-white"
+          >
+            Nazad
+          </button>
         ) : (
           ""
         )}
-        {page === 2 && <button>Dodaj runde</button>}
+        {page === 2 && (
+          <button className="bg-[#e1bf57] w-36 h-10 p-2 rounded-md mt-6">
+            Dodaj rundu
+          </button>
+        )}
         {page === 3 && (
           <>
-            <button>Odbaci kviz</button>
-            <button>Spremi kviz</button>
+            <button className="bg-[#A10000] w-36 h-10 p-2 rounded-md mt-6 text-white">
+              Odbaci kviz
+            </button>
+            <button className="bg-[#e1bf57] w-36 h-10 p-2 rounded-md mt-6">
+              Spremi kviz
+            </button>
           </>
         )}
         {page === 1 || page === 2 ? (
-          <button onClick={handleClick}>Dalje</button>
+          <button
+            onClick={handleClick}
+            className="bg-[#4D4D4D] w-36 h-10 p-2 rounded-md mt-6 text-white"
+          >
+            Dalje
+          </button>
         ) : (
           ""
         )}

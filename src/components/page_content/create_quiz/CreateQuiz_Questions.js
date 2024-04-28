@@ -4,6 +4,7 @@ import arrowLeft from "../../../icons/arrow-left.svg";
 import arrowRight from "../../../icons/arrow-right.svg";
 import checkSign from "../../../icons/check-sign.svg";
 import checkSignGreen from "../../../icons/check-sign-green.svg";
+import placeholderImage from "../../../icons/placeholder-image.png";
 
 const CreateQuiz_Questions = () => {
   const [roundNum, setRoundNum] = useState(1);
@@ -63,27 +64,32 @@ const CreateQuiz_Questions = () => {
       </div>
       <form>
         <label>Pitanje</label>
-        <input type="text" />
-        <label>Broj bodova za pitanje (opcionalno)</label>
-        <input type="number" />
+        <input type="text" placeholder="Unesite pitanje" />
         <h3>Odgovori</h3>
-        <input type="text" />
+        <input type="text" placeholder="Upišite odgovor" />
         <button>
           <img src={checkSign} alt="check" className="h-7" />
         </button>
-        <input type="text" />
+        <input type="text" placeholder="Upišite odgovor" />
         <button>
           <img src={checkSign} alt="check" className="h-7" />
         </button>
-        <input type="text" />
+        <input type="text" placeholder="Upišite odgovor" />
         <button>
           <img src={checkSign} alt="check" className="h-7" />
         </button>
-        <input type="text" />
+        <input type="text" placeholder="Upišite odgovor" />
         <button>
           <img src={checkSign} alt="check" className="h-7" />
         </button>
       </form>
+      <label>Broj bodova za pitanje (opcionalno)</label>
+      <input type="number" placeholder="Unesite broj" />
+      <p>*ako ne unesete broj bodova pitanje nosi 1 bod</p>
+      <img src={placeholderImage} alt="placeholder" />
+      <button className="bg-[#e1bf57] w-36 h-10 p-2 rounded-md mt-6">
+        Učitaj sliku
+      </button>
     </div>
   );
 };

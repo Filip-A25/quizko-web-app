@@ -40,7 +40,8 @@ function AuthLogin() {
     try {
       const resp = await handleLogin(loginData);
       const data = resp.data;
-      localStorage.setItem("token", JSON.stringify(data.token));
+      console.log(data.token);
+      localStorage.setItem("token", data.token);
       navigate("/");
     } catch (error) {
       console.log(error);

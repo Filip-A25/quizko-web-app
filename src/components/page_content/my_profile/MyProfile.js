@@ -58,6 +58,10 @@ function MyProfile() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    fetchData();
+  }, [editOn]);
+
   return (
     <ProfileContext.Provider
       value={{

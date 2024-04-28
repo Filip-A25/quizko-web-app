@@ -11,6 +11,8 @@ import ErrorPage from "./components/ErrorPage";
 import AuthLogin from "./components/page_content/auth_login/AuthLogin";
 import AuthRegister from "./components/page_content/auth_register/AuthRegister";
 import "./styles.css";
+import { StartQuiz } from "./components/page_content/start_quiz/StartQuiz";
+import { Display_Quiz } from "./components/page_content/start_quiz/Display_Quiz";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
       {
         path: "/moji-kvizovi",
         element: <MyQuizzes />,
+      },
+      {
+        path: "/moji-kvizovi/kviz/:quizId",
+        element: <StartQuiz />,
+      },
+      {
+        path: "/pokreni-kviz/:quizId",
+        element: <Display_Quiz />,
       },
       {
         path: "/moj-profil",
