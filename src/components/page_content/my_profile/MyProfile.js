@@ -6,6 +6,8 @@ import "../../../styles.css";
 //import icon
 import icon from "../../../icons/editIcon.svg";
 import { getMyProfile } from "../../../services/api_user";
+import { isLabelWithInternallyDisabledControl } from "@testing-library/user-event/dist/utils";
+import { Skeleton } from "../../../Skeleton";
 
 const ProfileContext = createContext();
 
@@ -14,9 +16,10 @@ function MyProfile() {
   const revealingElements = useRef([]);
 
   //profile fields
-  const [email, setEmail] = useState("dummy@dummy.com");
-  const [nickname, setNickname] = useState("hat");
+  const [email, setEmail] = useState("");
+  const [nickname, setNickname] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   //modal state
   const [editOn, setEditOn] = useState(0);
@@ -42,23 +45,24 @@ function MyProfile() {
     };
   }, [handleElementReveal, editOn]);
 
-  const fetchData = async () => {
-    try {
-      const resp = await getMyProfile();
-      console.log(resp);
-      setEmail(resp.email);
-      setPassword(resp.password);
-      setNickname(resp.username);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
-    fetchData();
-  }, []);
+    const fetchData = async () => {
+      setIsLoading(true);
+      console.log("isLoading === true");
+      try {
+        const resp = await getMyProfile();
+        console.log(resp);
+        setEmail(resp.email);
+        setPassword(resp.password);
+        setNickname(resp.username);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        console.log("Is Loading === false");
+        setIsLoading(false);
+      }
+    };
 
-  useEffect(() => {
     fetchData();
   }, [editOn]);
 
@@ -87,12 +91,16 @@ function MyProfile() {
                 <h1 className="mp-heading text-xl md:text-2xl lg:text-3xl mb-3">
                   Moj profil
                 </h1>
-
                 <table className="mp-fields">
                   <tbody className="text-sm md:text-base">
                     <tr className="mp-fields-field">
                       <td>E-mail</td>
-                      <td className="font-bold">{email}</td>
+                      {isLoading ? (
+                        <Skeleton field="td" width="full" height="[.5rem]" />
+                      ) : (
+                        <td className="font-bold">{email}</td>
+                      )}
+
                       <td>
                         <button
                           className="mp-field-button"
@@ -105,7 +113,12 @@ function MyProfile() {
                     </tr>
                     <tr className="mp-fields-field">
                       <td>Nadimak</td>
-                      <td className="font-bold">{nickname}</td>
+                      {isLoading ? (
+                        <Skeleton field="td" width="full" height="[.5rem]" />
+                      ) : (
+                        <td className="font-bold">{nickname}</td>
+                      )}
+
                       <td>
                         <button
                           className="mp-field-button"
@@ -118,7 +131,12 @@ function MyProfile() {
                     </tr>
                     <tr className="mp-fields-field">
                       <td>Lozinka</td>
-                      <td className="font-bold">{password}</td>
+                      {isLoading ? (
+                        <Skeleton field="td" width="full" height="[.5rem]" />
+                      ) : (
+                        <td className="font-bold">{password}</td>
+                      )}
+
                       <td>
                         <button
                           className="mp-field-button"
@@ -134,7 +152,6 @@ function MyProfile() {
                     </tr>
                   </tbody>
                 </table>
-
                 <button className="mp-delete-button text-base h-[6vh] w-[60%] md:w-[50%]">
                   Deaktiviraj profil
                 </button>

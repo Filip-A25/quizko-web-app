@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import arrowLeft from "../../../icons/arrow-left.svg";
 import arrowRight from "../../../icons/arrow-right.svg";
 import { getAllCategories } from "../../../services/api_categories";
+import { Skeleton } from "../../../Skeleton";
 
 function MyQuizzes() {
   const { handleElementReveal } = useContext(MainContext);
@@ -15,6 +16,7 @@ function MyQuizzes() {
   const [originalQuizzes, setOriginalQuizzes] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const revealingElements = useRef([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     handleElementReveal(revealingElements);
@@ -29,12 +31,15 @@ function MyQuizzes() {
   }, []);
 
   const fetchData = async () => {
+    setIsLoading(true);
     try {
       const quizzesData = await getAllQuizzes();
       setQuizzes([...quizzesData]);
       setOriginalQuizzes([...quizzesData]);
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -85,18 +90,22 @@ function MyQuizzes() {
             ))}
           </select>
         </div>
-        <ul className="grid lg:grid-cols-2 lg:grid-rows-3 gap-10 w-full md:grid-cols-1 sm:grid-cols-1 sm:mb-10">
-          {quizzes.map((quizz) => (
-            <li key={quizz.id} className="flex justify-center align-center">
-              <Quizz
-                id={quizz.id}
-                name={quizz.name}
-                description={quizz.description}
-                imgSrc={quizz.image}
-              />
-            </li>
-          ))}
-        </ul>
+        {isLoading ? (
+          <Skeleton field="ul" />
+        ) : (
+          <ul className="grid lg:grid-cols-2 lg:grid-rows-3 gap-10 w-full md:grid-cols-1 sm:grid-cols-1 sm:mb-10">
+            {quizzes.map((quizz) => (
+              <li key={quizz.id} className="flex justify-center align-center">
+                <Quizz
+                  id={quizz.id}
+                  name={quizz.name}
+                  description={quizz.description}
+                  imgSrc={quizz.image}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
         <div className="flex self-center bg-white rounded-xl my-5 gap-5">
           <button>
             <img className="w-10 h-10" src={arrowLeft} alt="left" />

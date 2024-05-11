@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAllQuestionsForRound } from "../../../services/api_quizzes";
 import { useNavigate } from "react-router-dom";
+import { Skeleton } from "../../../Skeleton";
 
 export const Question = ({
   currQuestion,
@@ -15,6 +16,7 @@ export const Question = ({
   const [correctAnwer, setCorrectAnswer] = useState("");
   const [answers, setAnswers] = useState([]);
   const [isCorrAnswerDisplay, setIsCorrAnswerDisplay] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -33,9 +35,15 @@ export const Question = ({
   }, [currQuestion, questionsData]);
 
   const fetchDataForNextQuestion = async (nextQuestion) => {
-    const resp = await getAllQuestionsForRound(nextQuestion, roundId);
-    console.log(resp);
-    setQuestions([...resp]);
+    setIsLoading(true);
+    try {
+      const resp = await getAllQuestionsForRound(nextQuestion, roundId);
+      console.log(resp);
+      setQuestions([...resp]);
+    } catch (error) {
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleNextQuestion = () => {
@@ -88,6 +96,8 @@ export const Question = ({
             );
           })}
         </div>
+      ) : isLoading ? (
+        <Skeleton field="question-div" width="1/2" />
       ) : (
         <div className="self-start mt-10 w-full h-90vh">
           {questionsData.map((question) => {
@@ -122,7 +132,10 @@ export const Question = ({
                   <button className="bg-[#E1BF57] w-36 h-10 p-2 rounded-md mt-6">
                     Uredi ljestvicu
                   </button>
-                  <button className="bg-[#A10000] text-white w-36 h-10 p-2 rounded-md mt-6">
+                  <button
+                    className="bg-[#A10000] text-white w-36 h-10 p-2 rounded-md mt-6"
+                    onClick={() => navigate("/moji-kvizovi")}
+                  >
                     Izlaz
                   </button>
                 </div>
