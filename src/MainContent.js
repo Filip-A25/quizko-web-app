@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { createContext, useState, Fragment, useLayoutEffect } from "react";
 import "./styling/page_component-styles/auth.css";
 import "./styling/page_component-styles/create-quiz.css";
@@ -19,6 +19,7 @@ import Sidebar from "./components/Sidebar";
 const MainContext = createContext();
 
 function MainContent() {
+  const navigate = useNavigate();
   /*
   "Otkrivanje" elemenata stranice prilikom scrollanja ili loadanja stranice (elementi koji se "otkrivaju" imaju klasu "reveal").
   Ako koristis funkciju prilikom loadanja vise elemenata u redu ili u sectionu, stavi "reveal" klasu u section, ne u pojedinacni element!!
@@ -45,14 +46,20 @@ function MainContent() {
   const [opened, openMenu] = useState(false);
   const [mobileSize, setMobileSize] = useState(false);
 
-  const [topAnimatedClass, setTopAnimatedClass] = useState("mobile-menu-line w-[100%] h-[6%] rounded-[5px] transition-transform");
-  const [bottomAnimatedClass, setBottomAnimatedClass] = useState("mobile-menu-line w-[100%] h-[6%] rounded-[5px] transition-transform");
-  const [midAnimatedClass, setMidAnimatedClass] = useState("mobile-menu-line w-[100%] h-[6%] rounded-[5px]");
+  const [topAnimatedClass, setTopAnimatedClass] = useState(
+    "mobile-menu-line w-[100%] h-[6%] rounded-[5px] transition-transform"
+  );
+  const [bottomAnimatedClass, setBottomAnimatedClass] = useState(
+    "mobile-menu-line w-[100%] h-[6%] rounded-[5px] transition-transform"
+  );
+  const [midAnimatedClass, setMidAnimatedClass] = useState(
+    "mobile-menu-line w-[100%] h-[6%] rounded-[5px]"
+  );
 
   const handleMenuDisplay = () => {
     const display = opened ? false : true;
     openMenu(display);
-  }
+  };
 
   const handleAnimateButton = () => {
     if (!opened) {
@@ -60,15 +67,19 @@ function MainContent() {
       setBottomAnimatedClass(bottomAnimatedClass + " mml-bottom");
       setMidAnimatedClass("hidden");
     } else {
-      setTopAnimatedClass("mobile-menu-line w-[100%] h-[6%] rounded-[5px] transition-transform");
-      setBottomAnimatedClass("mobile-menu-line w-[100%] h-[6%] rounded-[5px] transition-transform");
+      setTopAnimatedClass(
+        "mobile-menu-line w-[100%] h-[6%] rounded-[5px] transition-transform"
+      );
+      setBottomAnimatedClass(
+        "mobile-menu-line w-[100%] h-[6%] rounded-[5px] transition-transform"
+      );
       setMidAnimatedClass("mobile-menu-line w-[100%] h-[6%] rounded-[5px]");
     }
-  }
+  };
 
   useLayoutEffect(() => {
     if (window.innerWidth < 768) setMobileSize(true);
-  })
+  });
 
   window.addEventListener("resize", () => {
     if (window.innerWidth < 768 && !mobileSize) setMobileSize(true);
@@ -78,6 +89,8 @@ function MainContent() {
   const [nickWrapClass, setNickWrapClass] = useState("");
   const [emailWrapClass, setEmailWrapClass] = useState("");
   const [passwordWrapClass, setPasswordWrapClass] = useState("");
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Kod za hendlanje upisanog nicka, emaila i passworda:
   const handleNicknameCheck = (nickname) => {
@@ -105,51 +118,54 @@ function MainContent() {
       console.log("Success: Uspješno unesen nadimak.");
       return true;
     }
-  } 
+  };
 
   const handleEmailCheck = (email) => {
-    const format = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const format =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-    const trimmedValue = email.replace(/\s/g, ""); 
-    
+    const trimmedValue = email.replace(/\s/g, "");
+
     if (trimmedValue === "") {
-        setEmailWrapClass("auth-input-err-empty");
-        console.log("Error: Polje mora biti ispunjeno.");
-        return false;
+      setEmailWrapClass("auth-input-err-empty");
+      console.log("Error: Polje mora biti ispunjeno.");
+      return false;
     } else if (!format.test(trimmedValue)) {
-        setEmailWrapClass("auth-input-err-spc");
-        console.log("Error: Neispravna e-mail adresa.");
-        return false;
+      setEmailWrapClass("auth-input-err-spc");
+      console.log("Error: Neispravna e-mail adresa.");
+      return false;
     } else {
-        console.log("Success: Uspješno unesena e-mail adresa.");
-        return true;
+      console.log("Success: Uspješno unesena e-mail adresa.");
+      return true;
     }
-  }
+  };
 
   const handlePasswordCheck = (password) => {
-    const format = new RegExp("^(?=.*[A-Z])(?=.*[0-9\W])(?!.*\s).+$");
-        
+    const format = new RegExp("^(?=.*[A-Z])(?=.*[0-9W])(?!.*s).+$");
+
     if (password === "") {
-        setPasswordWrapClass("auth-input-err-empty");
-        console.log("Error: Polje mora biti ispunjeno.");
-        return false;
+      setPasswordWrapClass("auth-input-err-empty");
+      console.log("Error: Polje mora biti ispunjeno.");
+      return false;
     } else if (password.length <= 6) {
-        setPasswordWrapClass("password-auth-input-err-min");
-        console.log("Error: Lozinka mora sadržavati minimalno 6 znakova.");
-        return false;
+      setPasswordWrapClass("password-auth-input-err-min");
+      console.log("Error: Lozinka mora sadržavati minimalno 6 znakova.");
+      return false;
     } else if (password.length >= 24) {
-        setPasswordWrapClass("password-auth-input-err-max");
-        console.log("Error: Lozinka mora sadržavati maksimalno 24 znaka.");
-        return false;
+      setPasswordWrapClass("password-auth-input-err-max");
+      console.log("Error: Lozinka mora sadržavati maksimalno 24 znaka.");
+      return false;
     } else if (!format.test(password)) {
       setPasswordWrapClass("password-auth-input-err-spc");
-      console.log("Error: Lozinka mora sadržavati barem jedno veliko slovo i jedan znak ili broj.");
+      console.log(
+        "Error: Lozinka mora sadržavati barem jedno veliko slovo i jedan znak ili broj."
+      );
       return false;
     } else {
       console.log("Success: Uspješno unesena lozinka.");
       return true;
     }
-  }
+  };
 
   const location = useLocation();
 
@@ -157,30 +173,47 @@ function MainContent() {
     "/moji-kvizovi",
     "/moj-profil",
     "/kreiraj-kviz",
+    "/kreiraj-kviz/",
     "/kreiraj-kviz/nova-runda",
     "/kreiraj-kviz/novo-pitanje"
   ].includes(location.pathname);
 
   return (
     <div className="page-content">
-      <MainContext.Provider value={{ handleElementReveal, handleMenuDisplay, handleAnimateButton, topAnimatedClass, bottomAnimatedClass,
-      midAnimatedClass, setTopAnimatedClass, setBottomAnimatedClass, handleNicknameCheck, handleEmailCheck, handlePasswordCheck,
-      nickWrapClass, emailWrapClass, passwordWrapClass }}>
-      {isSidebarPage && !mobileSize ? (
-        <Sidebar />
-      ) : !isSidebarPage && !mobileSize ? (
-        <NavBar />
-      ) : (
-        <MobileNavBar />
-      )}
+      <MainContext.Provider
+        value={{
+          handleElementReveal,
+          handleMenuDisplay,
+          handleAnimateButton,
+          topAnimatedClass,
+          bottomAnimatedClass,
+          midAnimatedClass,
+          setTopAnimatedClass,
+          setBottomAnimatedClass,
+          handleNicknameCheck,
+          handleEmailCheck,
+          handlePasswordCheck,
+          nickWrapClass,
+          emailWrapClass,
+          passwordWrapClass,
+          navigate,
+          isLoggedIn,
+          setIsLoggedIn
+        }}
+      >
+        {isSidebarPage && !mobileSize ? (
+          <Sidebar />
+        ) : !isSidebarPage && !mobileSize ? (
+          <NavBar />
+        ) : (
+          <MobileNavBar />
+        )}
         {opened ? (
           <MobileMenu />
         ) : (
           <Fragment>
             <Outlet />
-            {!isSidebarPage && (
-              <Footer />
-            )}
+            {!isSidebarPage && <Footer />}
           </Fragment>
         )}
       </MainContext.Provider>

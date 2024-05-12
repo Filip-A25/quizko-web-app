@@ -5,7 +5,7 @@ import "../../../styles.css";
 
 //import icon
 import icon from "../../../icons/editIcon.svg";
-import { getMyProfile } from "../../../services/api_user";
+import { getMyProfile } from "../../../services/API_User";
 
 const ProfileContext = createContext();
 

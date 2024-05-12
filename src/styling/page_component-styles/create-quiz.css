@@ -10,13 +10,25 @@
 /* --------------------------- */
 /* ------- CREATE QUIZ ------- */
 /* --------------------------- */
-#create-quiz-content form textarea, #create-quiz-content form input {
+#create-quiz-content .date-input, #create-quiz-content .time-input, #create-quiz-content .question-point-input {
+  border-radius: 5px;
+  outline: none;
   border: 1px solid rgba(60, 60, 60, 0.2509803922);
   background: transparent;
   padding: 0 2% 0 2%;
   transition: all 50ms ease-in-out;
 }
-#create-quiz-content form textarea:focus, #create-quiz-content form input:focus {
+#create-quiz-content .date-input:focus, #create-quiz-content .time-input:focus, #create-quiz-content .question-point-input:focus {
+  border: 3px solid #e1bf57;
+  transition: all 50ms ease-in-out;
+}
+#create-quiz-content form input, #create-quiz-content form textarea {
+  border: 1px solid rgba(60, 60, 60, 0.2509803922);
+  background: transparent;
+  padding: 0 2% 0 2%;
+  transition: all 50ms ease-in-out;
+}
+#create-quiz-content form input:focus, #create-quiz-content form textarea:focus {
   border: 3px solid #e1bf57;
   transition: all 50ms ease-in-out;
 }

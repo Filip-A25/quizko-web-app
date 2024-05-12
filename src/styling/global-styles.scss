@@ -75,3 +75,15 @@
   font-size: 0.8rem;
   line-height: 1;
 }
+
+@mixin formInput() {
+  border: 1px solid #3c3c3c40;
+  background: transparent;
+  padding: 0 2% 0 2%;
+  transition: all 50ms ease-in-out;
+
+  &:focus {
+    border: 3px solid $main-theme-color;
+    transition: all 50ms ease-in-out;
+  }
+}

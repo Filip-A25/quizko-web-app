@@ -6,287 +6,273 @@
 /* -------------------------- */
 
 #authlogin-content {
-    @include flexHorizontalCentered();
-  
-    .al-form-section {
-      display: flex;
-      justify-content: space-around;
-      flex-direction: column;
-  
-      h1 {
-        @include formHeader();
-      }
-  
-      .al-form {  
-        display: flex;
-        justify-content: space-between;
-  
-        label {
-          color: $casual-text-color;
-        }
-  
-        .auth-form-input {
-          width: 100%;
-          border: 1px solid #3c3c3c40;
-          background: transparent;
-          padding: 0 2% 0 2%;
-          transition: all 50ms ease-in-out;
-  
-          &:focus {
-            border: 3px solid $main-theme-color;
-            transition: all 50ms ease-in-out;
-          }
-        }
+  @include flexHorizontalCentered();
 
-        .auth-form-submit {
-          @include standardButton();
+  .al-form-section {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 
-          background: $main-dark-theme-color;
-          position: relative;
-          color: whitesmoke;
-
-          input {
-            cursor: pointer;
-          }
-
-          &::after {
-            content: "";
-            z-index: -1;
-            position: absolute;
-            border-radius: inherit;
-            height: 100%;
-            width: 100%;
-            top: 0px;
-            left: 0px;
-          }
-      
-          &::after {
-            background: $main-theme-color;
-            transition: all 150ms ease-in-out;
-          }
-      
-          &:hover::after {
-            top: 4px;
-            left: 4px;
-            transition: all 150ms ease-in-out;
-          }
-        }
-  
-        .forget-password-label {
-          font-size: 0.8rem;
-
-          a {
-            font-weight: bold;
-          }
-        }
-      }
+    h1 {
+      @include formHeader();
     }
-  }
-  
-  #authregister-content {
-    @include flexHorizontalCentered();
-  
-    .al-form-section {
+
+    .al-form {
       display: flex;
-      flex-direction: column;
-  
-      h1 {
-        @include formHeader();
+      justify-content: space-between;
+
+      label {
+        color: $casual-text-color;
       }
-  
-      .al-form {
-        display: flex;
-        justify-content: space-between;
-  
-        label {
-          color: $casual-text-color;
-        }
-  
-        .auth-form-input {
-          width: 100%;
-          border: 1px solid #3c3c3c40;
-          background: transparent;
-          padding: 0 2% 0 2%;
+
+      .auth-form-input {
+        width: 100%;
+        border: 1px solid #3c3c3c40;
+        background: transparent;
+        padding: 0 2% 0 2%;
+        transition: all 50ms ease-in-out;
+
+        &:focus {
+          border: 3px solid $main-theme-color;
           transition: all 50ms ease-in-out;
-  
-          &:focus {
-            border: 3px solid $main-theme-color;
-            transition: all 50ms ease-in-out;
-          }
-        }
-
-        .auth-form-submit {
-          @include standardButton();
-
-          background: $main-dark-theme-color;
-          position: relative;
-          color: whitesmoke;
-
-          input {
-            cursor: pointer;
-          }
-
-          &::after {
-            content: "";
-            z-index: -1;
-            position: absolute;
-            border-radius: inherit;
-            height: 100%;
-            width: 100%;
-            top: 0px;
-            left: 0px;
-          }
-      
-          &::after {
-            background: $main-theme-color;
-            transition: all 150ms ease-in-out;
-          }
-      
-          &:hover::after {
-            top: 4px;
-            left: 4px;
-            transition: all 150ms ease-in-out;
-          }
-        }
-  
-        .forget-password-label {
-          font-size: 0.8rem;
-
-          a {
-            font-weight: bold;
-          }
         }
       }
-    }
-  }
-  
-  #action-success-message-content {
-    @include flexHorizontalCentered();
-  
-    height: calc(100vh - ($footer-height + $navbar-height));
-  
-    .asm-section {
-      padding-top: 6%;
-      flex-direction: column;
-  
-      h1 {
-        margin-bottom: 15%;
-      }
-  
-      h4 {
-        margin-top: 2%;
-        margin-bottom: 4%;
-      }
-  
-      .asm-button {
-        @include formSubmit();
+
+      .auth-form-submit {
         @include standardButton();
-  
-        width: 70%;
-  
-        .asm-link {
-          text-decoration: none;
-          color: $casual-light-text-color;
+
+        background: $main-dark-theme-color;
+        position: relative;
+        color: whitesmoke;
+
+        input {
+          cursor: pointer;
+        }
+
+        &::after {
+          content: "";
+          z-index: -1;
+          position: absolute;
+          border-radius: inherit;
+          height: 100%;
+          width: 100%;
+          top: 0px;
+          left: 0px;
+        }
+
+        &::after {
+          background: $main-theme-color;
+          transition: all 150ms ease-in-out;
+        }
+
+        &:hover::after {
+          top: 4px;
+          left: 4px;
+          transition: all 150ms ease-in-out;
+        }
+      }
+
+      .forget-password-label {
+        font-size: 0.8rem;
+
+        a {
+          font-weight: bold;
         }
       }
     }
   }
+}
 
+#authregister-content {
+  @include flexHorizontalCentered();
 
+  .al-form-section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 
+    h1 {
+      @include formHeader();
+    }
 
-  .auth-input-err-empty {
-    position: relative;
+    .al-form {
+      display: flex;
+      justify-content: space-between;
 
-    &::after {
-      @include errorAfterClass("* Polje mora biti ispunjeno.");
+      label {
+        color: $casual-text-color;
+      }
+
+      .auth-form-input {
+        width: 100%;
+        border: 1px solid #3c3c3c40;
+        background: transparent;
+        padding: 0 2% 0 2%;
+        transition: all 50ms ease-in-out;
+
+        &:focus {
+          border: 3px solid $main-theme-color;
+          transition: all 50ms ease-in-out;
+        }
+      }
+
+      .auth-form-submit {
+        @include standardButton();
+
+        background: $main-dark-theme-color;
+        position: relative;
+        color: whitesmoke;
+
+        input {
+          cursor: pointer;
+        }
+
+        &::after {
+          content: "";
+          z-index: -1;
+          position: absolute;
+          border-radius: inherit;
+          height: 100%;
+          width: 100%;
+          top: 0px;
+          left: 0px;
+        }
+
+        &::after {
+          background: $main-theme-color;
+          transition: all 150ms ease-in-out;
+        }
+
+        &:hover::after {
+          top: 4px;
+          left: 4px;
+          transition: all 150ms ease-in-out;
+        }
+      }
+
+      .forget-password-label {
+        font-size: 0.8rem;
+
+        a {
+          font-weight: bold;
+        }
+      }
     }
   }
+}
 
-  .auth-input-err-min {
-    position: relative;
+#action-success-message-content {
+  @include flexHorizontalCentered();
 
-    &::after {
-      @include errorAfterClass("* Unesite ispravnu e-mail adresu.");
+  height: calc(100vh - ($footer-height + $navbar-height));
+
+  .asm-section {
+    padding-top: 6%;
+    flex-direction: column;
+
+    h1 {
+      margin-bottom: 15%;
+    }
+
+    h4 {
+      margin-top: 2%;
+      margin-bottom: 4%;
+    }
+
+    .asm-button {
+      @include formSubmit();
+      @include standardButton();
+
+      width: 70%;
+
+      .asm-link {
+        text-decoration: none;
+        color: $casual-light-text-color;
+      }
     }
   }
+}
 
-  .auth-input-err-spc {
-    position: relative;
+.auth-input-err-empty {
+  position: relative;
 
-    &::after {
-      @include errorAfterClass(
-        "* Nesipravna e-mail adresa."
-      );
-    }
+  &::after {
+    @include errorAfterClass("* Polje mora biti ispunjeno.");
   }
+}
 
-  .password-auth-input-err-spc {
-    position: relative;
+.auth-input-err-min {
+  position: relative;
 
-    &::after {
-      @include errorAfterClass(
-        "* Lozinka mora sadržavati barem jedno veliko slovo i jedan znak ili broj."
-      );
-    }
+  &::after {
+    @include errorAfterClass("* Unesite ispravnu e-mail adresu.");
   }
+}
 
-  .password-auth-input-err-min {
-    position: relative;
+.auth-input-err-spc {
+  position: relative;
 
-    &::after {
-      @include errorAfterClass(
-        "* Lozinka mora sadržavati minimalno 6 znakova."
-      );
-    }
+  &::after {
+    @include errorAfterClass("* Nesipravna e-mail adresa.");
   }
+}
 
-  .password-auth-input-err-max {
-    position: relative;
+.password-auth-input-err-spc {
+  position: relative;
 
-    &::after {
-      @include errorAfterClass(
-        "* Lozinka ne smije sadržavati više od 24 znaka."
-      );
-    }
+  &::after {
+    @include errorAfterClass(
+      "* Lozinka mora sadržavati barem jedno veliko slovo i jedan znak ili broj."
+    );
   }
+}
 
-  .password-auth-input-err-dif {
-    position: relative;
+.password-auth-input-err-min {
+  position: relative;
 
-    &::after {
-      @include errorAfterClass(
-        "* Lozinke se moraju biti iste."
-      );
-    }
+  &::after {
+    @include errorAfterClass("* Lozinka mora sadržavati minimalno 6 znakova.");
   }
+}
 
-  .nick-auth-input-err-min {
-    position: relative;
+.password-auth-input-err-max {
+  position: relative;
 
-    &::after {
-      @include errorAfterClass(
-        "* Nadimak mora sadržavati minimalno 3 znaka."
-      );
-    }
+  &::after {
+    @include errorAfterClass("* Lozinka ne smije sadržavati više od 24 znaka.");
   }
+}
 
-  .nick-auth-input-err-max {
-    position: relative;
+.password-auth-input-err-dif {
+  position: relative;
 
-    &::after {
-      @include errorAfterClass(
-        "* Nadimak ne smije sadržavati više od 16 znakova."
-      );
-    }
+  &::after {
+    @include errorAfterClass("* Lozinke se moraju biti iste.");
   }
+}
 
-  .nick-auth-input-err-spc {
-    position: relative;
+.nick-auth-input-err-min {
+  position: relative;
 
-    &::after {
-      @include errorAfterClass(
-        "* Nadimak ne smije sadržavati posebne znakove."
-      );
-    }
+  &::after {
+    @include errorAfterClass("* Nadimak mora sadržavati minimalno 3 znaka.");
   }
+}
+
+.nick-auth-input-err-max {
+  position: relative;
+
+  &::after {
+    @include errorAfterClass(
+      "* Nadimak ne smije sadržavati više od 16 znakova."
+    );
+  }
+}
+
+.nick-auth-input-err-spc {
+  position: relative;
+
+  &::after {
+    @include errorAfterClass("* Nadimak ne smije sadržavati posebne znakove.");
+  }
+}

@@ -1,4 +1,4 @@
-import { get, post, put, remove } from "./api_base";
+import { get, post, put, remove, patch, postJSON } from "./API_Base";
 
 const getMyProfile = async () => {
   try {
@@ -16,7 +16,8 @@ const editEmail = () => {};
 
 const handleLogin = async (loginData) => {
   try {
-    const resp = await post("/users/log-in", loginData);
+    const resp = await postJSON("/users/log-in", JSON.stringify(loginData));
+    console.log(resp);
     return resp;
   } catch (error) {
     console.log(error);

@@ -6,7 +6,7 @@ import placeholderImg from "../../../icons/placeholder-image.png";
 
 export const Quizz = ({ name, description, imgSrc }) => {
   return (
-    <div className="w-1/5 h-40 bg-white rounded-md flex justify-start items-start">
+    <div className="w-1/2 h-40 bg-white rounded-md flex justify-center items-center">
       <img src={imgSrc ?? placeholderImg} alt="quiz" className="h-full w-1/3" />
       <div className="flex flex-col w-2/3 px-2 py-1 h-full  gap-1">
         <button className="w-8 h-1/5 self-end">

@@ -1,1 +1,35 @@
-/*# sourceMappingURL=content-styles.css.map */
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* --------------------------------- */
+/* --------- GLOBAL STYLES --------- */
+/* --------------------------------- */
+.standard-button {
+  font-family: "Lato", sans-serif;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.standard-button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+.standard-button::after {
+  background: #3c3c3c;
+  transition: all 150ms ease-in-out;
+}
+.standard-button:hover::after {
+  top: 4px;
+  left: 4px;
+  transition: all 150ms ease-in-out;
+}/*# sourceMappingURL=content-styles.css.map */

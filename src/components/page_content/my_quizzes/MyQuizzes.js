@@ -1,7 +1,8 @@
 import { useRef, useContext, useEffect, useState } from "react";
 import { MainContext } from "../../../MainContent";
-import { getAllQuizzes } from "../../../services/api_quizzes";
+import { getMyQuizzes } from "../../../services/API_Quizzes";
 import { Quizz } from "./Quizz";
+import { Link } from "react-router-dom";
 
 function MyQuizzes() {
   const { handleElementReveal } = useContext(MainContext);
@@ -22,7 +23,7 @@ function MyQuizzes() {
 
   const fetchData = async () => {
     try {
-      const quizzesData = await getAllQuizzes();
+      const quizzesData = await getMyQuizzes();
       setQuizzes([...quizzesData]);
     } catch (error) {
       console.log(error);
@@ -35,14 +36,14 @@ function MyQuizzes() {
 
   return (
     <div id="my-quizzes-content">
-      <div className="component-content">
-        <h1 className="mq-heading text-xl md:text-2xl lg:text-3xl mb-3">
+      <div className="component-content flex flex-col justify-center items-center">
+        <h1 className="mq-heading text-xl md:text-2xl lg:text-3xl mb-3 pb-20">
           Kolekcija kvizova
         </h1>
-        <ul>
+        <ul className="grid grid-cols-2 gap-10 w-full">
           {quizzes.map((quizz) => {
             return (
-              <li key={quizz.id}>
+              <li key={quizz.id} className="flex justify-center align-center">
                 <Quizz
                   name={quizz.name}
                   description={quizz.description}
@@ -52,6 +53,12 @@ function MyQuizzes() {
             );
           })}
         </ul>
+        <Link
+          to="/kreiraj-kviz"
+          className="bg-gray-500 text-white p-3 rounded-md self-end mr-10"
+        >
+          Kreiraj novi kviz
+        </Link>
       </div>
     </div>
   );

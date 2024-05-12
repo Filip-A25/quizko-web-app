@@ -7,17 +7,14 @@
 
 #create-quiz-content {
 
+    .date-input, .time-input, .question-point-input {
+        @include authFormInput();
+        @include formInput();
+    }
+
     form {
-        textarea, input {
-            border: 1px solid #3c3c3c40;
-            background: transparent;
-            padding: 0 2% 0 2%;
-            transition: all 50ms ease-in-out;
-    
-            &:focus {
-              border: 3px solid $main-theme-color;
-              transition: all 50ms ease-in-out;
-            }
+        input, textarea {
+            @include formInput();
         }
 
         input {

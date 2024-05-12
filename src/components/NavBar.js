@@ -1,16 +1,25 @@
 import NavButton from "./NavButton";
 import logo from "../logos/quizko-logo.png";
 import { Link } from "react-router-dom";
-import { useState, Fragment } from "react";
+import { Fragment, useEffect, useContext } from "react";
+import {MainContext} from "../MainContent";
 import "../styles.css";
 
 function NavBar({ position }) {
-  const [userStatus, setUserStatus] = useState("registered_user");
-  /*
-    Za isprobavanje prikaza stranice prijavljenom korisniku i neprijavljenom korisniku.
-    unregistered_user - neregistrirani korisnik
-    registered user - registrirani korisnik
-  */
+  const {navigate, isLoggedIn, setIsLoggedIn} = useContext(MainContext);
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setIsLoggedIn(true);
+    } else setIsLoggedIn(false);
+  }, [])
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+
+    navigate("/");
+  };
 
   return (
     <div id="navbar-element" className={`navbar-${position}`}>
@@ -25,7 +34,7 @@ function NavBar({ position }) {
           </Link>
         </div>
         <div className="nav-buttons-section grid w-[30%] md:w-[72%] lg:w-[50%] xl:w-[40%]">
-          {userStatus === "registered_user" || userStatus === "admin_user" ? (
+          {isLoggedIn && (
             <Fragment>
               <NavButton index={1} title="Početna" path="/" isContent={true} />
               <NavButton
@@ -47,10 +56,10 @@ function NavBar({ position }) {
                 isContent={true}
               />
             </Fragment>
-          ) : null}
+          )}
         </div>
         <div className="auth-buttons-section">
-          {userStatus === "unregistered_user" && (
+          {!isLoggedIn && (
             <Fragment>
               <NavButton
                 index={5}
@@ -66,14 +75,15 @@ function NavBar({ position }) {
               />
             </Fragment>
           )}
-          {userStatus === "registered_user" || userStatus === "admin_user" ? (
+          {isLoggedIn && (
             <NavButton
               index={7}
               title="Odjava"
               path="/"
               isContent={false}
+              onClick={handleLogout}
             />
-          ) : null}
+          )}
         </div>
       </section>
     </div>
