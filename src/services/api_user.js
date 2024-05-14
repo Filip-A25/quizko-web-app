@@ -1,8 +1,8 @@
-import { get, post, put, remove, patch, postJSON } from "./API_Base";
+import { get, post, put, remove, patch, getJSON, postJSON } from "./API_Base";
 
 const getMyProfile = async () => {
   try {
-    const resp = await get("/users/me");
+    const resp = await getJSON("/users/me");
     const data = resp.data.user;
     return data;
   } catch (error) {

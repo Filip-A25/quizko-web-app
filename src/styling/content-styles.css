@@ -32,4 +32,8 @@
   top: 4px;
   left: 4px;
   transition: all 150ms ease-in-out;
+}
+
+.scoreboard-tr:nth-child(2n) {
+  background: rgb(198, 198, 198);
 }/*# sourceMappingURL=content-styles.css.map */

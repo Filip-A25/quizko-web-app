@@ -4,6 +4,15 @@ const BASE_URL = "https://quizko-api.onrender.com/api/v1";
 
 const get = async (url) => {
   const headers = {
+    Accept: "multipart/form-data",
+    "Content-type": "multipart/form-data",
+    Authorization: getToken(),
+  };
+  return await axios.get(`${BASE_URL}${url}`, { headers: headers });
+};
+
+const getJSON = async (url) => {
+  const headers = {
     accept: "application/json",
     "Content-type": "application/json",
     authorization: getToken(),
@@ -61,4 +70,4 @@ const getToken = () => {
   return token ? `Bearer ${token}` : "";
 };
 
-export { get, post, put, remove, getToken, patch, postJSON };
+export { get, post, put, remove, getToken, patch, getJSON, postJSON };

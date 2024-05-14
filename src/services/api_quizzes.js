@@ -1,9 +1,9 @@
 import { data } from "autoprefixer";
-import { get, post, put, remove, postJSON } from "./API_Base";
+import { get, post, put, remove, getJSON, postJSON } from "./API_Base";
 
 const getMyQuizzes = async () => {
   try {
-    const resp = await get("/quizzes");
+    const resp = await get("/my-quizzes");
     const data = resp;
     return data;
   } catch (error) {
@@ -44,7 +44,7 @@ const deleteQuiz = async (id) => {
 
 const getAllCategories = async () => {
   try {
-    const response = await get("/categories");
+    const response = await getJSON("/categories");
     return response.data.categories;
   } catch (err) {
     throw new Error(err);

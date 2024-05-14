@@ -1,5 +1,5 @@
 import { data } from "autoprefixer";
-import { get, post, put, remove, postJSON } from "./API_Base";
+import { get, post, put, remove, getJSON, postJSON } from "./API_Base";
 
 const createNewQuizRound = async (id, data) => {
     try {
@@ -46,7 +46,7 @@ const getAllQuestionsFromRound = async (id) => {
 
 const getRoundById = async (id) => {
     try {
-        const response = await get(`/quizzes/round/${id}`);
+        const response = await getJSON(`/quizzes/round/${id}`);
         console.log(response.data);
         return response.data;
     } catch (err) {
