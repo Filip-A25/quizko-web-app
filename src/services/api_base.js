@@ -67,7 +67,7 @@ const patch = async (url, data) => {
 
 const getToken = () => {
   const token = localStorage.getItem("token");
-  return token ? `Bearer ${token}` : "";
+  return token ? `Bearer ` + token : "";
 };
 
 export { get, post, put, remove, getToken, patch, getJSON, postJSON };

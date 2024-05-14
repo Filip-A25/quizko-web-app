@@ -175,8 +175,10 @@ function MainContent() {
     "/kreiraj-kviz",
     "/kreiraj-kviz/",
     "/kreiraj-kviz/nova-runda",
+    "/moji-kvizovi/kviz/",
+    "/pokreni-kviz",
     "/kreiraj-kviz/novo-pitanje"
-  ].includes(location.pathname);
+  ].some((path) => location.pathname.startsWith(path));
 
   return (
     <div className="page-content">

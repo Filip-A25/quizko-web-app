@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import editIcon from "../../../icons/editIcon.svg";
 import deleteIcon from "../../../icons/delete-icon.svg";
 import placeholderImg from "../../../icons/placeholder-image.png";
 
-export const Quizz = ({ name, description, imgSrc }) => {
+export const Quizz = ({ id, name, description, imgSrc }) => {
   return (
-    <div className="w-1/2 h-40 bg-white rounded-md flex justify-center items-center">
+    <div className="rounded-md flex justify-center items-center lg:w-1/2 lg:h-40 bg-white md:w-[70vw] md:h-40 sm:w-[90vw] sm:h-[30vh]">
       <img src={imgSrc ?? placeholderImg} alt="quiz" className="h-full w-1/3" />
       <div className="flex flex-col w-2/3 px-2 py-1 h-full  gap-1">
         <button className="w-8 h-1/5 self-end">
@@ -18,9 +19,12 @@ export const Quizz = ({ name, description, imgSrc }) => {
           <button className="w-8 h-full">
             <img src={deleteIcon} alt="trash-can" className="h-full" />
           </button>
-          <button className="w-24 h-full py-2 text-white rounded-md bg-green-500">
+          <Link
+            to={`kviz/${id}`}
+            className="w-24 h-full py-2 text-white rounded-md bg-green-500 text-center"
+          >
             Pokreni kviz
-          </button>
+          </Link>
         </div>
       </div>
     </div>
