@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAllQuestionsForRound } from "../../../services/api_quizzes";
+import { getAllQuestionsFromRound } from "../../../services/API_Rounds";
 import { useNavigate } from "react-router-dom";
 import { Skeleton } from "../../../Skeleton";
 
@@ -37,7 +37,7 @@ export const Question = ({
   const fetchDataForNextQuestion = async (nextQuestion) => {
     setIsLoading(true);
     try {
-      const resp = await getAllQuestionsForRound(nextQuestion, roundId);
+      const resp = await getAllQuestionsFromRound(nextQuestion, roundId);
       console.log(resp);
       setQuestions([...resp]);
     } catch (error) {

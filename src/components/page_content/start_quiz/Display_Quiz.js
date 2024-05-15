@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { getQuiz } from "../../../services/api_quizzes";
+import { getQuizById } from "../../../services/API_Quizzes";
 import { useParams } from "react-router-dom";
 import { Round } from "./Round";
 import { Question } from "./Question";
-import { getAllQuestionsForRound } from "../../../services/api_quizzes";
+import { getAllQuestionsFromRound } from "../../../services/API_Rounds";
 import { Skeleton } from "../../../Skeleton";
 
 export const Display_Quiz = () => {
@@ -22,7 +22,7 @@ export const Display_Quiz = () => {
     setIsLoadingRound(true);
     try {
       console.log(quizId);
-      const resp = await getQuiz(quizId);
+      const resp = await getQuizById(quizId);
       console.log([...resp.rounds]);
       setRounds([...resp.rounds]);
       setNumOfRounds(resp.num_of_rounds);
@@ -50,7 +50,7 @@ export const Display_Quiz = () => {
         setNumOfQuestionsRound(rounds[0].num_of_questions);
         console.log(numOfQuestionsRound);
         const roundId = await rounds[currRound]._id;
-        const resp = await getAllQuestionsForRound(currQuestion, roundId);
+        const resp = await getAllQuestionsFromRound(currQuestion, roundId);
         console.log(resp);
         setQuestions([...resp]);
         console.log(questions);

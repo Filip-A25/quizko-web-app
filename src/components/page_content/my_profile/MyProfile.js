@@ -6,8 +6,6 @@ import "../../../styles.css";
 //import icon
 import icon from "../../../icons/editIcon.svg";
 import { getMyProfile } from "../../../services/API_User";
-import { getMyProfile } from "../../../services/api_user";
-import { isLabelWithInternallyDisabledControl } from "@testing-library/user-event/dist/utils";
 import { Skeleton } from "../../../Skeleton";
 
 const ProfileContext = createContext();

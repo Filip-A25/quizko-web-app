@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import arrowLeft from "../../../icons/arrow-left.svg";
 import arrowRight from "../../../icons/arrow-right.svg";
-import { getAllCategories } from "../../../services/api_categories";
+import { getAllCategories } from "../../../services/API_Categories";
 import { Skeleton } from "../../../Skeleton";
 
 function MyQuizzes() {

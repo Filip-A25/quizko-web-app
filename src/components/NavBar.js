@@ -1,19 +1,12 @@
 import NavButton from "./NavButton";
 import logo from "../logos/quizko-logo.png";
 import { Link } from "react-router-dom";
-import { Fragment, useEffect, useContext } from "react";
+import { Fragment, useEffect, useContext, useState } from "react";
 import {MainContext} from "../MainContent";
 import "../styles.css";
 
 function NavBar({ position }) {
   const {navigate, isLoggedIn, setIsLoggedIn} = useContext(MainContext);
-  const [userStatus, setUserStatus] = useState("registered_user");
-  /*
-    Za isprobavanje prikaza stranice prijavljenom korisniku i neprijavljenom korisniku.
-    unregistered_user - neregistrirani korisnik
-    registered user - registrirani korisnik
-  */
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [isNavbarAnimated, setIsNavbarAnimated] = useState(false);
 

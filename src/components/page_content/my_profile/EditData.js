@@ -6,7 +6,7 @@ import {
   editEmail,
   editNickname,
   editPassword,
-} from "../../../services/api_user";
+} from "../../../services/API_User";
 
 function EditData(props) {
   const { editOn, setEditOn, setEmail, setNickname } =

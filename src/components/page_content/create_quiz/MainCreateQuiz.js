@@ -74,6 +74,8 @@ function MainCreateQuiz() {
     let currentRoundNum = getCurrentRoundNum();
     const questionNum = getQuestionNum();
     const roundNum = getRoundNum();
+
+    setFormNavigate(true);
     
     if (currentQuestionNum === questionNum && currentRoundNum === roundNum) {
         clearLocalStorage();
@@ -135,8 +137,9 @@ function MainCreateQuiz() {
 
 
   const blocker = useBlocker(({currentLocation, nextLocation}) => {
-    return !formNavigate && currentLocation.pathname !== nextLocation.pathname && nextLocation.pathname !== "kreiraj-kviz" && 
-      nextLocation.pathname !== "/kreiraj-kviz/nova-runda" && nextLocation.pathname !== "/kreiraj-kviz/novo-pitanje";
+    return !formNavigate && currentLocation.pathname !== "/kreiraj-kviz" && currentLocation.pathname !== "/kreiraj-kviz/" &&
+    currentLocation.pathname !== nextLocation.pathname && nextLocation.pathname !== "kreiraj-kviz" && nextLocation.pathname !== "/kreiraj-kviz/nova-runda" &&
+    nextLocation.pathname !== "/kreiraj-kviz/novo-pitanje";
   })
 
   const [formNavigate, setFormNavigate] = useState(false);

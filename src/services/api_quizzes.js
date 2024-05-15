@@ -3,9 +3,9 @@ import { get, post, put, remove, getJSON, postJSON } from "./API_Base";
 
 const getMyQuizzes = async () => {
   try {
-    const resp = await get("/my-quizzes");
-    const data = resp;
-    return data;
+    const resp = await get("/quizzes/my-quizzes");
+    console.log(resp.data.paginatedQuizzes);
+    return resp.data.paginatedQuizzes;
   } catch (error) {
     console.log(error);
   }
@@ -42,24 +42,4 @@ const deleteQuiz = async (id) => {
   }
 }
 
-const getAllCategories = async () => {
-  try {
-    const response = await getJSON("/categories");
-    return response.data.categories;
-  } catch (err) {
-    throw new Error(err);
-  }
-}
-
-const createNewCategory = async (data) => {
-  try {
-    const response = await postJSON("/categories", data);
-    console.log(response);
-    return response.data;
-  } catch (err) {
-    console.log(err);
-    throw new Error(err);
-  }
-}
-
-export { getMyQuizzes, getQuizById, createNewQuiz, deleteQuiz, createNewCategory, getAllCategories };
+export { getMyQuizzes, getQuizById, createNewQuiz, deleteQuiz };
