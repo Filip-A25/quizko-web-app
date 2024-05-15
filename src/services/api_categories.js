@@ -1,4 +1,4 @@
-import { get, post, put, remove, getJSON, postJSON } from "./API_Base";
+import { get, post, put, remove, getJSON, postJSON } from "./api_base";
 
 const getAllCategories = async () => {
   try {

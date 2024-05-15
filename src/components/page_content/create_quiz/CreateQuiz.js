@@ -2,8 +2,8 @@ import { Fragment, useContext } from "react";
 import {QuizContext} from "./MainCreateQuiz";
 import {MainContext} from "../../../MainContent";
 import imgLoadIcon from "../../../icons/img-load-icon.png";
-import {createNewQuiz} from "../../../services/API_Quizzes";
-import {createNewCategory, getAllCategories} from "../../../services/API_Categories";
+import {createNewQuiz} from "../../../services/api_quizzes";
+import {createNewCategory, getAllCategories} from "../../../services/api_categories";
 
 function CreateQuiz() {
     const {setQuizId, setRoundNum, setCurrentRoundNum} = useContext(QuizContext);

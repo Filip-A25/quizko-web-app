@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getQuizById } from "../../../services/API_Quizzes";
+import { getQuizById } from "../../../services/api_quizzes";
 import { useParams } from "react-router-dom";
 import { Round } from "./Round";
 import { Question } from "./Question";

@@ -1,5 +1,5 @@
 import { data } from "autoprefixer";
-import { get, post, put, remove, getJSON, postJSON } from "./API_Base";
+import { get, post, put, remove, getJSON, postJSON } from "./api_base";
 
 const getMyQuizzes = async () => {
   try {

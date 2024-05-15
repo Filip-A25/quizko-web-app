@@ -3,7 +3,7 @@ import {QuizContext} from "./MainCreateQuiz";
 import {MainContext} from "../../../MainContent";
 import imgLoadIcon from "../../../icons/img-load-icon.png";
 import AnswerInput from "./secondary/AnswerInput";
-import {getQuizById} from "../../../services/API_Quizzes";
+import {getQuizById} from "../../../services/api_quizzes";
 import {createNewQuestionForRound} from "../../../services/API_Rounds";
 
 function CreateQuestion() {

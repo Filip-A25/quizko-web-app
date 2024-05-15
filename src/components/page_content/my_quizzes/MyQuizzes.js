@@ -1,12 +1,11 @@
 import { useRef, useContext, useEffect, useState } from "react";
 import { MainContext } from "../../../MainContent";
-import { getMyQuizzes } from "../../../services/API_Quizzes";
+import { getMyQuizzes } from "../../../services/api_quizzes";
 import { Quizz } from "./Quizz";
 import { Link } from "react-router-dom";
-
 import arrowLeft from "../../../icons/arrow-left.svg";
 import arrowRight from "../../../icons/arrow-right.svg";
-import { getAllCategories } from "../../../services/API_Categories";
+import { getAllCategories } from "../../../services/api_categories";
 import { Skeleton } from "../../../Skeleton";
 
 function MyQuizzes() {

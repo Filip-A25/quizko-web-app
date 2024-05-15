@@ -1,7 +1,7 @@
 import { useRef, useContext, useEffect, createContext, useState } from "react";
 import {MainContext} from "../../../MainContent";
 import {Outlet, useBlocker} from "react-router-dom";
-import {deleteQuiz} from "../../../services/API_Quizzes";
+import {deleteQuiz} from "../../../services/api_quizzes";
 import {createNewAnswerForQuestion} from "../../../services/API_Rounds";
 
 const QuizContext = createContext();

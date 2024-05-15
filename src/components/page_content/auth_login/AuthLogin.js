@@ -2,7 +2,7 @@ import { useRef, useContext, useEffect, useState } from "react";
 import { MainContext } from "../../../MainContent";
 import { Link, useNavigate } from "react-router-dom";
 import "../../../styles.css";
-import { handleLogin } from "../../../services/API_User";
+import { handleLogin } from "../../../services/api_user";
 
 function AuthLogin() {
   const {
