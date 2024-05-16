@@ -48,6 +48,7 @@ function CreateQuestion() {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
+        setFormNavigate(true);
         await handleQuestionCreate(e);
         handleAnswersCreate(e);
     }

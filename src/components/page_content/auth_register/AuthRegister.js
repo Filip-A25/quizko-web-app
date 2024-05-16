@@ -3,6 +3,7 @@ import { MainContext } from "../../../MainContent";
 import { Link } from 'react-router-dom';
 import ActionSuccessMessage from "../../ActionSuccessMessage";
 import "../../../styles.css";
+import {handleRegister} from "../../../services/api_user";
 
 function AuthRegister() {
   const {handleElementReveal, nickWrapClass, emailWrapClass, passwordWrapClass, handleNicknameCheck, handleEmailCheck, handlePasswordCheck} = useContext(MainContext);
@@ -24,20 +25,32 @@ function AuthRegister() {
     };
   }, []);
 
-  const handleRegisterSubmit = (e) => {
+  const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-    setNickname(e.target[0].value);
 
     const nickCheck = handleNicknameCheck(e.target[0].value);
     const emailCheck = handleEmailCheck(e.target[1].value);
     const passwordCheck = handlePasswordCheck(e.target[2].value);
     if (!nickCheck || !emailCheck || !passwordCheck) return; 
 
+    setNickname(e.target[0].value);
+
     if (e.target[2].value !== e.target[3].value) {
       setConfirmWrapClass("password-auth-input-err-dif");
-      console.log("Error: Lozinke moraju biti iste.");
       return;
     }
+
+    try {
+      await handleRegister({
+        username: e.target[0].value,
+        email: e.target[1].value,
+        password: e.target[2].value,
+        passwordConfirm: e.target[3].value,
+      })
+    } catch (err) {
+      throw new Error(err);
+    }
+
     setRegisterSuccess(true);
   }
 

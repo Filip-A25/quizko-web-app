@@ -22,6 +22,8 @@ function MainCreateQuiz() {
     };
   }, []);
 
+  const [formNavigate, setFormNavigate] = useState(false);
+
   const getCurrentRoundNum = () => {
     return localStorage.getItem("current_round_num");
   }
@@ -68,25 +70,25 @@ function MainCreateQuiz() {
     localStorage.setItem("round_id", id);
   }
 
+  let navigatePath;
+
   // Navigira nakon klika na button "Dalje" u svakom PITANJU
   const handleNavigate = () => {
     let currentQuestionNum = getCurrentQuestionNum();
     let currentRoundNum = getCurrentRoundNum();
     const questionNum = getQuestionNum();
     const roundNum = getRoundNum();
-
-    setFormNavigate(true);
     
     if (currentQuestionNum === questionNum && currentRoundNum === roundNum) {
-        clearLocalStorage();
-        navigate("/kreiraj-kviz");
+      clearLocalStorage();
+      navigatePath = "/kreiraj-kviz";
     }
     if (currentQuestionNum === questionNum && currentRoundNum < roundNum) {
-        navigate("/kreiraj-kviz/nova-runda");
+      navigatePath = "/kreiraj-kviz/nova-runda";
     }
     if (currentQuestionNum < questionNum) {
-        setCurrentQuestionNum(++currentQuestionNum);
-        navigate("/kreiraj-kviz/novo-pitanje");
+      setCurrentQuestionNum(++currentQuestionNum);
+      navigatePath = 0;
     }
 }
 
@@ -95,7 +97,7 @@ function MainCreateQuiz() {
   // Kreiraj određeni broj odgovora za kviz
   const handleAnswersCreate = async (e) => {
     const questionId = localStorage.getItem("question_id");
-
+    
     try {
       for (let i = 1; i <= answersNumber * 2; i++) {
         await createNewAnswerForQuestion(questionId, {
@@ -106,6 +108,7 @@ function MainCreateQuiz() {
       }
 
       handleNavigate();
+      navigate(navigatePath);
     } catch (err) {
       throw new Error(err);
     }
@@ -141,8 +144,6 @@ function MainCreateQuiz() {
     currentLocation.pathname !== nextLocation.pathname && nextLocation.pathname !== "kreiraj-kviz" && nextLocation.pathname !== "/kreiraj-kviz/nova-runda" &&
     nextLocation.pathname !== "/kreiraj-kviz/novo-pitanje";
   })
-
-  const [formNavigate, setFormNavigate] = useState(false);
 
   // Kada korisnik izlazi iz kreiranja kviza blocker ga obavjestava da ce mu se cijeli kviz izbrisati, ukoliko klikne nastavi
   // brise se cijeli local storage, brise se kviz i korisnik nastavlja na page na koji je kliknuo

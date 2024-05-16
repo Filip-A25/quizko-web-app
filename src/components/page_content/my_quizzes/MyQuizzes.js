@@ -100,6 +100,8 @@ function MyQuizzes() {
                   name={quizz.name}
                   description={quizz.description}
                   imgSrc={quizz.image}
+                  dataFetch={fetchData} 
+                  categoriesFetch={fetchCategories}
                 />
               </li>
             ))}

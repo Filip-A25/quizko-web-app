@@ -9,7 +9,7 @@ const getMyProfile = async () => {
     console.log(error);
   }
 };
-const createProfile = () => {};
+
 const editPassword = async (passwordData) => {
   try {
     console.log("Commencing password change");
@@ -38,6 +38,16 @@ const editEmail = async (email) => {
   }
 };
 
+const handleRegister = async (registerData) => {
+  try {
+    const response = await postJSON("/users/register", registerData);
+    console.log(response);
+    return response;
+  } catch (err) {
+    throw new Error(err);
+  }
+}
+
 const handleLogin = async (loginData) => {
   try {
     const resp = await postJSON("/users/log-in", JSON.stringify(loginData));
@@ -50,9 +60,9 @@ const handleLogin = async (loginData) => {
 
 export {
   getMyProfile,
-  createProfile,
   editPassword,
   editNickname,
   editEmail,
+  handleRegister,
   handleLogin,
 };
