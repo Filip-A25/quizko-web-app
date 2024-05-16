@@ -115,6 +115,7 @@ body {
     .auth-buttons-section {
       @include flexCentered();
       width: 20%;
+      height: 100%;
 
       .navlink-element {
         margin-right: 9%;

@@ -141,13 +141,13 @@ function MainContent() {
   };
 
   const handlePasswordCheck = (password) => {
-    const format = new RegExp("^(?=.*[A-Z])(?=.*[0-9W])(?!.*s).+$");
+    const format = new RegExp("^(?=.*[A-Z])(?=.*[0-9\W]).+$");
 
     if (password === "") {
       setPasswordWrapClass("auth-input-err-empty");
       console.log("Error: Polje mora biti ispunjeno.");
       return false;
-    } else if (password.length <= 6) {
+    } else if (password.length < 6) {
       setPasswordWrapClass("password-auth-input-err-min");
       console.log("Error: Lozinka mora sadržavati minimalno 6 znakova.");
       return false;

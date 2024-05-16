@@ -54,7 +54,7 @@ function NavBar({ position }) {
             ></img>
           </Link>
         </div>
-        <div className="nav-buttons-section grid w-[30%] md:w-[72%] lg:w-[50%] xl:w-[40%]">
+        <div className="nav-buttons-section grid w-[30%] md:w-[55%] lg:w-[50%] xl:w-[40%]">
           {isLoggedIn && (
             <Fragment>
               <NavButton index={1} title="Početna" path="/" isContent={true} />
@@ -90,12 +90,14 @@ function NavBar({ position }) {
                 title="Prijava"
                 path="/prijava"
                 isContent={false}
+                onClick={handleNavButtonClick}
               />
               <NavButton
                 index={6}
                 title="Registracija"
                 path="/registracija"
                 isContent={false}
+                onClick={handleNavButtonClick}
               />
             </Fragment>
           )}

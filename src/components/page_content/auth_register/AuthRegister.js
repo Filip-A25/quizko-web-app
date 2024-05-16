@@ -50,7 +50,7 @@ function AuthRegister() {
       >
         <h1 className="text-xl md:text-2xl lg:text-3xl">Registrirajte se</h1>
         <form
-          className="al-form flex-col text-sm md:text-base h-[87.5%] sm:h-[87.5%] md:h-[80%] lg:w-[90%] pt-4"
+          className="al-form flex-col text-sm md:text-base h-[87.5%] sm:h-[87.5%] md:h-[90%] lg:w-[90%] pt-4"
           onSubmit={(e) => handleRegisterSubmit(e)}
         >
           <label>Nadimak</label>

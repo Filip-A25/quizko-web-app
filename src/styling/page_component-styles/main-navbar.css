@@ -116,6 +116,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 20%;
+  height: 100%;
 }
 #navbar-element .navbar-content-section .auth-buttons-section .navlink-element {
   margin-right: 9%;
