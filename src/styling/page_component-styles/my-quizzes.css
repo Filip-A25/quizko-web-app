@@ -1,0 +1,48 @@
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* --------------------------------- */
+/* --------- GLOBAL STYLES --------- */
+/* --------------------------------- */
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* ---------------------------- */
+/* -------- MY QUIZZES -------- */
+/* ---------------------------- */
+ul {
+  z-index: 2;
+}
+ul .quiz-li::before, ul .quiz-li::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  top: 5px;
+  left: 5px;
+}
+ul .quiz-li::before {
+  background: #3c3c3c;
+  transition: all 150ms ease-in-out;
+}
+ul .quiz-li:hover::before {
+  top: 10px;
+  left: 10px;
+  transition: all 150ms ease-in-out;
+}
+ul .quiz-li::after {
+  background: #e1bf57;
+}
+ul .quiz-li .quiz-div h2 {
+  white-space: nowrap;
+  overflow: hidden;
+}
+ul .quiz-li .quiz-div p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}/*# sourceMappingURL=my-quizzes.css.map */

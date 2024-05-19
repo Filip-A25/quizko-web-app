@@ -17,20 +17,10 @@ function MyProfile() {
   //profile fields
   const [email, setEmail] = useState("");
   const [nickname, setNickname] = useState("");
-  const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   //modal state
   const [editOn, setEditOn] = useState(0);
-
-  // logic for hiding password
-  useEffect(() => {
-    const passwordHider = () => {
-      const length = password.length;
-      setPassword("*".repeat(length));
-    };
-    passwordHider();
-  }, [password]);
 
   useEffect(() => {
     handleElementReveal(revealingElements);
@@ -52,7 +42,6 @@ function MyProfile() {
         const resp = await getMyProfile();
         console.log(resp);
         setEmail(resp.email);
-        setPassword(resp.password);
         setNickname(resp.username);
       } catch (error) {
         console.log(error);
@@ -71,9 +60,7 @@ function MyProfile() {
         setEditOn,
         editOn,
         setEmail,
-        setNickname,
-        setPassword,
-        password,
+        setNickname
       }}
     >
       <div
@@ -133,7 +120,7 @@ function MyProfile() {
                       {isLoading ? (
                         <Skeleton field="td" width="full" height="[.5rem]" />
                       ) : (
-                        <td className="font-bold">{password}</td>
+                        <td className="font-bold">•••••••••••••••</td>
                       )}
 
                       <td>

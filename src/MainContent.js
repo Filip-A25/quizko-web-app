@@ -8,6 +8,7 @@ import "./styling/page_component-styles/main-navbar.css";
 import "./styling/page_component-styles/my-profile.css";
 import "./styling/page_component-styles/mobile-navbar.css";
 import "./styling/page_component-styles/mobile-menu.css";
+import "./styling/page_component-styles/my-quizzes.css";
 import "./styling/global-styles.css";
 import "./styling/styling-vars.css";
 import NavBar from "./components/NavBar";
