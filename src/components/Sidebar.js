@@ -6,7 +6,7 @@ function Sidebar() {
   return (
     <div
       id="sidebar-element"
-      className="group absolute left-0 h-screen md:w-[12vw] lg:w-[16vw] bg-[#E1BF57] transition-all duration-250 ease-in-out animate-sidebarShow"
+      className="group fixed left-0 h-screen md:w-[12vw] lg:w-[16vw] bg-[#E1BF57] transition-all duration-250 ease-in-out animate-sidebarShow"
     >
       <header className="flex justify-center items-end h-20 animate-sidebarShow">
         <NavLink to="/">

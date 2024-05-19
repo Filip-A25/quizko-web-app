@@ -1,10 +1,9 @@
-import { data } from "autoprefixer";
-import { get, post, put, remove, getJSON, postJSON } from "./api_base";
+import { get, post, put, remove, getJSON, postJSON, getPARAMS } from "./api_base";
 
-const getMyQuizzes = async () => {
+const getMyQuizzes = async (pageNum) => {
+  console.log(pageNum);
   try {
-    const resp = await get("/quizzes/my-quizzes");
-    console.log(resp.data.paginatedQuizzes);
+    const resp = await getPARAMS(`/quizzes/my-quizzes`, { page: pageNum, limit: 4 });
     return resp.data.paginatedQuizzes;
   } catch (error) {
     console.log(error);

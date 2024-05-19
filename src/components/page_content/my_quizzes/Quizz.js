@@ -18,7 +18,7 @@ export const Quizz = ({ id, name, description, imgSrc, dataFetch, categoriesFetc
   }
 
   return (
-    <div className="quiz-div flex justify-center items-center lg:h-40 md:w-[70vw] md:h-40 sm:w-[90vw] sm:h-[30vh] bg-text-light-color rounded-md">
+    <div className="quiz-div flex justify-center items-center w-full lg:h-40 md:w-[70vw] md:h-40 sm:w-[90vw] sm:h-[30vh] bg-text-light-color rounded-md">
       <img src={imgSrc ?? placeholderImg} alt="quiz" className="h-full w-1/3" />
       <div className="flex flex-col w-2/3 px-2 h-full gap-1 relative text-text-color">
         <div className="flex justify-between mt-6 pr-2">
@@ -34,7 +34,7 @@ export const Quizz = ({ id, name, description, imgSrc, dataFetch, categoriesFetc
           </button>
           <Link
             to={`kviz/${id}`}
-            className="w-24 h-full py-2 text-text-color rounded-md bg-green-500 text-center"
+            className="w-24 h-full py-2 text-sm text-main-theme rounded-md bg-green-500 text-center font-bold"
           >
             Pokreni kviz
           </Link>

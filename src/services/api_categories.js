@@ -9,10 +9,19 @@ const getAllCategories = async () => {
   }
 }
 
+const getUserCategories = async () => {
+  try {
+    const response = await get("/categories/my-categories");
+    return response.data.namedCategories;
+  } catch (err) {
+    console.log(err);
+    throw new Error(err);
+  }
+}
+
 const getCategory = async (categoryId) => {
   try {
     const resp = await getJSON(`/categories/${categoryId}`);
-    console.log(resp);
     return resp;
   } catch (error) {
     console.log(error);
@@ -22,7 +31,6 @@ const getCategory = async (categoryId) => {
 const createNewCategory = async (data) => {
   try {
     const response = await postJSON("/categories", data);
-    console.log(response);
     return response.data;
   } catch (err) {
     console.log(err);
@@ -30,4 +38,4 @@ const createNewCategory = async (data) => {
   }
 }
 
-export { getAllCategories, getCategory, createNewCategory };
+export { getAllCategories, getCategory, createNewCategory, getUserCategories };

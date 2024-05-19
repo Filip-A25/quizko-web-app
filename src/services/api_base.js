@@ -20,13 +20,22 @@ const getJSON = async (url) => {
   return await axios.get(`${BASE_URL}${url}`, { headers: headers });
 };
 
-const post = async (url, data) => {
+const getPARAMS = async (url, params) => {
   const headers = {
     Accept: "multipart/form-data",
     "Content-type": "multipart/form-data",
     Authorization: getToken(),
   };
-  return await axios.post(`${BASE_URL}${url}`, data, { headers: headers });
+  return await axios.get(`${BASE_URL}${url}`, { params: params,  headers: headers });
+}
+
+const post = async (url) => {
+  const headers = {
+    Accept: "multipart/form-data",
+    "Content-type": "multipart/form-data",
+    Authorization: getToken(),
+  };
+  return await axios.post(`${BASE_URL}${url}`, { headers: headers });
 };
 
 const postJSON = async (url, data) => {
@@ -70,4 +79,4 @@ const getToken = () => {
   return token ? `Bearer ` + token : "";
 };
 
-export { get, post, put, remove, getToken, patch, getJSON, postJSON };
+export { get, post, put, remove, getToken, patch, getJSON, postJSON, getPARAMS };
