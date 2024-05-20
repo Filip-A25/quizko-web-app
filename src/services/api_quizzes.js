@@ -14,13 +14,13 @@ const getMyQuizzes = async () => {
 const getQuizById = async (id) => {
   try {
     const response = await get(`/quizzes/quiz/${id}`);
-    console.log(response);
+    console.log(response.data);
     return response.data;
   } catch (err) {
     console.log(err);
     throw new Error(err);
   }
-}
+};
 
 const createNewQuiz = async (data) => {
   try {
@@ -31,7 +31,7 @@ const createNewQuiz = async (data) => {
     console.log(err);
     throw new Error(err);
   }
-}
+};
 
 const deleteQuiz = async (id) => {
   try {
@@ -40,6 +40,6 @@ const deleteQuiz = async (id) => {
   } catch (err) {
     throw new Error(err);
   }
-}
+};
 
 export { getMyQuizzes, getQuizById, createNewQuiz, deleteQuiz };

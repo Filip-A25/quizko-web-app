@@ -2,11 +2,11 @@ import NavButton from "./NavButton";
 import logo from "../logos/quizko-logo.png";
 import { Link } from "react-router-dom";
 import { Fragment, useEffect, useContext, useState } from "react";
-import {MainContext} from "../MainContent";
+import { MainContext } from "../MainContent";
 import "../styles.css";
 
 function NavBar({ position }) {
-  const {navigate, isLoggedIn, setIsLoggedIn} = useContext(MainContext);
+  const { navigate, isLoggedIn, setIsLoggedIn } = useContext(MainContext);
 
   const [isNavbarAnimated, setIsNavbarAnimated] = useState(false);
 
@@ -28,7 +28,7 @@ function NavBar({ position }) {
     if (localStorage.getItem("token")) {
       setIsLoggedIn(true);
     } else setIsLoggedIn(false);
-  }, [])
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -41,7 +41,7 @@ function NavBar({ position }) {
     <div
       id="navbar-element"
       className={`navbar-${position} ${
-        isNavbarAnimated ? "animate-navbarSidebar" : ""
+        isNavbarAnimated ? "animate-navbarSidebar" : "animate-sidebarNavbar"
       }`}
     >
       <section className="navbar-content-section">
@@ -50,11 +50,11 @@ function NavBar({ position }) {
             <img
               src={logo}
               alt="quizko app logo"
-              className="h-9 sm:h-10 lg:h-11"
+              className="h-9  sm:h-10 lg:h-11 "
             ></img>
           </Link>
         </div>
-        <div className="nav-buttons-section grid w-[30%] md:w-[55%] lg:w-[50%] xl:w-[40%]">
+        <div className="nav-buttons-section grid w-[30%] md:w-[75%] lg:w-[50%] xl:w-[40%]">
           {isLoggedIn && (
             <Fragment>
               <NavButton index={1} title="Početna" path="/" isContent={true} />

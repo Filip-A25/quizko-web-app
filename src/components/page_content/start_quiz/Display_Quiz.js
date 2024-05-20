@@ -23,9 +23,9 @@ export const Display_Quiz = () => {
     try {
       console.log(quizId);
       const resp = await getQuizById(quizId);
-      console.log([...resp.rounds]);
-      setRounds([...resp.rounds]);
-      setNumOfRounds(resp.num_of_rounds);
+      console.log([...resp.quiz.rounds]);
+      setRounds([...resp.quiz.rounds]);
+      setNumOfRounds(resp.quiz.num_of_rounds);
     } catch (error) {
       console.log(error);
     } finally {
@@ -48,18 +48,16 @@ export const Display_Quiz = () => {
     try {
       if (rounds.length > 0) {
         setNumOfQuestionsRound(rounds[0].num_of_questions);
-        console.log(numOfQuestionsRound);
         const roundId = await rounds[currRound]._id;
-        const resp = await getAllQuestionsFromRound(currQuestion, roundId);
-        console.log(resp);
-        setQuestions([...resp]);
-        console.log(questions);
+        const resp = await getAllQuestionsFromRound(roundId);
+        const data = resp.data.questions;
+        console.log(data);
+        setQuestions([...data]);
       }
     } catch (error) {
       console.log(error);
     } finally {
       setIsLoadingQuestions(false);
-      console.log("Loading is false");
     }
   };
 
