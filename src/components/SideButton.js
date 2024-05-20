@@ -34,10 +34,6 @@ function SideButton(props) {
     }
   }, []);
 
-  useEffect(() => {
-    console.log(props.isHomeButton);
-  }, []);
-
   const handleClick = (e) => {
     e.preventDefault();
     if (props.onClick) {
@@ -54,7 +50,7 @@ function SideButton(props) {
       className={({ isActive }) => {
         return isActive ? "navlink-active cursor-pointer" : "cursor-pointer";
       }}
-    >
+    >   
       {props.isHomeButton ? (
         <button
           className="h-14 w-full flex justify-center items-center lg:justify-start transition-all px-7"
@@ -68,7 +64,7 @@ function SideButton(props) {
           <span className="hidden lg:inline-block">{props.title}</span>
         </button>
       ) : (
-        <button className="h-14 w-full flex justify-center items-center lg:justify-start transition-all px-7">
+        <button className=" h-14 w-full flex justify-center items-center lg:justify-start transition-all px-7">
           <img
             src={iconSrc}
             alt={props.title}

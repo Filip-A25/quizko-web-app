@@ -8,8 +8,8 @@ function Footer() {
       id="footer-element"
       className="flex flex-col items-center justify-around h-[25vh] md:h-[10vh] md:flex md:flex-row md:items-center md:justify-between "
     >
-      <section className="social-media-links-section flex flex-col order-2 md:order-1 md:w-[40%] lg:w-[35%] xl:w-[30%] 2xl:w-[30%] md:items-center md:flex-row">
-        <div className="social-media-flexbox justify-center md:justify-between md:w-[18%] lg:w-[16%] 2xl:w-[15%]">
+      <section className="social-media-links-section flex flex-col order-2 md:order-1 pl-4 md:w-[40%] lg:w-[35%] xl:w-[30%] 2xl:w-[30%] md:items-center md:flex-row">
+        <div className="social-media-flexbox justify-center md:justify-between md:w-[17%] lg:w-[16%] 2xl:w-[13%]">
           <a
             href="https://www.facebook.com/edit.udruga/"
             className="sm-link mr-2 md:mr-0"

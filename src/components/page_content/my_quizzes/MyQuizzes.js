@@ -127,19 +127,19 @@ function MyQuizzes() {
             ))}
           </ul>
         )}
-        <section className="flex flex-col sm:flex-row justify-between items-center w-4/5 relative mt-8 sm:mt-3 mb-5">
+        <section className="flex flex-col sm:flex-row justify-between items-center h-24 w-4/5 relative mt-8 sm:mt-3 mb-3">
           {currentPage !== 1 ? (
             <button className="standard-button relative bg-button-red text-text-light-color mb-4 sm:mb-0 h-12 sm:h-10 w-64 sm:w-32" onClick={() => handlePrevPage()}>
               Nazad
             </button>
           ) : null}
-          <div className="flex flex-col sm:flex-row w-full h-28 sm:h-full sm:w-[47.5%] md:w-[45%] 2xl:w-[25%] items-center justify-between sm:absolute right-0">
+          <div className="flex flex-col sm:flex-row w-full h-28 sm:h-full sm:w-[47.5%] md:w-[40%] 2xl:w-[25%] items-center justify-between sm:absolute right-0">
             <Link to="/kreiraj-kviz">
               <button className="standard-button relative bg-main-theme text-text-color h-12 sm:h-10 w-64 sm:w-32">
                 Kreiraj kviz
               </button>
             </Link>
-            <button className="standard-button relative bg-text-color text-text-light-color h-12 sm:h-10 w-64 sm:w-32" onClick={() => handleNextPage()}>
+            <button className="standard-button relative bg-text-color text-text-light-color h-12 sm:h-10 w-64 sm:w-32 after:!bg-main-theme" onClick={() => handleNextPage()}>
               Dalje
             </button>
           </div>
