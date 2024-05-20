@@ -72,7 +72,6 @@ function CreateQuestion() {
     e.preventDefault();
     let currentQuestionNum = getCurrentQuestionNum();
     let currentRoundNum = getCurrentRoundNum();
-    setCurrentQuestionNum(--currentQuestionNum);
 
     if (currentQuestionNum === 1) {
       try {

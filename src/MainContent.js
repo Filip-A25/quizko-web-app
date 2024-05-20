@@ -8,6 +8,7 @@ import "./styling/page_component-styles/main-navbar.css";
 import "./styling/page_component-styles/my-profile.css";
 import "./styling/page_component-styles/mobile-navbar.css";
 import "./styling/page_component-styles/mobile-menu.css";
+import "./styling/page_component-styles/my-quizzes.css";
 import "./styling/global-styles.css";
 import "./styling/styling-vars.css";
 import NavBar from "./components/NavBar";
@@ -141,7 +142,7 @@ function MainContent() {
   };
 
   const handlePasswordCheck = (password) => {
-    const format = new RegExp("^(?=.*[A-Z])(?=.*[0-9\W]).+$");
+    const format = new RegExp("^(?=.*[A-Z])(?=.*[0-9W]).+$");
 
     if (password === "") {
       setPasswordWrapClass("auth-input-err-empty");
@@ -177,7 +178,7 @@ function MainContent() {
     "/kreiraj-kviz/nova-runda",
     "/moji-kvizovi/kviz/",
     "/pokreni-kviz",
-    "/kreiraj-kviz/novo-pitanje"
+    "/kreiraj-kviz/novo-pitanje",
   ].some((path) => location.pathname.startsWith(path));
 
   return (
@@ -200,7 +201,7 @@ function MainContent() {
           passwordWrapClass,
           navigate,
           isLoggedIn,
-          setIsLoggedIn
+          setIsLoggedIn,
         }}
       >
         {isSidebarPage && !mobileSize ? (

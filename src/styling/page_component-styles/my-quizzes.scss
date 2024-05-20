@@ -1,0 +1,80 @@
+@import "../global-styles.scss";
+@import "../styling-vars.scss";
+
+/* ---------------------------- */
+/* -------- MY QUIZZES -------- */
+/* ---------------------------- */
+
+ul {
+  z-index: 2;
+
+  .quiz-li {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border-radius: inherit;
+      height: 100%;
+      width: 100%;
+      top: 5px;
+      left: 5px;
+    }
+
+    &::before {
+      background: $main-dark-theme-color;
+      transition: all 150ms ease-in-out;
+    }
+
+    &:hover::before {
+      top: 10px;
+      left: 10px;
+      transition: all 150ms ease-in-out;
+    }
+
+    &::after {
+      background: $main-theme-color;
+    }
+
+    .quiz-div {
+      h2 {
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      p {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+}
+
+.standard-button {
+  @include standardButton();
+
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    border-radius: inherit;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+  }
+
+  &::after {
+    background: $main-dark-theme-color;
+    transition: all 150ms ease-in-out;
+  }
+
+  &:hover::after {
+    top: 4px;
+    left: 4px;
+    transition: all 150ms ease-in-out;
+  }
+}
