@@ -29,13 +29,13 @@ const getPARAMS = async (url, params) => {
   return await axios.get(`${BASE_URL}${url}`, { params: params,  headers: headers });
 }
 
-const post = async (url) => {
+const post = async (url, data) => {
   const headers = {
     Accept: "multipart/form-data",
     "Content-type": "multipart/form-data",
     Authorization: getToken(),
   };
-  return await axios.post(`${BASE_URL}${url}`, { headers: headers });
+  return await axios.post(`${BASE_URL}${url}`, data, { headers: headers });
 };
 
 const postJSON = async (url, data) => {

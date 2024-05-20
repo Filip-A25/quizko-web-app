@@ -34,7 +34,7 @@ function CreateQuestion() {
         try {
             const form = new FormData();
             form.append("name", e.target[0].value);
-            form.append("num_of_points", parseInt(e.target[pointsPos].value));
+            if (!parseInt(e.target[pointsPos].value).isNaN && parseInt(e.target[pointsPos].value) > 0) form.append("num_of_points", parseInt(e.target[pointsPos].value));
             form.append("num_of_answers", answersNumber);
             form.append("round_id", roundId);
     

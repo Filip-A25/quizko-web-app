@@ -17,7 +17,7 @@ function Sidebar() {
           ></img>
         </NavLink>
       </header>
-      <nav className="flex flex-col mt-24 animate-sidebarShow">
+      <nav className="flex flex-col mt-24 animate-sidebarShow h-full">
         <SideButton index={1} title="Početna" path="/" />
         <SideButton index={2} title="Kreiraj kviz" path="/kreiraj-kviz" />
         <SideButton index={3} title="Moji kvizovi" path="/moji-kvizovi" />
