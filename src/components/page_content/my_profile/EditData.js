@@ -33,7 +33,6 @@ function EditData(props) {
 
   const checkPasswordMatch = (e) => {
     if (newPassword !== e.target.value) {
-      console.log(true, e.target.parentNode);
       e.target.parentNode.classList.add("error-password-match");
     } else e.target.parentNode.classList.remove("error-password-match");
   };
@@ -46,36 +45,28 @@ function EditData(props) {
           const resp = await editEmail({ email: dataToChange.newEmail });
           setDataToChange({});
           setEditOn(0);
-          console.log(resp);
         } catch (error) {
-          console.log(error);
+          throw new Error(error);
         }
         break;
       case 2:
         try {
-          console.log("Changing nickname");
-          console.log({ username: dataToChange.newNickname });
           const resp = await editNickname({
             username: dataToChange.newNickname,
           });
-          console.log(dataToChange);
           setDataToChange({});
           setEditOn(0);
-          console.log(resp);
         } catch (error) {
-          console.log(error);
+          throw new Error(error);
         }
         break;
       case 3:
         try {
-          console.log("Changing password");
-          console.log(dataToChange);
           const resp = await editPassword(dataToChange);
           setDataToChange({});
           setEditOn(0);
-          console.log(resp);
         } catch (error) {
-          console.log(error);
+          throw new Error(error);
         }
         break;
       default:

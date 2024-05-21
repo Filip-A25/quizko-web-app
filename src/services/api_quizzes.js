@@ -9,12 +9,12 @@ import {
 } from "./api_base";
 
 const getMyQuizzes = async (pageNum) => {
-  console.log(pageNum);
   try {
     const resp = await getPARAMS(`/quizzes/my-quizzes`, {
       page: pageNum,
       limit: 4,
     });
+    console.log(resp);
     return resp.data.paginatedQuizzes;
   } catch (error) {
     console.log(error);
@@ -24,7 +24,7 @@ const getMyQuizzes = async (pageNum) => {
 const getQuizById = async (id) => {
   try {
     const response = await get(`/quizzes/quiz/${id}`);
-    console.log(response.data);
+    console.log(response);
     return response.data;
   } catch (err) {
     console.log(err);

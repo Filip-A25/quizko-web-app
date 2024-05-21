@@ -6,7 +6,7 @@ import { MainContext } from "../MainContent";
 import "../styles.css";
 
 function NavBar({ position }) {
-  const { navigate, isLoggedIn, setIsLoggedIn } = useContext(MainContext);
+  const { handleLogout, isLoggedIn, setIsLoggedIn } = useContext(MainContext);
 
   const [isNavbarAnimated, setIsNavbarAnimated] = useState(false);
 
@@ -29,13 +29,6 @@ function NavBar({ position }) {
       setIsLoggedIn(true);
     } else setIsLoggedIn(false);
   }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    setIsLoggedIn(false);
-
-    navigate("/");
-  };
 
   return (
     <div

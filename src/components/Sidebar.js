@@ -1,9 +1,13 @@
 import { NavLink } from "react-router-dom";
 import logo from "../logos/quizko-logo.png";
 import SideButton from "./SideButton";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { MainContext } from "../MainContent";
+import logOutIcon from "../icons/sign-out-icon.png";
 
 function Sidebar() {
+  const {handleLogout} = useContext(MainContext);
+
   const [isSidebarAnimated, setIsSidebarAnimated] = useState(false);
 
   const handleSidebarButtonClick = () => {
@@ -40,7 +44,14 @@ function Sidebar() {
         <SideButton index={2} title="Kreiraj kviz" path="/kreiraj-kviz" />
         <SideButton index={3} title="Moji kvizovi" path="/moji-kvizovi" />
         <SideButton index={4} title="Moj profil" path="/moj-profil" />
-        <SideButton index={5} title="Odjava" path="/prijava" />
+        <button className="h-14 w-full flex justify-center items-center lg:justify-start transition-all px-7" alt="Odjava" onClick={handleLogout}>
+          <img
+              src={logOutIcon}
+              alt="Odjava"
+              className="sbar-button-icon h-6 lg:mr-5"
+            ></img>
+            <span className="hidden lg:inline-block">Odjava</span>
+        </button>
       </nav>
     </div>
   );

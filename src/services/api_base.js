@@ -77,6 +77,15 @@ const patch = async (url, data) => {
   return await axios.patch(`${BASE_URL}${url}`, data, { headers: headers });
 };
 
+const patchJSON = async (url, data) => {
+  const headers = {
+    Accept: "application/json",
+    "Content-type": "application/json",
+    Authorization: getToken(),
+  };
+  return await axios.patch(`${BASE_URL}${url}`, data, { headers: headers });
+};
+
 const getToken = () => {
   const token = localStorage.getItem("token");
   return token ? `Bearer ` + token : "";
@@ -91,5 +100,6 @@ export {
   patch,
   getJSON,
   postJSON,
+  patchJSON,
   getPARAMS,
 };

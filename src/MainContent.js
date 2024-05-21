@@ -62,6 +62,16 @@ function MainContent() {
     openMenu(display);
   };
 
+  // Hendlanje logouta prilikom klika na button "Odjava".
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+
+    navigate("/");
+  };
+
   const handleAnimateButton = () => {
     if (!opened) {
       setTopAnimatedClass(topAnimatedClass + " mml-top");
@@ -90,8 +100,6 @@ function MainContent() {
   const [nickWrapClass, setNickWrapClass] = useState("");
   const [emailWrapClass, setEmailWrapClass] = useState("");
   const [passwordWrapClass, setPasswordWrapClass] = useState("");
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Kod za hendlanje upisanog nicka, emaila i passworda:
   const handleNicknameCheck = (nickname) => {
@@ -202,6 +210,7 @@ function MainContent() {
           navigate,
           isLoggedIn,
           setIsLoggedIn,
+          handleLogout
         }}
       >
         {isSidebarPage && !mobileSize ? (
