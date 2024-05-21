@@ -1,4 +1,4 @@
-import { get, post, put, remove, patch, getJSON, postJSON } from "./api_base";
+import { get, post, put, remove, patch, getJSON, postJSON, patchJSON } from "./api_base";
 
 const getMyProfile = async () => {
   try {
@@ -22,7 +22,8 @@ const editPassword = async (passwordData) => {
 };
 const editNickname = async (nickname) => {
   try {
-    const resp = await patch("/users/update-me", nickname);
+    const resp = await patchJSON("/users/update-me", nickname);
+    console.log(resp);
     return resp.data.status;
   } catch (error) {
     console.log(error);

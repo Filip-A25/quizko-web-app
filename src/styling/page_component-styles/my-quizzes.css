@@ -13,8 +13,7 @@
 ul {
   z-index: 2;
 }
-ul .quiz-li::before,
-ul .quiz-li::after {
+ul .quiz-li::before, ul .quiz-li::after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -73,4 +72,4 @@ ul .quiz-li .quiz-div p {
   top: 4px;
   left: 4px;
   transition: all 150ms ease-in-out;
-} /*# sourceMappingURL=my-quizzes.css.map */
+}/*# sourceMappingURL=my-quizzes.css.map */
