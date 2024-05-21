@@ -169,7 +169,7 @@ function MainCreateQuiz() {
   return (
     <div
       id="create-quiz-content"
-      className="flex justify-center items-center h-[90vh] sm:h-[90vh] md:h-full w-full md:w-[88vw] lg:w-[84vw] absolute right-0 z-0 p-0 m-0"
+      className="flex justify-center items-center h-full sm:h-[vh] md:h-full w-full md:w-[88vw] lg:w-[84vw] absolute right-0 z-0 p-0 m-0"
     >
       <div className="component-content relative h-full w-full">
         <section
