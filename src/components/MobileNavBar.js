@@ -14,13 +14,16 @@ function MobileNavBar() {
   } = useContext(MainContext);
 
   return (
-    <div id="mobile-navbar-element" className="flex justify-between">
+    <div
+      id="mobile-navbar-element"
+      className="flex justify-between relative z-10"
+    >
       <div className="logo-section flex items-center w-[30%] h-[100%] ml-8">
         <Link to="/">
           <img src={logo} alt="Quizko Logo" className="h-[42px]"></img>
         </Link>
       </div>
-      <div className="menu-section flex items-center justify-end w-[30%] h-[100%] mr-8">
+      <div className="menu-section flex items-center justify-end w-[30%] h-[100%] mr-8 ">
         <button
           className="h-[4vh] w-[6vw] flex flex-col justify-around cursor-pointer group transition-transform"
           onClick={() => {

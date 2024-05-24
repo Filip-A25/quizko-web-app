@@ -50,7 +50,7 @@ function SideButton(props) {
       className={({ isActive }) => {
         return isActive ? "navlink-active cursor-pointer" : "cursor-pointer";
       }}
-    >   
+    >
       {props.isHomeButton ? (
         <button
           className="h-14 w-full flex justify-center items-center lg:justify-start transition-all px-7"

@@ -75,7 +75,7 @@ function NavBar({ position }) {
             </Fragment>
           )}
         </div>
-        <div className="auth-buttons-section">
+        <div className="auth-buttons-section pr-10 gap-10">
           {!isLoggedIn && (
             <Fragment>
               <NavButton

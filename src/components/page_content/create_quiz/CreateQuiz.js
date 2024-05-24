@@ -66,13 +66,13 @@ function CreateQuiz() {
 
   return (
     <Fragment>
-      <section className="flex flex-col items-center  w-full sm:block h-3/4 sm:w-2/5 md:w-[40%]">
+      <section className="flex flex-col items-center h-full w-full sm:block sm:w-2/5 md:w-[40%] mt-30">
         <form
           id="create-quiz-form"
           className="flex flex-col justify-between w-3/4 sm:w-full h-full sm:h-[75%] md:h-[80%] lg:h-[80%]"
           onSubmit={(e) => handleFormSubmit(e)}
         >
-          <h1 className="cq-heading text-xl md:text-2xl lg:text-3xl mb-3 pt-16 sm:pt-10 md:pt-[8%] lg:pt-[4%]">
+          <h1 className="cq-heading text-xl md:text-2xl lg:text-3xl mb-3 mt-16 sm:mt-[5%] md:mt-[8%] lg:mt-[4%]">
             Kreiraj kviz
           </h1>
           <label>Naslov kviza</label>
@@ -117,8 +117,8 @@ function CreateQuiz() {
           Dalje
         </button>
       </section>
-      <section className="sm:w-2/5 md:w-[35%] lg:w-[30%] sm:pt-14 md:pt-[12%] lg:pt-[8%] flex flex-col items-center sm:block">
-        <div className="h-48 md:h-52 w-3/4 sm:w-full lg:h-64 bg-gray-200 flex justify-center items-center flex-col gap-10 !border-3 !border-black border-solid">
+      <section className=" sm:w-2/5 md:w-[35%] lg:w-[30%] sm:pt-14 md:pt-[12%] lg:pt-[8%] flex flex-col items-center sm:block bg-background-color">
+        <div className="w-3/4 sm:w-full md:h-52 lg:h-64 bg-gray-200 flex justify-center items-center flex-col p-5 gap-10 !border-3 !border-black border-solid">
           <img
             src={imgLoadIcon}
             alt="Load image"
