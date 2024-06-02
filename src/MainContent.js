@@ -9,6 +9,7 @@ import "./styling/page_component-styles/my-profile.css";
 import "./styling/page_component-styles/mobile-navbar.css";
 import "./styling/page_component-styles/mobile-menu.css";
 import "./styling/page_component-styles/my-quizzes.css";
+import "./styling/page_component-styles/join-quiz.css";
 import "./styling/global-styles.css";
 import "./styling/styling-vars.css";
 import NavBar from "./components/NavBar";
@@ -187,6 +188,8 @@ function MainContent() {
     "/moji-kvizovi/kviz/",
     "/pokreni-kviz",
     "/kreiraj-kviz/novo-pitanje",
+    "/pridruzi-se-kvizu",
+    "/pridruzi-se-kvizu/"
   ].some((path) => location.pathname.startsWith(path));
 
   return (

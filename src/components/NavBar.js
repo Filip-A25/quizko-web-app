@@ -60,13 +60,20 @@ function NavBar({ position }) {
               />
               <NavButton
                 index={3}
+                title="Pridruži se kvizu"
+                path="/pridruzi-se-kvizu"
+                isContent={true}
+                onClick={handleNavButtonClick}
+              />
+              <NavButton
+                index={4}
                 title="Moji kvizovi"
                 path="/moji-kvizovi"
                 isContent={true}
                 onClick={handleNavButtonClick}
               />
               <NavButton
-                index={4}
+                index={5}
                 title="Moj profil"
                 path="/moj-profil"
                 isContent={true}
@@ -79,14 +86,14 @@ function NavBar({ position }) {
           {!isLoggedIn && (
             <Fragment>
               <NavButton
-                index={5}
+                index={6}
                 title="Prijava"
                 path="/prijava"
                 isContent={false}
                 onClick={handleNavButtonClick}
               />
               <NavButton
-                index={6}
+                index={7}
                 title="Registracija"
                 path="/registracija"
                 isContent={false}
@@ -96,7 +103,7 @@ function NavBar({ position }) {
           )}
           {isLoggedIn && (
             <NavButton
-              index={7}
+              index={8}
               title="Odjava"
               path="/"
               isContent={false}

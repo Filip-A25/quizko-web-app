@@ -1,0 +1,21 @@
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+/* --------------------------------- */
+/* --------- GLOBAL STYLES --------- */
+/* --------------------------------- */
+/* ------------------------- */
+/* ------- VARIABLES ------- */
+/* ------------------------- */
+#join-quiz-content input {
+  border: 1px solid rgba(60, 60, 60, 0.2509803922);
+  background: transparent;
+  padding: 0 2% 0 2%;
+  transition: all 50ms ease-in-out;
+  border-radius: 5px;
+  outline: none;
+}
+#join-quiz-content input:focus {
+  border: 3px solid #e1bf57;
+  transition: all 50ms ease-in-out;
+}/*# sourceMappingURL=join-quiz.css.map */

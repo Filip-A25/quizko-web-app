@@ -1,4 +1,30 @@
+/*import {useState, useEffect} from "react";
+import {getQuizById} from "../services/api_quizzes";
+
 function Scoreboard() {
+   const [teams, setTeams] = useState([]);
+   const [quizData, setQuizData] = useState({});
+   const [roundData, setRoundData] = useState();
+   
+   useEffect(() => {
+    const quizId = localStorage.getItem("quiz_id");
+    async function handleFetch() {
+        await fetchQuizData(quizId);
+        setTeams(quizData.scoreboard.teams);
+    }
+    handleFetch();
+   }, []);
+
+   const fetchQuizData = async (id) => {
+    try {  
+        const quiz = await getQuizById(id);
+        setQuizData(quiz.quiz);
+        setRoundData(quiz.quiz.rounds);
+    } catch (err) {
+        throw new Error(err);
+    }
+   }
+
     return (
         <div className="h-[70vh] w-full flex items-center">
             <table className="rounded-md">
@@ -6,11 +32,8 @@ function Scoreboard() {
                     <tr className="bg-text-color text-text-light-color h-10">
                         <th className="w-16">Rb.</th>
                         <th className="w-28">Tim</th>
-                        <th className="w-24">Runda 1</th>
-                        <th className="w-24">Runda 2</th>
-                        <th className="w-24">Runda 3</th>
-                        <th className="w-24">Runda 4</th>
-                        <th className="w-24">Runda 5</th>
+                        {roundData.map((round, index) =>
+                            <th className="w-20">Runda {index}</th>)}
                         <th className="w-28">Ukupno</th>
                     </tr>
                 </thead>
@@ -91,4 +114,4 @@ function Scoreboard() {
     )
 }
 
-export default Scoreboard;
+export default Scoreboard;*/

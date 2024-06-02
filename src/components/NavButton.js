@@ -8,6 +8,7 @@ import profileIcon from "../icons/profile-icon.png";
 import logInIcon from "../icons/sign-in-icon.png";
 import registerIcon from "../icons/register-icon.png";
 import logOutIcon from "../icons/sign-out-icon.png";
+import joinQuizIcon from "../icons/join-quiz-icon.png";
 
 function NavButton(props) {
   const [buttonClass, setButtonClass] = useState("");
@@ -28,18 +29,21 @@ function NavButton(props) {
         setIconSrc(createIcon);
         break;
       case 3:
-        setIconSrc(myQuizzesIcon);
+        setIconSrc(joinQuizIcon);
         break;
       case 4:
-        setIconSrc(profileIcon);
+        setIconSrc(myQuizzesIcon);
         break;
       case 5:
-        setIconSrc(logInIcon);
+        setIconSrc(profileIcon);
         break;
       case 6:
-        setIconSrc(registerIcon);
+        setIconSrc(logInIcon);
         break;
       case 7:
+        setIconSrc(registerIcon);
+        break;
+      case 8:
         setIconSrc(logOutIcon);
         break;
       default:

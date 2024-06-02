@@ -13,6 +13,7 @@ import MyProfile from "./components/page_content/my_profile/MyProfile";
 import ErrorPage from "./components/ErrorPage";
 import AuthLogin from "./components/page_content/auth_login/AuthLogin";
 import AuthRegister from "./components/page_content/auth_register/AuthRegister";
+import JoinQuiz from "./components/page_content/join_quiz/JoinQuiz";
 import Scoreboard from "./components/Scoreboard";
 import "./styles.css";
 import { StartQuiz } from "./components/page_content/start_quiz/StartQuiz";
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
             element: <CreateQuestion />
           }
         ]
+      },
+      {
+        path: "/pridruzi-se-kvizu",
+        element: <JoinQuiz />
       },
       {
         path: "/moji-kvizovi",

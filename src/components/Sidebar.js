@@ -42,8 +42,9 @@ function Sidebar() {
           isHomeButton="true"
         />
         <SideButton index={2} title="Kreiraj kviz" path="/kreiraj-kviz" />
-        <SideButton index={3} title="Moji kvizovi" path="/moji-kvizovi" />
-        <SideButton index={4} title="Moj profil" path="/moj-profil" />
+        <SideButton index={3} title="Pridruži se kvizu" path="/pridruzi-se-kvizu" />
+        <SideButton index={4} title="Moji kvizovi" path="/moji-kvizovi" />
+        <SideButton index={5} title="Moj profil" path="/moj-profil" />
         <button className="h-14 w-full flex justify-center items-center lg:justify-start transition-all px-7" alt="Odjava" onClick={handleLogout}>
           <img
               src={logOutIcon}

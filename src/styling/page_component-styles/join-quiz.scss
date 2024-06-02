@@ -1,0 +1,9 @@
+@import "../global-styles.scss";
+@import "../styling-vars.scss";
+
+#join-quiz-content {
+    input {
+        @include formInput();
+        @include authFormInput();
+    }
+}

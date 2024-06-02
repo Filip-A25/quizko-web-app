@@ -5,6 +5,7 @@ import createIcon from "../icons/create-quiz-icon.png";
 import myQuizzesIcon from "../icons/my-quizzes-icon.png";
 import profileIcon from "../icons/profile-icon.png";
 import logOutIcon from "../icons/sign-out-icon.png";
+import joinQuizIcon from "../icons/join-quiz-icon.png";
 
 function SideButton(props) {
   const [iconSrc, setIconSrc] = useState("");
@@ -19,12 +20,15 @@ function SideButton(props) {
         setIconSrc(createIcon);
         break;
       case 3:
-        setIconSrc(myQuizzesIcon);
+        setIconSrc(joinQuizIcon);
         break;
       case 4:
-        setIconSrc(profileIcon);
+        setIconSrc(myQuizzesIcon);
         break;
       case 5:
+        setIconSrc(profileIcon);
+        break;
+      case 6:
         setIconSrc(logOutIcon);
         break;
       default:
@@ -48,7 +52,7 @@ function SideButton(props) {
     <NavLink
       to={props.path}
       className={({ isActive }) => {
-        return isActive ? "navlink-active cursor-pointer" : "cursor-pointer";
+        return isActive ? "navlink-active cursor-pointer text-text-light-color" : "cursor-pointer";
       }}
     >   
       {props.isHomeButton ? (

@@ -75,7 +75,7 @@ body {
 }
 #navbar-element .navbar-content-section .nav-buttons-section {
   height: 100%;
-  grid-template-columns: repeat(4, 20%);
+  grid-template-columns: repeat(5, 20%);
   gap: 1%;
   align-items: center;
   justify-content: center;
