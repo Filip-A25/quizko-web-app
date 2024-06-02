@@ -19,7 +19,7 @@ function MyQuizzes() {
 
   useEffect(() => {
     localStorage.setItem("query_page", currentPage);
-  }, [currentPage])
+  }, [currentPage]);
 
   useEffect(() => {
     handleElementReveal(revealingElements);
@@ -78,16 +78,16 @@ function MyQuizzes() {
       const currPage = prevPage + 1;
       fetchData(currPage);
       return currPage;
-    })
-  }
+    });
+  };
 
   const handlePrevPage = () => {
     setCurrentPage((prevPage) => {
       const currPage = prevPage - 1;
       fetchData(currPage);
       return currPage;
-    })
-  }
+    });
+  };
 
   return (
     <div id="my-quizzes-content" className="h-full lg:h-screen">
@@ -101,9 +101,15 @@ function MyQuizzes() {
             onChange={handleFilter}
             className="sm:w-[30vw] md:w-[25vw] lg:w-[25vw] xl:w-[20vw] sm:my-[2vh] lg:mb-[3vh] lg:mt-[1vh] text-l md:text-xl lg:text-lg p-3 rounded-md bg-[#e1bf57] text-white hover:cursor-pointer"
           >
-            <option value="original" className="bg-text-light-color">All categories</option>
+            <option value="original" className="bg-text-light-color">
+              All categories
+            </option>
             {categories.map((category) => (
-              <option key={category._id} value={category._id} className="bg-text-light-color">
+              <option
+                key={category._id}
+                value={category._id}
+                className="bg-text-light-color"
+              >
                 {category.name}
               </option>
             ))}
@@ -114,13 +120,16 @@ function MyQuizzes() {
         ) : (
           <ul className="grid lg:grid-cols-2 lg:grid-rows-2 gap-10 md:grid-cols-1 sm:grid-cols-1 sm:mb-10 pt-10 w-4/5">
             {quizzes.map((quizz) => (
-              <li key={quizz.id} className="quiz-li relative flex justify-center align-center rounded-md h-36 sm:h-full">
+              <li
+                key={quizz.id}
+                className="quiz-li relative flex justify-center align-center rounded-md h-36 sm:h-full"
+              >
                 <Quizz
-                  id={quizz.id}
+                  quizId={quizz.id}
                   name={quizz.name}
                   description={quizz.description}
                   imgSrc={quizz.image}
-                  dataFetch={fetchData} 
+                  dataFetch={fetchData}
                   categoriesFetch={fetchCategories}
                 />
               </li>
@@ -129,7 +138,10 @@ function MyQuizzes() {
         )}
         <section className="flex flex-col sm:flex-row justify-between items-center h-24 w-4/5 relative mt-8 sm:mt-3 mb-3">
           {currentPage !== 1 ? (
-            <button className="standard-button relative bg-button-red text-text-light-color mb-4 sm:mb-0 h-12 sm:h-10 w-64 sm:w-32" onClick={() => handlePrevPage()}>
+            <button
+              className="standard-button relative bg-button-red text-text-light-color mb-4 sm:mb-0 h-12 sm:h-10 w-64 sm:w-32"
+              onClick={() => handlePrevPage()}
+            >
               Nazad
             </button>
           ) : null}
@@ -139,7 +151,10 @@ function MyQuizzes() {
                 Kreiraj kviz
               </button>
             </Link>
-            <button className="standard-button relative bg-text-color text-text-light-color h-12 sm:h-10 w-64 sm:w-32 after:!bg-main-theme" onClick={() => handleNextPage()}>
+            <button
+              className="standard-button relative bg-text-color text-text-light-color h-12 sm:h-10 w-64 sm:w-32 after:!bg-main-theme"
+              onClick={() => handleNextPage()}
+            >
               Dalje
             </button>
           </div>

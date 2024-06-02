@@ -91,7 +91,7 @@ export const Question = ({
             {answers.map((answer) => (
               <li
                 key={answer.id}
-                className="bg-white self-start w-full px-2 py-2 text-l border-2 border-[#e1bf57]"
+                className="self-start w-full px-2 py-2 text-l bg-[#e1bf57] text-white rounded-md"
               >
                 {answer.answer}
               </li>

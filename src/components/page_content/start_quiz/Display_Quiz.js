@@ -94,7 +94,7 @@ export const Display_Quiz = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen w-screen lg:pl-[16vw] md:pl-[12vw] sm:pl-[0]">
+    <div className="flex items-center justify-center h-screen w-screen ">
       {isRoundDisplay ? (
         isLoadingRound ? (
           <Skeleton field="runda-div" width="full" />

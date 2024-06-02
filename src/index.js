@@ -16,8 +16,8 @@ import AuthRegister from "./components/page_content/auth_register/AuthRegister";
 import JoinQuiz from "./components/page_content/join_quiz/JoinQuiz";
 import Scoreboard from "./components/Scoreboard";
 import "./styles.css";
-import { StartQuiz } from "./components/page_content/start_quiz/StartQuiz";
 import { Display_Quiz } from "./components/page_content/start_quiz/Display_Quiz";
+import { MailConfirm } from "./components/page_content/auth_register/MailConfirm";
 
 const router = createBrowserRouter([
   {
@@ -35,29 +35,25 @@ const router = createBrowserRouter([
         children: [
           {
             path: "/kreiraj-kviz/",
-            element: <CreateQuiz />
+            element: <CreateQuiz />,
           },
           {
             path: "/kreiraj-kviz/nova-runda",
-            element: <CreateRound />
+            element: <CreateRound />,
           },
           {
             path: "/kreiraj-kviz/novo-pitanje",
-            element: <CreateQuestion />
-          }
-        ]
+            element: <CreateQuestion />,
+          },
+        ],
       },
       {
         path: "/pridruzi-se-kvizu",
-        element: <JoinQuiz />
+        element: <JoinQuiz />,
       },
       {
         path: "/moji-kvizovi",
         element: <MyQuizzes />,
-      },
-      {
-        path: "/moji-kvizovi/kviz/:quizId",
-        element: <StartQuiz />,
       },
       {
         path: "/pokreni-kviz/:quizId",
@@ -72,13 +68,17 @@ const router = createBrowserRouter([
         element: <AuthLogin />,
       },
       {
+        path: "potvrda-maila",
+        element: <MailConfirm />,
+      },
+      {
         path: "/registracija",
         element: <AuthRegister />,
       },
       {
         path: "/scoreboard",
-        element: <Scoreboard />
-      }
+        element: <Scoreboard />,
+      },
     ],
   },
 ]);

@@ -1,4 +1,14 @@
-import { get, post, put, remove, patch, getJSON, postJSON, patchJSON } from "./api_base";
+import { MailConfirm } from "../components/page_content/auth_register/MailConfirm";
+import {
+  get,
+  post,
+  put,
+  remove,
+  patch,
+  getJSON,
+  postJSON,
+  patchJSON,
+} from "./api_base";
 
 const getMyProfile = async () => {
   try {
@@ -47,7 +57,7 @@ const handleRegister = async (registerData) => {
   } catch (err) {
     throw new Error(err);
   }
-}
+};
 
 const handleLogin = async (loginData) => {
   try {
@@ -59,6 +69,16 @@ const handleLogin = async (loginData) => {
   }
 };
 
+const confirmMail = async (userId, emailToken) => {
+  try {
+    const resp = await patchJSON(
+      `/users/confirm-email/${userId}/${emailToken}`
+    );
+    console.log(resp);
+    return resp;
+  } catch (error) {}
+};
+
 export {
   getMyProfile,
   editPassword,
@@ -66,4 +86,5 @@ export {
   editEmail,
   handleRegister,
   handleLogin,
+  confirmMail,
 };

@@ -10,7 +10,7 @@ function AuthLogin() {
     emailWrapClass,
     passwordWrapClass,
     handleEmailCheck,
-    setIsLoggedIn
+    setIsLoggedIn,
   } = useContext(MainContext);
   const revealingElements = useRef([]);
 
@@ -38,6 +38,7 @@ function AuthLogin() {
     handleEmailCheck(e.target[0].value);
     try {
       const resp = await handleLogin(loginData);
+      console.log(loginData);
       const data = resp.data;
       console.log(data.token);
       localStorage.setItem("token", data.token);

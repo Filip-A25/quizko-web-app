@@ -186,11 +186,12 @@ function MainContent() {
     "/kreiraj-kviz/",
     "/kreiraj-kviz/nova-runda",
     "/moji-kvizovi/kviz/",
-    "/pokreni-kviz",
     "/kreiraj-kviz/novo-pitanje",
     "/pridruzi-se-kvizu",
-    "/pridruzi-se-kvizu/"
+    "/pridruzi-se-kvizu/",
   ].some((path) => location.pathname.startsWith(path));
+
+  const isNoBarPage = location.pathname.startsWith("/pokreni-kviz");
 
   return (
     <div className="page-content">
@@ -213,22 +214,25 @@ function MainContent() {
           navigate,
           isLoggedIn,
           setIsLoggedIn,
-          handleLogout
+          handleLogout,
         }}
       >
-        {isSidebarPage && !mobileSize ? (
-          <Sidebar />
-        ) : !isSidebarPage && !mobileSize ? (
-          <NavBar />
-        ) : (
-          <MobileNavBar />
+        {!isNoBarPage && (
+          <>
+            {isSidebarPage && !mobileSize ? (
+              <Sidebar />
+            ) : !isSidebarPage && !mobileSize ? (
+              <NavBar />
+            ) : (
+              <MobileNavBar />
+            )}
+            {opened && <MobileMenu />}
+          </>
         )}
-        {opened ? (
-          <MobileMenu />
-        ) : (
+        {!opened && (
           <Fragment>
             <Outlet />
-            {!isSidebarPage && <Footer />}
+            {!isSidebarPage && !isNoBarPage && <Footer />}
           </Fragment>
         )}
       </MainContext.Provider>
